@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class FadeOut_ForcedLanding : MonoBehaviour
 {
@@ -29,6 +30,7 @@ public class FadeOut_ForcedLanding : MonoBehaviour
             yield return null;
         }
         yield return null;
+        SceneManager.LoadScene("Hospitaltest");
     }
 }
 

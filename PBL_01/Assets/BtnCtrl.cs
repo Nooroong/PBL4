@@ -5,20 +5,54 @@ using UnityEngine.UI;
 
 public class BtnCtrl : MonoBehaviour
 {
+    public Toggle toggle1_1;
+    public Toggle toggle1_2;
+    public Toggle toggle2_1;
+    public Toggle toggle2_2;
+    public Toggle toggle3_1;
+    public Toggle toggle3_2;
+    public Toggle toggle4_1;
+    public Toggle toggle4_2;
+    public Toggle toggle5_1;
+    public Toggle toggle5_2;
+    public Toggle toggle6_1;
+    public Toggle toggle6_2;
+    public Toggle toggle7_1;
+    public Toggle toggle7_2;
+    public Toggle toggle8_1;
+    public Toggle toggle8_2;
+    public Toggle toggle9_1;
+    public Toggle toggle9_2;
+    public Toggle toggle10_1;
+    public Toggle toggle10_2;
+
     private Button btn;
 
     public void Start() {
         //아래 따옴표 안에 해당되는 버튼 오브젝트의 이름을 적는다.
-        btn = GameObject.Find("Button").GetComponent<Button>();
+        btn = GameObject.Find("Complete").GetComponent<Button>();
         btn.interactable = false; //버튼 상호작용 비활성화
     }
 
     public void BtnState() {
         //!아래 조건 변경!
-        if (true) { //모든 항목을 체크한 경우
+        if ((toggle1_1.isOn == true || toggle1_2.isOn == true) && 
+            (toggle2_1.isOn == true || toggle2_2.isOn == true) &&
+            (toggle3_1.isOn == true || toggle3_2.isOn == true) &&
+            (toggle4_1.isOn == true || toggle4_2.isOn == true) &&
+            (toggle5_1.isOn == true || toggle5_2.isOn == true) &&
+            (toggle6_1.isOn == true || toggle6_2.isOn == true) &&
+            (toggle7_1.isOn == true || toggle7_2.isOn == true) &&
+            (toggle8_1.isOn == true || toggle8_2.isOn == true) &&
+            (toggle9_1.isOn == true || toggle9_2.isOn == true) &&
+            (toggle10_1.isOn == true || toggle10_2.isOn == true)) { //모든 항목을 체크한 경우
             btn.interactable = true; //버튼 상호작용 활성화
         } else { //항목이 모두 체크되지 않은 경우
             btn.interactable = false; //버튼 상호작용 비활성화
         }
+    }
+    public void Update()
+    {
+        BtnState();
     }
 }
