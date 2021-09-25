@@ -571,7 +571,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ef82da11d6174845b29df260961f49c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  yourButton: {fileID: 402426418}
 --- !u!1 &1269276951
 GameObject:
   m_ObjectHideFlags: 0
@@ -695,7 +694,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 2800000, guid: 39338b1e8d35c004992725e04b3dae97, type: 3}
+  m_Texture: {fileID: 2800000, guid: 2c979d67f3aa1c04bacc45699f666da6, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
