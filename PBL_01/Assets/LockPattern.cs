@@ -103,11 +103,10 @@ public class LockPattern : MonoBehaviour {
     }
 
     void CreatePattern(List<int> ptn) {
-        ptn.Add(0);
-        ptn.Add(1);
-        ptn.Add(2);
-        ptn.Add(3);
-        ptn.Add(4);
+        int cnt = this.transform.childCount;
+        for(int i = 0; i < cnt; i++) {
+            ptn.Add(i);
+        }
     }
 
     public void OnMouseEnterCircle(CircleIdentifier idf) {
