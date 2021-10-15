@@ -29,4 +29,25 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Hospitaltest.unity
     guid: 56f75969ca073a445b707b8f8c80009d
+  - enabled: 1
+    path: Assets/Scenes/HospitalDesktop.unity
+    guid: 7f3b5474dbbff614ea392cc85831ee04
+  - enabled: 1
+    path: Assets/Scenes/Consult1.unity
+    guid: ff8efe6450941fe4aa59537fc01636ce
+  - enabled: 1
+    path: Assets/Scenes/Consult2.unity
+    guid: 7523517954e5da34baf9a4a63072a197
+  - enabled: 1
+    path: Assets/Scenes/Consult3.unity
+    guid: b163111027c3dd846a7d16e09b921aad
+  - enabled: 1
+    path: Assets/Scenes/StreetLeaflet.unity
+    guid: b79f01a8a98ce6946af5d909dabd5938
+  - enabled: 1
+    path: Assets/Scenes/ReadLeaflet.unity
+    guid: daaa29f1ee23d1544b86294e3b09e23f
+  - enabled: 1
+    path: Assets/Scenes/StreetPlayer.unity
+    guid: af01fc1afd34d4b40bcbd104348c6c47
   m_configObjects: {}
