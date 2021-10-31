@@ -50,4 +50,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/StreetPlayer.unity
     guid: af01fc1afd34d4b40bcbd104348c6c47
+  - enabled: 1
+    path: Assets/Scenes/Note.unity
+    guid: ff5df188909c5704f8513d124ed46cea
+  - enabled: 1
+    path: Assets/Scenes/Note_test.unity
+    guid: cc8fb8b67ccbc4446b1799744e4f5234
   m_configObjects: {}
