@@ -7,9 +7,24 @@ public class Note_Active : MonoBehaviour
 {
     public GameObject note1, note2, note3;
     public Text text;
+
+    void Awake()
+    {
+        var obj = FindObjectsOfType(typeof(Canvas));
+        if (obj.Length == 1)
+        {
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+
+    }
+
     // Start is called before the first frame update
     void Start()
-    {
+    { 
         if(text.text.Contains("ps"))
         {
             note1.SetActive(false);
