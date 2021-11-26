@@ -10,7 +10,7 @@ public class Joystick : MonoBehaviour, IDragHandler, IPointerUpHandler, IPointer
     public RectTransform innerPad; //안쪽 원
     public RectTransform outerPad; //바깥 원
 
-    private float deadZone = 0; //안쪽 원의 이동 범위
+    private float deadZone = 0; //안쪽 원의 이동 범위?
     private float handleRange = 1;
     private Vector3 input = Vector3.zero;
     private Canvas canvas;
@@ -49,6 +49,5 @@ public class Joystick : MonoBehaviour, IDragHandler, IPointerUpHandler, IPointer
     public void OnPointerUp(PointerEventData eventData) {
         input = Vector2.zero;
         innerPad.anchoredPosition = Vector2.zero; //안쪽 원의 위치를 제자리로
-
     }
 }
