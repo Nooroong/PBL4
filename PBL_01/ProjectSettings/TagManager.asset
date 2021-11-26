@@ -51,3 +51,6 @@ TagManager:
   - name: Black
     uniqueID: 1854237517
     locked: 0
+  - name: Effect
+    uniqueID: 406365249
+    locked: 0
