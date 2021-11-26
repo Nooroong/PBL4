@@ -241,6 +241,8 @@ GameObject:
   - component: {fileID: 595649021}
   - component: {fileID: 595649023}
   - component: {fileID: 595649022}
+  - component: {fileID: 595649024}
+  - component: {fileID: 595649025}
   m_Layer: 5
   m_Name: player
   m_TagString: Untagged
@@ -287,7 +289,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: e4cd046ae9aaa7045b7ac0f4d1b61271, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e193d22196f2f0547a5ad4dbaa46a0f1, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -305,6 +307,43 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 595649020}
   m_CullTransparentMesh: 1
+--- !u!95 &595649024
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 595649020}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 1d4d269511c9f41459af8f1548e5645f, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &595649025
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 595649020}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2bf8da04097724943a306ccd33b69753, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Foot1: {fileID: 1793349356}
+  Foot2: {fileID: 1101408656}
+  Foot3: {fileID: 1622997262}
+  Foot4: {fileID: 1922586041}
+  Foot5: {fileID: 863809904}
+  player: {fileID: 595649022}
 --- !u!1 &700227724
 GameObject:
   m_ObjectHideFlags: 0
@@ -382,7 +421,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 4793656b612085e4198cbd9bd96baa23, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -550,7 +589,6 @@ GameObject:
   - component: {fileID: 863809906}
   - component: {fileID: 863809905}
   - component: {fileID: 863809904}
-  - component: {fileID: 863809907}
   m_Layer: 5
   m_Name: Foot5
   m_TagString: Untagged
@@ -620,7 +658,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 863809905}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 595649025}
+        m_TargetAssemblyTypeName: FootPrint, Assembly-CSharp
+        m_MethodName: FadeFoot5
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &863809905
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -659,20 +709,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 863809902}
   m_CullTransparentMesh: 1
---- !u!114 &863809907
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 863809902}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 30ad83207e4865244baca73a84272ae7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Foot5: {fileID: 863809904}
-  player: {fileID: 595649022}
 --- !u!1 &1101408654
 GameObject:
   m_ObjectHideFlags: 0
@@ -686,7 +722,6 @@ GameObject:
   - component: {fileID: 1101408657}
   - component: {fileID: 1101408656}
   - component: {fileID: 1101408660}
-  - component: {fileID: 1101408659}
   m_Layer: 5
   m_Name: Foot2
   m_TagString: Untagged
@@ -756,7 +791,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1101408657}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 595649025}
+        m_TargetAssemblyTypeName: FootPrint, Assembly-CSharp
+        m_MethodName: FadeFoot2
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1101408657
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -795,20 +842,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1101408654}
   m_CullTransparentMesh: 1
---- !u!114 &1101408659
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1101408654}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9055476bdb3abc44f84b2196565cc426, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Foot2: {fileID: 1101408656}
-  player: {fileID: 595649022}
 --- !u!114 &1101408660
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1013,7 +1046,6 @@ GameObject:
   - component: {fileID: 1622997264}
   - component: {fileID: 1622997263}
   - component: {fileID: 1622997262}
-  - component: {fileID: 1622997265}
   m_Layer: 5
   m_Name: Foot3
   m_TagString: Untagged
@@ -1083,7 +1115,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1622997263}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 595649025}
+        m_TargetAssemblyTypeName: FootPrint, Assembly-CSharp
+        m_MethodName: FadeFoot3
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1622997263
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1122,20 +1166,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1622997260}
   m_CullTransparentMesh: 1
---- !u!114 &1622997265
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1622997260}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4b994d22592c03343a8b8bb3ec9119ba, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Foot3: {fileID: 1622997262}
-  player: {fileID: 595649022}
 --- !u!1 &1793349354
 GameObject:
   m_ObjectHideFlags: 0
@@ -1147,8 +1177,8 @@ GameObject:
   - component: {fileID: 1793349355}
   - component: {fileID: 1793349358}
   - component: {fileID: 1793349357}
-  - component: {fileID: 1793349356}
   - component: {fileID: 1793349359}
+  - component: {fileID: 1793349356}
   m_Layer: 5
   m_Name: Foot1
   m_TagString: Untagged
@@ -1218,7 +1248,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1793349357}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 595649025}
+        m_TargetAssemblyTypeName: FootPrint, Assembly-CSharp
+        m_MethodName: FadeFoot1
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1793349357
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1264,12 +1306,16 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1793349354}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2bf8da04097724943a306ccd33b69753, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Foot1: {fileID: 1793349356}
+  Foot2: {fileID: 0}
+  Foot3: {fileID: 0}
+  Foot4: {fileID: 0}
+  Foot5: {fileID: 0}
   player: {fileID: 595649022}
 --- !u!1 &1922586039
 GameObject:
@@ -1283,7 +1329,6 @@ GameObject:
   - component: {fileID: 1922586043}
   - component: {fileID: 1922586042}
   - component: {fileID: 1922586041}
-  - component: {fileID: 1922586044}
   m_Layer: 5
   m_Name: Foot4
   m_TagString: Untagged
@@ -1353,7 +1398,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1922586042}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 595649025}
+        m_TargetAssemblyTypeName: FootPrint, Assembly-CSharp
+        m_MethodName: FadeFoot4
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1922586042
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1392,17 +1449,3 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1922586039}
   m_CullTransparentMesh: 1
---- !u!114 &1922586044
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1922586039}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 72bbb0a26620e7d4baf9cdfee5d76edd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Foot4: {fileID: 1922586041}
-  player: {fileID: 595649022}

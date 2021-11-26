@@ -9,6 +9,7 @@ public class Note2_text : MonoBehaviour
     public Text text;
     public Text note, ps;
     public Button exit;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -22,6 +23,6 @@ public class Note2_text : MonoBehaviour
     }
     public void Exit()
     {
-        SceneManager.LoadScene("Note_test");
+        SceneManager.LoadScene("desk");
     } 
 }

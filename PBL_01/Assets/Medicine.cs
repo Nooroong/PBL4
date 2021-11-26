@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+
 
 public class Medicine : MonoBehaviour
 {
@@ -238,8 +240,12 @@ public class Medicine : MonoBehaviour
         btn7.enabled = true;
         btn8.enabled = true;
     }
+    public void makeBtn()
+    {
+        SceneManager.LoadScene("Tablet");
+    }
 
-    public void Btnset()
+        public void Btnset()
     {
         if (btn1isactive == false){
             btn1.enabled = false;

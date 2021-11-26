@@ -5,9 +5,9 @@ using UnityEngine.UI;
 
 public class FootPrint : MonoBehaviour
 {
-
-    public Button Foot1;
-    int speed = 10;
+    Animator m_Animator;
+    public Button Foot1, Foot2, Foot3, Foot4, Foot5;
+    float speed = 7.0f;
     float xMove;
     public Image player;
     
@@ -16,25 +16,109 @@ public class FootPrint : MonoBehaviour
     void Start()
     {
         player.gameObject.SetActive(true);
+        m_Animator = GetComponent<Animator>();
+        m_Animator.GetComponent<Animator>().enabled = false;
     }
 
     public void FadeFoot1()
     {
-        
-        while (player.gameObject.transform.position.x < 570.0f)
-        {
-            
-            gameObject.SetActive(false);
-            xMove = 0;
-            xMove = +speed * Time.deltaTime;
-            player.transform.Translate(new Vector3(xMove, 0, 0));
-        }
-        
+        StartCoroutine(Foot1Flow());
     }
 
+    IEnumerator Foot1Flow()
+    {
+        while (player.gameObject.transform.position.x < 570.0f)
+        {
+            m_Animator.GetComponent<Animator>().enabled = true;
+            Foot1.gameObject.SetActive(false);
+            xMove = 0;
+            xMove = speed;
+            player.transform.Translate(new Vector3(xMove, 0, 0));
+            yield return null;
+        }
+        yield return null;
+    }
+
+    public void FadeFoot2()
+    {
+       StartCoroutine(Foot2Flow());
+    }
+
+    IEnumerator Foot2Flow()
+    {
+
+        while ((player.gameObject.transform.position.x > 570.0f) && (player.gameObject.transform.position.x < 760.0f))
+        {
+            m_Animator.GetComponent<Animator>().enabled = true;
+            Foot2.gameObject.SetActive(false);
+            xMove = 0;
+            xMove = +speed;
+            player.transform.Translate(new Vector3(xMove, 0, 0));
+            yield return null;
+        }
+        yield return null;
+    }
+    public void FadeFoot3()
+    {
+        StartCoroutine(Foot3Flow());
+    }
+
+    IEnumerator Foot3Flow()
+    {
+
+        while ((player.gameObject.transform.position.x > 750.0f) && (player.gameObject.transform.position.x < 880.0f))
+        {
+            m_Animator.GetComponent<Animator>().enabled = true;
+            Foot3.gameObject.SetActive(false);
+            xMove = 0;
+            xMove = +speed;
+            player.transform.Translate(new Vector3(xMove, 0, 0));
+            yield return null;
+        }
+        yield return null;
+    }
+    public void FadeFoot4()
+    {
+        StartCoroutine(Foot4Flow());
+    }
+
+    IEnumerator Foot4Flow()
+    {
+
+        while ((player.gameObject.transform.position.x > 880.0f) && (player.gameObject.transform.position.x < 1100.0f))
+        {
+            m_Animator.GetComponent<Animator>().enabled = true;
+            Foot4.gameObject.SetActive(false);
+            xMove = 0;
+            xMove = +speed;
+            player.transform.Translate(new Vector3(xMove, 0, 0));
+            yield return null;
+        }
+        yield return null;
+    }
+
+    public void FadeFoot5()
+    {
+        StartCoroutine(Foot5Flow());
+    }
+
+    IEnumerator Foot5Flow()
+    {
+
+        while ((player.gameObject.transform.position.x > 1100.0f) && (player.gameObject.transform.position.x < 1220.0f))
+        {
+            m_Animator.GetComponent<Animator>().enabled = true;
+            Foot5.gameObject.SetActive(false);
+            xMove = 0;
+            xMove = +speed;
+            player.transform.Translate(new Vector3(xMove, 0, 0));
+            yield return null;
+        }
+        yield return null;
+    }
     // Update is called once per frame
     void Update()
     {
-        Foot1.onClick.AddListener(FadeFoot1);
+        m_Animator.GetComponent<Animator>().enabled = false;
     }
 }

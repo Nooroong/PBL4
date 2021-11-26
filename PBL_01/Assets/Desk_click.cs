@@ -4,9 +4,9 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class Note_test : MonoBehaviour
+public class Desk_click : MonoBehaviour
 {
-    public Button note;
+    public Button note, newspaper;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,5 +22,9 @@ public class Note_test : MonoBehaviour
     public void LoadNote()
     {
         SceneManager.LoadScene("Note");
+    }
+    public void LoadNewspaper()
+    {
+        SceneManager.LoadScene("Newspaper");
     }
 }
