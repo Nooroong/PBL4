@@ -10,16 +10,7 @@ public class Note_Active : MonoBehaviour
 
     void Awake()
     {
-        var obj = FindObjectsOfType(typeof(Canvas));
-        if (obj.Length == 1)
-        {
-            DontDestroyOnLoad(gameObject);
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
-
+        text.text = PlayerPrefs.GetString("note");
     }
 
     // Start is called before the first frame update

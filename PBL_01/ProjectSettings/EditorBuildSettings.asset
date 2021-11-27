@@ -51,6 +51,9 @@ EditorBuildSettings:
     path: Assets/Scenes/StreetPlayer.unity
     guid: af01fc1afd34d4b40bcbd104348c6c47
   - enabled: 1
+    path: Assets/Scenes/House.unity
+    guid: 7212c475f2ea11148bd5d3ef9b62cf8d
+  - enabled: 1
     path: Assets/Scenes/Note.unity
     guid: ff5df188909c5704f8513d124ed46cea
   - enabled: 1
@@ -62,9 +65,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/TeaTime2.unity
     guid: 0aabbc229ac8d5e4ca5b55dcb81c5501
-  - enabled: 1
-    path: Assets/Scenes/House.unity
-    guid: 7212c475f2ea11148bd5d3ef9b62cf8d
   - enabled: 1
     path: Assets/Scenes/TeaTime0.unity
     guid: 2abfc257a2e98c74e973ef07e84b53cb

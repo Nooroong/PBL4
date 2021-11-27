@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class Desk_click : MonoBehaviour
 {
-    public Button note, newspaper;
+    public Button note, newspaper, tablets, home;
     // Start is called before the first frame update
     void Start()
     {
@@ -26,5 +26,9 @@ public class Desk_click : MonoBehaviour
     public void LoadNewspaper()
     {
         SceneManager.LoadScene("Newspaper");
+    }
+    public void LoadHome()
+    {
+        SceneManager.LoadScene("House");
     }
 }
