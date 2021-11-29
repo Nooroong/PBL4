@@ -19,21 +19,21 @@ public class Tea_control : MonoBehaviour
             Teabag.GetComponent<Image>().sprite = Resources.Load("TeaTime\\chamomile", typeof(Sprite)) as Sprite;
             m_Animator.SetTrigger("chamomile");
             m_Animator.GetComponent<Animator>().enabled = true;
-            choosetea.tea = null;
+            choosetea.tea = "chamomile";
         }
         else if (choosetea.tea == "lavender")
         {
             Teabag.GetComponent<Image>().sprite = Resources.Load("TeaTime\\lavender", typeof(Sprite)) as Sprite;
             m_Animator.SetTrigger("lavender");
             m_Animator.GetComponent<Animator>().enabled = true;
-            choosetea.tea = null;
+            choosetea.tea = "lavender";
         }
         else if (choosetea.tea == "jasmine")
         {
             Teabag.GetComponent<Image>().sprite = Resources.Load("TeaTime\\jasmine", typeof(Sprite)) as Sprite;
             m_Animator.SetTrigger("jasmine");
             m_Animator.GetComponent<Animator>().enabled = true;
-            choosetea.tea = null;
+            choosetea.tea = "jasmine";
         }
     }
 

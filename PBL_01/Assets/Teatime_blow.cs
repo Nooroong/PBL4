@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class Teatime_blow : MonoBehaviour
 {
-
+    public GameObject Bar;
     public float sensitivity = 100;
     public float loudness = 0;
     private AudioSource _audio;
@@ -23,10 +23,6 @@ public class Teatime_blow : MonoBehaviour
         _audio.Play();
 
         text.gameObject.SetActive(false);
-
-        //  Movie2.SetActive(false);
-        //  Movie1.SetActive(true);
-
     }
     void Update()
     {
@@ -34,6 +30,7 @@ public class Teatime_blow : MonoBehaviour
         if (loudness > 7)
         {
             Debug.Log("loudness is bigger than 1");
+            IncreaseBar();
             text.gameObject.SetActive(true);
         }
         else
@@ -57,6 +54,10 @@ public class Teatime_blow : MonoBehaviour
             a += Mathf.Abs(s);
         }
         return a / 256;
+    }
+    public void IncreaseBar()
+    {
+        Bar.GetComponent<Image>().fillAmount += 0.1f;
     }
 }
 

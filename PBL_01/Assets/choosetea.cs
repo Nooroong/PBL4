@@ -33,4 +33,8 @@ public class choosetea : MonoBehaviour
         tea = "jasmine";
         SceneManager.LoadScene("TeaTime1");
     }
+    public void LoadHome()
+    {
+        SceneManager.LoadScene("House");
+    }
 }

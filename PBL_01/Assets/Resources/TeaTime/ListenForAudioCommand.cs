@@ -5,12 +5,10 @@ using UnityEngine.UI;
 
 public class ListenForAudioCommand : MonoBehaviour
 {
-    public Text text;
-
+    public GameObject Bar;
     // Start is called before the first frame update
     void Start()
     {
-        text.gameObject.SetActive(false);
     }
 
     // Update is called once per frame
@@ -22,11 +20,11 @@ public class ListenForAudioCommand : MonoBehaviour
         if (db < 1 && db > -20f)
         {
             Debug.Log("loudness is bigger than 1");
-            text.gameObject.SetActive(true);
+            IncreaseBar();
         }
-        else
-        {
-            text.gameObject.SetActive(false);
-        }
+    }
+    public void IncreaseBar()
+    {
+        Bar.GetComponent<Image>().fillAmount += 0.01f;
     }
 }
