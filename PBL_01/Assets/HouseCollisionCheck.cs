@@ -10,6 +10,9 @@ using UnityEngine.SceneManagement;
 public class HouseCollisionCheck : MonoBehaviour
 {
     public Button btn; //돋보기(버튼)
+    public static bool click1;
+    public static bool click2;
+    public Text text;
 
     private string collisionObj = "null"; //주인공과 충돌한 오브젝트의 이름을 저장하는 변수
     private string[] ign = { "null", "wall", "floor", "phonograph", "sofa" }; //충돌해도 버튼을 활성화 시키지 않는 오브젝트
@@ -18,6 +21,7 @@ public class HouseCollisionCheck : MonoBehaviour
     void Start()
     {
         btn.interactable = false; //버튼 비활성화
+        text.gameObject.SetActive(false);
     }
 
     public void BtnOnClick() {
@@ -65,6 +69,15 @@ public class HouseCollisionCheck : MonoBehaviour
         //충돌이 지속되는 동안
         //충돌한 오브젝트가 씬 이동과 관계있다면 버튼 활성화
         if(!ign.Contains(collisionObj)) btn.interactable = true;
+        string s = "table";
+        if (collisionObj.CompareTo(s) == 0)
+        {
+            if ((click1 == true) && (click2 == true))
+            {
+                text.gameObject.SetActive(true);
+
+            }
+        }
             
     }
     private void OnCollisionExit2D(Collision2D collision) {
