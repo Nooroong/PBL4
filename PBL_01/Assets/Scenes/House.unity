@@ -1155,6 +1155,7 @@ GameObject:
   m_Component:
   - component: {fileID: 602666014}
   - component: {fileID: 602666015}
+  - component: {fileID: 602666016}
   m_Layer: 0
   m_Name: fridge
   m_TagString: Untagged
@@ -1227,6 +1228,42 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!60 &602666016
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 602666013}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 19.2, y: 10.8}
+    newSize: {x: 19.2, y: 10.8}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 6.1866627, y: 1.3538318}
+      - {x: 4.798039, y: 1.3592775}
+      - {x: 4.796792, y: 0.59999996}
+      - {x: 4.821424, y: 0.55398047}
+      - {x: 4.8587637, y: 0.5254891}
+      - {x: 5.5085077, y: 0.22964947}
+      - {x: 5.587644, y: 0.20795034}
+      - {x: 5.638747, y: 0.23073427}
+      - {x: 6.1751266, y: 0.4868482}
+      - {x: 6.190252, y: 0.51229566}
+      - {x: 6.197689, y: 0.5876893}
 --- !u!1 &639656056
 GameObject:
   m_ObjectHideFlags: 0
@@ -1604,8 +1641,7 @@ PolygonCollider2D:
       - {x: 4.509673, y: 1.325192}
       - {x: 3.7614584, y: 1.0411587}
       - {x: 4.80606, y: 0.5558722}
-      - {x: 5.6108756, y: 0.18210745}
-      - {x: 6.1868567, y: 0.47046316}
+      - {x: 5.48493, y: 0.83912176}
       - {x: 6.878443, y: 0.14561294}
       - {x: 6.8780828, y: 0.66943586}
       - {x: 7.9240184, y: 0.19912332}
