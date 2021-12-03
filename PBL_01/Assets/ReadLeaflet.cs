@@ -8,7 +8,7 @@ public class ReadLeaflet : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Invoke("NextScene", 3f);
+        Invoke("NextScene", 4f);
     }
     public void NextScene()
     {

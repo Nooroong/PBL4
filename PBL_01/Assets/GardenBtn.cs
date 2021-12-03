@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GardenBtn : MonoBehaviour
 {
@@ -65,6 +66,7 @@ public class GardenBtn : MonoBehaviour
         isClicked1 = false;
         isClicked2 = false;
         isClicked3 = false;
+        SceneManager.LoadScene("House");
     }
 
 }
