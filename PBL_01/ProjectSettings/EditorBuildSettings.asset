@@ -5,52 +5,52 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Prologue_Hospital.unity
     guid: 94911348c2468e64f95c2be4fb7d27f3
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Prologue_Spaceship.unity
     guid: 417f0b286675e85499cfc7ee119f821b
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Prologue_Toilet.unity
     guid: be692ef2344d5f04a8a7816f6c0513e2
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Prologue_Home.unity
     guid: b5513d96388a4454a9ffa380b2a98ad0
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Prologue_Cafe.unity
     guid: f41ac697861a5714f9c56d1615418177
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Prologue_ForcedLanding.unity
     guid: f3bb97315249fc14992e0abedb5ccd20
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Hospitaltest.unity
     guid: 56f75969ca073a445b707b8f8c80009d
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/HospitalDesktop.unity
     guid: 7f3b5474dbbff614ea392cc85831ee04
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Consult1.unity
     guid: ff8efe6450941fe4aa59537fc01636ce
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Consult2.unity
     guid: 7523517954e5da34baf9a4a63072a197
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Consult3.unity
     guid: b163111027c3dd846a7d16e09b921aad
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/StreetLeaflet.unity
     guid: b79f01a8a98ce6946af5d909dabd5938
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/ReadLeaflet.unity
     guid: daaa29f1ee23d1544b86294e3b09e23f
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/StreetPlayer.unity
     guid: af01fc1afd34d4b40bcbd104348c6c47
-  - enabled: 0
+  - enabled: 1
     path: Assets/01.Scenes/Google Maps Example/Google Mini Map Example.unity
     guid: 5e7cc6b79702b2d4baa287e09cabbf9e
   - enabled: 1
