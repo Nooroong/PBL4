@@ -12,9 +12,12 @@ public class PlayerJoystickMoving : MonoBehaviour {
     private Animator anim;
 
     void Awake() {
+        this.transform.position = new Vector3(PlayerCtrlScript.playerX, PlayerCtrlScript.playerY, 0);
+
         joystick = GameObject.FindObjectOfType<Joystick>();
         anim = GetComponent<Animator>();
     }
+
 
     void FixedUpdate() {
         if (joystick.Horizontal != 0 || joystick.Vertical != 0) { //¿Ãµø
