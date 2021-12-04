@@ -6,15 +6,15 @@ using UnityEngine.UI;
 
 public class GoogleStaticMap : MonoBehaviour
 {
+	public Button start, finish;
+	public static string url;
 	public RawImage rawImage;
 	[Range(0f, 1f)]
 	public float transparency = 1f;
-	public float mapCenterLatitude;
-	public float mapCenterLongtitude;
-	float[] pLatitude = new float [100];
-	float[] pLongtitude = new float[100];
 	string path;
 	int i = 0;
+	float[] pLatitude = new float[100];
+	float[] pLongtitude = new float[100];
 	[Range(1, 20)]
 	public int mapZoom = 30;
 	public int mapWidth = 1080;
@@ -26,8 +26,7 @@ public class GoogleStaticMap : MonoBehaviour
 	public MapType mapType = MapType.roadmap;
 	[Range(1, 4)]
 	public int scale = 1;
-	public float markerLatitude;
-	public float markerLongtitude;
+
 	public enum MarkerSize
 	{
 		tiny, mid, small,
@@ -41,34 +40,44 @@ public class GoogleStaticMap : MonoBehaviour
 	public char label = 'C';
 	public string apiKey;
 
-	private string url;
+	//private string url;
 	private Color rawImageColor = Color.white;
 
 	IEnumerator Map()
 	{
+		float mapCenterLatitude;
+		float mapCenterLongtitude;
+		float markerLatitude;
+		float markerLongtitude;
 
 		markerLatitude = GPS.latitude;
 		markerLongtitude = GPS.longitude;
 
 		pLatitude[i] = GPS.latitude;
 		pLongtitude[i] = GPS.longitude;
+        //path = "%7C" + pLatitude[0] + "," + pLongtitude[0];
 
-		i++;
-
+        if (i < 1)
+        {
+			path += "%7C" + pLatitude[i] + "," + pLongtitude[i];
+			i++;
+		}
+        else
+        {
+			if (pLatitude[i] != GPS.latitude || pLongtitude[i - 1] != GPS.longitude)
+			{
+				path += "%7C" + pLatitude[i] + "," + pLongtitude[i];
+				i++;
+			}
+		}
 		mapCenterLatitude = GPS.latitude;
 		mapCenterLongtitude = GPS.longitude;
 
 		rawImageColor.a = transparency;
 		rawImage.color = rawImageColor;
 
-		for(int j =0; j < i; j++)
-        {
-			path += "%7C" + pLatitude[j] + "," + pLongtitude[j];
-			//yield return path;
-        }
-
 		label = Char.ToUpper(label);
-
+		
 		url = "https://maps.googleapis.com/maps/api/staticmap"
 			+ "?center=" + mapCenterLatitude + "," + mapCenterLongtitude
 			+ "&zoom=" + mapZoom
@@ -96,14 +105,14 @@ public class GoogleStaticMap : MonoBehaviour
 	private void Reset()
 	{
 		rawImage = gameObject.GetComponentInChildren<RawImage>();
-		InvokeRepeating("RefreshMap", 1f, 1f);
+		InvokeRepeating("RefreshMap", 0.0001f, 1f);
 		//RefreshMap();
 
 	}
 
 	private void Start()
 	{
-		Invoke("Reset", 1f);
+		//Invoke("Reset", 1f);
 	}
 
     private void Update()
@@ -112,8 +121,17 @@ public class GoogleStaticMap : MonoBehaviour
 		//Invoke("Reset", 1f);
 	}
 
+	public void startWalk()
+    {
+		Invoke("Reset", 1f);
+	}
+	public void finishWalk()
+	{
+		CancelInvoke("RefreshMap");
+	}
+
 #if UNITY_EDITOR
-    private void OnValidate()
+	private void OnValidate()
 	{
 		RefreshMap();
 	}

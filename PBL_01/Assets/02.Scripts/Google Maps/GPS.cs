@@ -7,8 +7,6 @@ using UnityEngine.Android;
 
 public class GPS : MonoBehaviour
 {
-    public Text Latitude;
-    public Text Longtitude;
     public static float latitude;
     public static float longitude;
 
@@ -45,12 +43,12 @@ public class GPS : MonoBehaviour
             {
                 latitude = Input.location.lastData.latitude;
                 longitude = Input.location.lastData.longitude;
-                Latitude.text = "위도: " + latitude.ToString();
-                Longtitude.text = "경도: "+longitude.ToString();
+                //Latitude.text = "위도: " + GoogleStaticMap.url;
+                //Longtitude.text = "경도: "+longitude.ToString();
                 Debug.Log("Latitude : " + Input.location.lastData.latitude);
                 Debug.Log("Longitude : " + Input.location.lastData.longitude);
                 Debug.Log("Altitude : " + Input.location.lastData.altitude);
-                yield return new WaitForSeconds(1f);
+                yield return new WaitForSeconds(0.0001f);
             }
         }
     }

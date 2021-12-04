@@ -52,7 +52,7 @@ public class HouseCollisionCheck : MonoBehaviour
                 SceneManager.LoadScene("desk");
                 break;
             case "walking":
-                //SceneManager.LoadScene("");
+                SceneManager.LoadScene("Walking");
                 break;
             case "window":
                 SceneManager.LoadScene("GardenPlant");
