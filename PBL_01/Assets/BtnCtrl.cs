@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class BtnCtrl : MonoBehaviour
 {
@@ -54,5 +55,9 @@ public class BtnCtrl : MonoBehaviour
     public void Update()
     {
         BtnState();
+    }
+    public void LoadScene()
+    {
+        SceneManager.LoadScene("Consult1");
     }
 }

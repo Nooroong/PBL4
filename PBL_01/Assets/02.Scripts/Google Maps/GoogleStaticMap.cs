@@ -96,7 +96,7 @@ public class GoogleStaticMap : MonoBehaviour
 	private void Reset()
 	{
 		rawImage = gameObject.GetComponentInChildren<RawImage>();
-		InvokeRepeating("RefreshMap", 0.0001f, 1f);
+		InvokeRepeating("RefreshMap", 1f, 1f);
 		//RefreshMap();
 
 	}

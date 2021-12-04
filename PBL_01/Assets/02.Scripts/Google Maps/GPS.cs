@@ -50,7 +50,7 @@ public class GPS : MonoBehaviour
                 Debug.Log("Latitude : " + Input.location.lastData.latitude);
                 Debug.Log("Longitude : " + Input.location.lastData.longitude);
                 Debug.Log("Altitude : " + Input.location.lastData.altitude);
-                yield return new WaitForSeconds(0.0001f);
+                yield return new WaitForSeconds(1f);
             }
         }
     }
