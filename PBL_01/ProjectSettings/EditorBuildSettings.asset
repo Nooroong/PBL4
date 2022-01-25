@@ -89,4 +89,7 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/Newspaper.unity
     guid: 79387c60c608c2a4d81aa888c2542112
+  - enabled: 1
+    path: Assets/Scenes/Tablet.unity
+    guid: 51986afe8be99a84b84996260e4a17ac
   m_configObjects: {}
