@@ -36,8 +36,6 @@ public class TimeManager : MonoBehaviour {
     public void OnClicked() {
         if (label.GetComponent<Text>().text != "119") { //입력된 전화번호가 119가 아닐 시
             //잘못된 번호라는 알림창 띄우기
-            alertText.gameObject.SetActive(true);
-            //alertText.transform.position = new Vector3(960f, 490f, 0f);
             StartCoroutine(FadeText());
         }
         else { //올바른 전화번호를 입력
@@ -55,6 +53,7 @@ public class TimeManager : MonoBehaviour {
 
 
     public IEnumerator FadeText() {
+        alertText.gameObject.SetActive(true);
         alertText.color = new Color(alertText.color.r, alertText.color.g, alertText.color.b, 0);
         while (alertText.color.a < 1.0f) {
             alertText.color = new Color(alertText.color.r, alertText.color.g, alertText.color.b, alertText.color.a + (Time.deltaTime / 0.6f));
@@ -70,6 +69,7 @@ public class TimeManager : MonoBehaviour {
             alertText.color = new Color(alertText.color.r, alertText.color.g, alertText.color.b, alertText.color.a - (Time.deltaTime / 0.6f));
             yield return null;
         }
+        alertText.gameObject.SetActive(false);
     }
 
 }
