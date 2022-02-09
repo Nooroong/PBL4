@@ -17,10 +17,10 @@ public class Assistance1 : MonoBehaviour
         player.gameObject.SetActive(true);
 
         
-        xMove = -speed * Time.deltaTime;
+        xMove = +speed * Time.deltaTime;
         player.transform.Translate(new Vector3(xMove, 0, 0));
 
-        Invoke("NextScene", 4);
+        Invoke("NextScene", 7);
  
     }
 
