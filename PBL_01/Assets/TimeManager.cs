@@ -8,19 +8,18 @@ using UnityEngine.UI;
 
 public class TimeManager : MonoBehaviour {
     public Text label; //정답 입력 칸
-    public Text timeText; //타이머 텍스트
     public Text alertText; //알림창
-    private float time = 10f; //제한시간
 
 
     private void Start() {
         alertText.gameObject.SetActive(false);
     }
 
+    /*
     // Update is called once per frame
     void Update() {
         //시간이 남았거나 정답을 입력하지 않은 경우, 프레임마다 시간을 감소
-        //if (time > 0f && (label.GetComponent<Text>().text != "119"))
+        if (time > 0f && (label.GetComponent<Text>().text != "119"))
 
         //시간 감소
         time -= Time.deltaTime;
@@ -28,9 +27,9 @@ public class TimeManager : MonoBehaviour {
         timeText.text = string.Format("{0:N2}", time);
         
         //시간이 음수로 나오는 경우를 방지
-        //if (time <= 0) timeText.text = "0.00";
+        if (time <= 0) timeText.text = "0.00";
     }
-    
+    */
 
     //전화 버튼 클릭 시
     public void OnClicked() {

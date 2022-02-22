@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Move : MonoBehaviour
 {
@@ -12,12 +13,13 @@ public class Move : MonoBehaviour
     public Image Panel;
 
     float time = 0f;
-    float F_time = 2f;
+    float F_time = 1f;
 
     // Start is called before the first frame update
     void Start()
     {
         Moving();
+        Invoke("F_Out", 5);
     }
 
     // Update is called once per frame
@@ -29,7 +31,8 @@ public class Move : MonoBehaviour
     public void Moving()
     {
         StartCoroutine(MoveFlow());
-        Invoke("F_Out", 2);
+        
+        
     }
 
     IEnumerator MoveFlow()
@@ -65,5 +68,11 @@ public class Move : MonoBehaviour
             yield return null;
         }
         yield return null;
+        NextScene();
+    }
+
+    void NextScene()
+    {
+        SceneManager.LoadScene("Siren");
     }
 }

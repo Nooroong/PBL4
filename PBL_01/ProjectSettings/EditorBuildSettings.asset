@@ -98,4 +98,25 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Assistance3.unity
     guid: cc7d1b7c8149a9a4a85fce64689e6245
+  - enabled: 1
+    path: Assets/Scenes/Flashback_E.unity
+    guid: 357e3fb02c16b0f45865c4d0b6bc4de7
+  - enabled: 1
+    path: Assets/Scenes/Siren.unity
+    guid: c67073abf6cc02c46b7b444333db1ea8
+  - enabled: 1
+    path: Assets/Scenes/Phone.unity
+    guid: 6b4eca5595cd3474d9d5568b2d7afd78
+  - enabled: 1
+    path: Assets/Scenes/BandS.unity
+    guid: efceb928c59644e45ba7467292add699
+  - enabled: 1
+    path: Assets/Scenes/Ambulance.unity
+    guid: fc820b27785da614ab4502a4a3ee51d2
+  - enabled: 1
+    path: Assets/Scenes/Pass.unity
+    guid: 3de5316517102f24abf0dcbd76ada213
+  - enabled: 1
+    path: Assets/Scenes/Day2End.unity
+    guid: c488b64cf514c7741bc026af7e17bc6f
   m_configObjects: {}

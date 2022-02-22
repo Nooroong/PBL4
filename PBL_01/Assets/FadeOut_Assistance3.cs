@@ -2,16 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class FadeOut_Assistance3 : MonoBehaviour
 {
 
     public Image Panel;
-    public RawImage Background;
+    public Image Background;
     public Image Player;
 
     float time = 0f;
-    float F_time = 2f;
+    float F_time = 1f;
 
     public void F_Out()
     {
@@ -32,9 +33,12 @@ public class FadeOut_Assistance3 : MonoBehaviour
             yield return null;
         }
         yield return null;
-
+        NextScene();
     }
-
+    void NextScene()
+    {
+        SceneManager.LoadScene("Flashback_E");
+    }
 
     public void Start()
     {
