@@ -5,14 +5,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class TimeManager : MonoBehaviour {
     public Text label; //정답 입력 칸
     public Text alertText; //알림창
-
+    public Text alertText2;
+    public Image Panel;
+    float time = 0f;
+    float F_time =7f;
 
     private void Start() {
         alertText.gameObject.SetActive(false);
+        alertText2.gameObject.SetActive(false);
+        Panel.gameObject.SetActive(false);
     }
 
     /*
@@ -40,9 +46,12 @@ public class TimeManager : MonoBehaviour {
         else { //올바른 전화번호를 입력
             //숫자 버튼들
             GameObject BtnsGrid = GameObject.Find("NumGrid"); //요것의 자식들을 전부 비활성화
+            //올바른 정보라는 알림창 띄우기
+            StartCoroutine(FadeText2());
             for (int i = 0; i < BtnsGrid.transform.childCount; i++) {
                 var btn = BtnsGrid.transform.GetChild(i);
                 btn.GetComponent<Button>().interactable = false;
+                Invoke("F_Out", 1f);
             }
 
             //지우기 버튼도 비활성화
@@ -69,6 +78,55 @@ public class TimeManager : MonoBehaviour {
             yield return null;
         }
         alertText.gameObject.SetActive(false);
+    }
+
+    public IEnumerator FadeText2()
+    {
+        alertText2.gameObject.SetActive(true);
+        alertText2.color = new Color(alertText2.color.r, alertText2.color.g, alertText2.color.b, 0);
+        while (alertText2.color.a < 1.0f)
+        {
+            alertText2.color = new Color(alertText2.color.r, alertText2.color.g, alertText2.color.b, alertText2.color.a + (Time.deltaTime / 0.6f));
+
+            yield return null;
+        }
+        StartCoroutine(FadeTextToZero2());
+    }
+
+    public IEnumerator FadeTextToZero2()
+    {
+        alertText2.color = new Color(alertText2.color.r, alertText2.color.g, alertText2.color.b, 1);
+        while (alertText2.color.a > 0.0f)
+        {
+            alertText2.color = new Color(alertText2.color.r, alertText2.color.g, alertText2.color.b, alertText2.color.a - (Time.deltaTime / 0.6f));
+            yield return null;
+        }
+        alertText2.gameObject.SetActive(false);
+    }
+    public void F_Out()
+    {
+        StartCoroutine(FadeOutFlow());
+    }
+
+    IEnumerator FadeOutFlow()
+    {
+        Panel.gameObject.SetActive(true);
+        time = 0f;
+        Color alpha = Panel.color;
+
+        while (alpha.a < 1f)
+        {
+            time += Time.deltaTime / F_time;
+            alpha.a = Mathf.Lerp(0, 1, time);
+            Panel.color = alpha;
+            yield return null;
+        }
+        yield return null;
+        NextScene();
+    }
+    void NextScene()
+    {
+        SceneManager.LoadScene("Ambulance");
     }
 
 }
