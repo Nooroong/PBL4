@@ -2,10 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 using UnityEngine.EventSystems;
 
 public class MemoryCheck : MonoBehaviour {
     public Image ch; //체크 이미지 변수
+
+    public Image Panel;
+    float time = 0f;
+    float F_time = 2f;
 
     private void Update() {
         if(Input.GetMouseButtonUp(0)) {
@@ -21,10 +26,43 @@ public class MemoryCheck : MonoBehaviour {
                     }
                 }
                 ch.gameObject.SetActive(true); //자식이 모두 bad memory라면 통과.(이미지 활성화)
+                Invoke("F_Out", 1f);
             } else { //기억이 2개 이하인 경우
                 ch.gameObject.SetActive(false);
             }
         }
         
+    }
+
+    public void F_Out()
+    {
+        StartCoroutine(FadeOutFlow());
+    }
+
+    IEnumerator FadeOutFlow()
+    {
+        Panel.gameObject.SetActive(true);
+        time = 0f;
+        Color alpha = Panel.color;
+
+        while (alpha.a < 1f)
+        {
+            time += Time.deltaTime / F_time;
+            alpha.a = Mathf.Lerp(0, 1, time);
+            Panel.color = alpha;
+            yield return null;
+        }
+        yield return null;
+        NextScene();
+    }
+    void NextScene()
+    {
+        SceneManager.LoadScene("Medicine");
+    }
+
+
+    public void Start()
+    {
+        Panel.gameObject.SetActive(false);
     }
 }

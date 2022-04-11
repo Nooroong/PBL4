@@ -11,6 +11,7 @@ public class Medicine : MonoBehaviour
     public GameObject select1, select2, select3;
     public Button reset;
     public Button make;
+    public GameObject Button;
 
     int total = 0;
 
@@ -23,6 +24,7 @@ public class Medicine : MonoBehaviour
     bool btn7isactive = false;
     bool btn8isactive = false;
 
+
     // Start is called before the first frame update
     void Start()
     {
@@ -32,6 +34,15 @@ public class Medicine : MonoBehaviour
         select1.SetActive(false);
         select2.SetActive(false);
         select3.SetActive(false);
+
+        btn1.GetComponent<Button>().interactable = false;
+        btn2.GetComponent<Button>().interactable = false;
+        btn3.GetComponent<Button>().interactable = false;
+        btn4.GetComponent<Button>().interactable = false;
+        btn5.GetComponent<Button>().interactable = false;
+        btn6.GetComponent<Button>().interactable = false;
+        btn7.GetComponent<Button>().interactable = false;
+        btn8.GetComponent<Button>().interactable = false;
     }
 
     // Update is called once per frame
@@ -56,6 +67,19 @@ public class Medicine : MonoBehaviour
             make.interactable = true;
             Btnset();
         }
+    }
+    public void OnClickButton()
+    {
+        Button.SetActive(false);
+        btn1.GetComponent<Button>().interactable = true;
+        btn2.GetComponent<Button>().interactable = true;
+        btn3.GetComponent<Button>().interactable = true;
+        btn4.GetComponent<Button>().interactable = true;
+        btn5.GetComponent<Button>().interactable = true;
+        btn6.GetComponent<Button>().interactable = true;
+        btn7.GetComponent<Button>().interactable = true;
+        btn8.GetComponent<Button>().interactable = true;
+
     }
 
     public void btn1isClicked()
