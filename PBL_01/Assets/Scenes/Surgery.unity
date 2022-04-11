@@ -891,6 +891,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ch: {fileID: 152341545}
+  mind: {fileID: 14224793}
   Panel: {fileID: 1177528632}
 --- !u!60 &673708145
 PolygonCollider2D:
@@ -1902,7 +1903,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2108988278}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fb23ab3985272a243baa58cade591cf5, type: 3}
   m_Name: 

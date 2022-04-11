@@ -14,7 +14,9 @@ public class LockPattern : MonoBehaviour {
     public GameObject linePrefab;
     public Canvas canvas; //라인이 캔버스의 자식으로 생성됨
     public List<CircleIdentifier> lines = new List<CircleIdentifier>(); //CircleIdentifier: 각 라인이 어느 circle로부터 생성됐는지 알 수 있음.
-    public List<int> pattern = new List<int>();
+
+    bool isAsc = true; //좌->우 패턴
+    bool isDes = true; //우->좌 패턴
 
     GameObject lineOnEdit; //가장 마지막에 생성된 라인을 담는 변수
     RectTransform lineOnEditRcTs;
@@ -31,8 +33,6 @@ public class LockPattern : MonoBehaviour {
             identifier.id = i;
             circles.Add(i, identifier);
         }
-
-        CreatePattern(pattern);
     }
 
     // Update is called once per frame
@@ -93,20 +93,18 @@ public class LockPattern : MonoBehaviour {
         circleOnEdit = circle;
     }
 
-    bool IsCorrect(List<CircleIdentifier> a, List<int> b) {
-        if (a.Count != b.Count) return false;
+    bool IsCorrect(List<CircleIdentifier> a) {
+        if (a.Count != transform.childCount) return false;
 
-        for (int i = b.Count - 1; i >= 0; i--) {
-            if (a[i].id != b[i]) return false;
+        for (int i = 0; i < a.Count - 1; i++) {
+            if (a[i].id < a[i + 1].id && isAsc) {
+                isAsc = true; isDes = false;
+            } else if (a[i].id > a[i + 1].id && isDes) {
+                isAsc = false; isDes = true;
+            } else
+                return false;
         }
         return true;
-    }
-
-    void CreatePattern(List<int> ptn) {
-        int cnt = this.transform.childCount;
-        for(int i = 0; i < cnt; i++) {
-            ptn.Add(i);
-        }
     }
 
     public void OnMouseEnterCircle(CircleIdentifier idf) {
@@ -145,7 +143,7 @@ public class LockPattern : MonoBehaviour {
         }
         if (unLocking) {
             //패턴 일치
-            if (IsCorrect(lines, pattern)) {
+            if (IsCorrect(lines)) {
                 foreach (var item in lines) {
                     circles[item.id].GetComponent<Image>().DOColor(Color.green, .25F);
                 }

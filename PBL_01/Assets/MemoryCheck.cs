@@ -7,10 +7,12 @@ using UnityEngine.EventSystems;
 
 public class MemoryCheck : MonoBehaviour {
     public Image ch; //체크 이미지 변수
+    public Image mind; //기억 속 이미지
 
     public Image Panel;
     float time = 0f;
     float F_time = 2f;
+    bool flag = true;
 
     private void Update() {
         if(Input.GetMouseButtonUp(0)) {
@@ -26,13 +28,25 @@ public class MemoryCheck : MonoBehaviour {
                     }
                 }
                 ch.gameObject.SetActive(true); //자식이 모두 bad memory라면 통과.(이미지 활성화)
-                Invoke("F_Out", 1f);
+                //기억 터치 비활성화
+                for (int i = 0; i < transform.childCount; i++)
+                    transform.GetChild(i).GetComponent<MemoryMovement>().enabled = false;
+                for (int i = 0; i < mind.transform.childCount; i++) 
+                    mind.transform.GetChild(i).GetComponent<MemoryMovement>().enabled = false;
+
+                //페이드 아웃 중 터치시 화면이 깜박거리는 현상을 방지
+                //화면을 아무리 터치해도 F_Out()이 최초 1회만 동작하도록 한다.
+                if (flag) {
+                    Invoke("F_Out", 1f);
+                    flag = !flag;
+                }
             } else { //기억이 2개 이하인 경우
                 ch.gameObject.SetActive(false);
             }
         }
         
     }
+
 
     public void F_Out()
     {
