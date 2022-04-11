@@ -1,9 +1,12 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System;
 using System.Collections;
 
 public class MaskCamera : MonoBehaviour
 {
+    public Button next;
+
     public GameObject Dust;
     Rect ScreenRect;
     public RenderTexture rt;
@@ -13,10 +16,9 @@ public class MaskCamera : MonoBehaviour
     private Vector2? newHolePosition;
 
     public bool _requestReadPixel = false;
-    private Action<float> callback;
-    public void getPercent(Action<float> _callback)
+
+    public void getPercent()
     {
-        callback = _callback;
         _requestReadPixel = true;
     }
     private void CutHole(Vector2 imageSize, Vector2 imageLocalPosition)
@@ -51,6 +53,7 @@ public class MaskCamera : MonoBehaviour
 
     public IEnumerator Start()
     {
+        InvokeRepeating("getPercent", 2f, 2f);
         firstFrame = true;
         _requestReadPixel = false;
         //Get Erase effect boundary area
@@ -100,12 +103,12 @@ public class MaskCamera : MonoBehaviour
             tex.ReadPixels(new Rect(_left, _top, rt.width - 2 * _left, rt.height - 2 * _top), 0, 0);
             _requestReadPixel = false;
             float percent = caculatorPrercent(tex);
-            Debug.Log("Percent:" + percent);
-            if (callback != null)
+            if (percent > 95)
             {
-                callback(percent);
+                next.gameObject.SetActive(true);
             }
         }
+
     }
     // use to caculator
     Texture2D tex;
@@ -123,4 +126,5 @@ public class MaskCamera : MonoBehaviour
         float _percent = (count * 100 / ((tex.width) * (tex.height)));
         return _percent;
     }
+
 }
