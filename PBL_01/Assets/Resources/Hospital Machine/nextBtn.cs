@@ -7,13 +7,15 @@ using UnityEngine.SceneManagement;
 public class nextBtn : MonoBehaviour
 {
     public Image black;
+    public GameObject cam;
 
     float time = 0f;
     float F_time = 3f;
 
     public void Onclick()
     {
-       FadeOut();      
+        cam.gameObject.GetComponent<MaskCamera>().enabled = false;
+        FadeOut();      
     }
 
     public void FadeOut()

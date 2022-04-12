@@ -257,8 +257,8 @@ Canvas:
   m_GameObject: {fileID: 182885858}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
-  m_Camera: {fileID: 0}
+  m_RenderMode: 1
+  m_Camera: {fileID: 1357271994}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
@@ -344,7 +344,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.15294118, g: 0.21176471, b: 0.34901962, a: 0}
+  m_Color: {r: 0, g: 0, b: 0, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -920,5 +920,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5936b39243ea0134c8c07cd218466f9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_cam: {fileID: 1357271994}
   Background: {fileID: 2117505954}
   Player: {fileID: 2078579029}

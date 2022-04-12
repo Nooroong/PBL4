@@ -5,20 +5,24 @@ using UnityEngine.UI;
 
 public class Assistance3 : MonoBehaviour
 {
-    int speed = 80;
-    int speed1 = 150;
-   float yMove;
-    float xMove;
+    public Camera m_cam; // 카메라
+
     public Image Background;
     public Image Player;
-    
-    // Start is called before the first frame update
-    
+
+    Vector3 BG_screenPos; //새로운 BG 포지션
+    Vector3 P_screenPos; //새로운 Player 포지션
+
+    float speed = 1.6f; // 1/50배
+    float speed1 = 3.0f;
+    float yMove;
+    float xMove;
 
     void Move()
     {
         yMove = 0;
-        if (Background.gameObject.transform.position.y > 380.0f)
+        //Background.gameObject.transform.position.y
+        if (BG_screenPos.y > 380.0f)
         {
             yMove = -speed * Time.deltaTime;
             Background.transform.Translate(new Vector3(0, yMove, 0));
@@ -27,7 +31,7 @@ public class Assistance3 : MonoBehaviour
     public void PlayerMv()
     {
         
-        if (Player.gameObject.transform.position.x > 520.0f)
+        if (P_screenPos.x > 520.0f)
        {
             xMove = 0;
 
@@ -43,6 +47,9 @@ public class Assistance3 : MonoBehaviour
      
     void Update()
     {
+        BG_screenPos = m_cam.WorldToScreenPoint(Background.gameObject.transform.position);
+        P_screenPos = m_cam.WorldToScreenPoint(Player.gameObject.transform.position);
+
         Move();
         Invoke("Show", 5f);
     }

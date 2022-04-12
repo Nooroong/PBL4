@@ -1160,6 +1160,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   black: {fileID: 442865540}
+  cam: {fileID: 687392913}
 --- !u!114 &1648395199
 MonoBehaviour:
   m_ObjectHideFlags: 0

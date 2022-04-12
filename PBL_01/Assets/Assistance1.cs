@@ -8,7 +8,7 @@ public class Assistance1 : MonoBehaviour
 {
 
     public Image player;
-    int speed = 80;
+    float speed = 1.6f; // 1/50น่ 80->1.6f
     float xMove;
 
     void Move()

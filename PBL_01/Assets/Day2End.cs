@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class Day2End : MonoBehaviour
 {
     public Image player;
-    int speed = 80;
+    float speed = 1.6f;
     float xMove;
 
     void Move()

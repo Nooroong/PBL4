@@ -25,13 +25,18 @@ public class Component_movement : MonoBehaviour, IBeginDragHandler, IDragHandler
     public void OnBeginDrag(PointerEventData eventData)
     {
         //드래그를 시작할 때의 마우스 좌표를 저장
-        defaultPosition = this.transform.position;
+        Vector2 mouseDragPosition = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
+        Vector2 worldObjectPosition = Camera.main.ScreenToWorldPoint(mouseDragPosition);
+        defaultPosition = worldObjectPosition;
     }
 
     public void OnDrag(PointerEventData eventData)
     {
         //드래그가 이뤄지는 순간의 마우스 포지션을 받아 오브젝트가 포인터를 따라가게 함.
-        this.transform.position = Input.mousePosition;
+        Vector2 mouseDragPosition = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
+        Vector2 worldObjectPosition = Camera.main.ScreenToWorldPoint(mouseDragPosition);
+
+        this.transform.position = worldObjectPosition;
         //기억 조각이 맨 앞에 위치하도록 임시로 부모 변경
         transform.SetParent(GameObject.Find("empty").transform);
     }
@@ -40,8 +45,10 @@ public class Component_movement : MonoBehaviour, IBeginDragHandler, IDragHandler
     {
         //카메라에서 마우스 위치로 Ray를 쏴서 '콜라이더'와 맞았는지 판별
         //감지를 원하는 오브젝트에 콜라이더를 추가해야한다.
+        Vector2 mouseDragPosition = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
+        Vector2 worldObjectPosition = Camera.main.ScreenToWorldPoint(mouseDragPosition);
 
-        Vector2 wp = Input.mousePosition; //버튼을 뗐을 때 좌표를 가져옴
+        Vector2 wp = worldObjectPosition; //버튼을 뗐을 때 좌표를 가져옴
         Ray2D ray = new Ray2D(wp, Vector2.zero); //원점에서 마우스 좌표 방향으로 Ray를 쏨
         float distance = Mathf.Infinity; //Ray 내에서 감지할 최대 거리
 

@@ -6,9 +6,13 @@ using UnityEngine.SceneManagement;
 
 public class Consult2 : MonoBehaviour
 {
+    public Camera m_cam;
+
+    Vector3 D_screenPos;
 
     public Image door;
-    int speed = 160;
+
+    float speed = 3.2f;
     float xMove;
 
     // Start is called before the first frame update
@@ -21,7 +25,7 @@ public class Consult2 : MonoBehaviour
     {
         xMove = 0;
 
-        if (door.gameObject.transform.position.x > 570.0f)
+        if (D_screenPos.x > 570.0f)
         {
             xMove = -speed * Time.deltaTime;
             door.transform.Translate(new Vector3(xMove, 0, 0));
@@ -33,7 +37,7 @@ public class Consult2 : MonoBehaviour
     
     public void NextScene()
     {
-        if (door.gameObject.transform.position.x < 570.0f)
+        if (D_screenPos.x < 570.0f)
         {
             SceneManager.LoadScene("Consult3");
         }
@@ -44,8 +48,7 @@ public class Consult2 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        D_screenPos = m_cam.WorldToScreenPoint(door.gameObject.transform.position);
         ShowDoor();
-        
-        
     }
 }

@@ -6,8 +6,16 @@ using UnityEngine.SceneManagement;
 
 public class Walkigstreet : MonoBehaviour
 {
+    public Camera m_cam;
+
+    public GameObject tree, building, sky, fly;
+    //Vector3 P_screenPos;
+
     Animator m_Animator;
-    float p_speed = 7f;
+
+    float time = 0f;
+    float F_time = 4f;
+    float p_speed = 100f;
     float xMove;
     public Image player;
 
@@ -19,18 +27,14 @@ public class Walkigstreet : MonoBehaviour
     }
     void Start()
     {
-        //walking();
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(player.gameObject.transform.position.x >= 1320.0f)
-        {
-            m_Animator.GetComponent<Animator>().enabled = false;
-            Invoke("LoadScene", 2f);
-
-        }
+        //P_screenPos= m_cam.WorldToScreenPoint(player.gameObject.transform.position);
+        time += Time.deltaTime / F_time;
     }
     public void walking()
     {
@@ -39,13 +43,19 @@ public class Walkigstreet : MonoBehaviour
 
     IEnumerator WalkingFlow()
     {
-        while (player.gameObject.transform.position.x < 1320.0f)
+        while (time < F_time)
         {
             xMove = 0;
             xMove = 1/p_speed;
             player.transform.Translate(new Vector3(xMove, 0, 0));
             yield return null;
         }
+        m_Animator.GetComponent<Animator>().enabled = false;
+        tree.gameObject.GetComponent<BG_Moving>().enabled = false;
+        sky.gameObject.GetComponent<BG_Moving>().enabled = false;
+        building.gameObject.GetComponent<BG_Moving>().enabled = false;
+        fly.gameObject.GetComponent<BG_Moving>().enabled = false;
+        Invoke("LoadScene", 2f);
         yield return null;
     }
     public void LoadScene()

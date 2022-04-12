@@ -7,7 +7,7 @@ public class FootPrint : MonoBehaviour
 {
     Animator m_Animator;
     public Button Foot1, Foot2, Foot3, Foot4, Foot5;
-    float speed = 7.0f;
+    float speed = 5f;
     float xMove;
     public Image player;
     
@@ -32,7 +32,7 @@ public class FootPrint : MonoBehaviour
             m_Animator.GetComponent<Animator>().enabled = true;
             Foot1.gameObject.SetActive(false);
             xMove = 0;
-            xMove = speed;
+            xMove = +speed;
             player.transform.Translate(new Vector3(xMove, 0, 0));
             yield return null;
         }
@@ -105,7 +105,7 @@ public class FootPrint : MonoBehaviour
     IEnumerator Foot5Flow()
     {
 
-        while ((player.gameObject.transform.position.x > 1100.0f) && (player.gameObject.transform.position.x < 1220.0f))
+        while ((player.gameObject.transform.position.x > 1050.0f) && (player.gameObject.transform.position.x < 1220.0f))
         {
             m_Animator.GetComponent<Animator>().enabled = true;
             Foot5.gameObject.SetActive(false);
