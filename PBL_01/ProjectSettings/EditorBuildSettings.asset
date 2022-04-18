@@ -132,6 +132,15 @@ EditorBuildSettings:
     path: Assets/Scenes/Surgery.unity
     guid: a11f590f0473b2148a262ed69f566415
   - enabled: 1
+    path: Assets/Scenes/Day3_start.unity
+    guid: 5939f3829dfddad4aa3c57d4ada2b2fc
+  - enabled: 1
+    path: Assets/Scenes/Festival1.unity
+    guid: ff7a5f072e00c1942b9f1dc660a2761a
+  - enabled: 1
+    path: Assets/Scenes/Festival_friends.unity
+    guid: 56638549abbbb9a468a8df732d3ec1ed
+  - enabled: 1
     path: Assets/Scenes/Festival2.unity
     guid: 1b472d30f145cc441ac937e3dfc19ea2
   - enabled: 1
