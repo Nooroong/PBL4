@@ -8,11 +8,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 using DG.Tweening;
 
 public class LockPattern : MonoBehaviour {
+    public Image Panel;
+    public Image Background;
+
+    float time = 0f;
+    float F_time = 1f;
+
     public GameObject linePrefab;
-    public Canvas canvas; //라인이 캔버스의 자식으로 생성됨
+    public GameObject lineParent; //라인이 캔버스의 자식으로 생성됨
     public List<CircleIdentifier> lines = new List<CircleIdentifier>(); //CircleIdentifier: 각 라인이 어느 circle로부터 생성됐는지 알 수 있음.
 
     bool isAsc = true; //좌->우 패턴
@@ -43,8 +50,8 @@ public class LockPattern : MonoBehaviour {
 
         //항상 가장 마지막에 생성된 라인은 마우스를 따라다닌다. 따라서 Update()에서 처리.
         if (unLocking) {
-            Vector3 mousePos = canvas.transform.InverseTransformPoint(Input.mousePosition);
-            lineOnEditRcTs.sizeDelta = new Vector2(lineOnEditRcTs.sizeDelta.x, Vector3.Distance(mousePos, circleOnEdit.transform.localPosition));
+            Vector3 mousePos = lineParent.transform.InverseTransformPoint(Camera.main.ScreenToWorldPoint((Input.mousePosition)));
+            lineOnEditRcTs.sizeDelta = new Vector2(lineOnEditRcTs.sizeDelta.x, (Vector3.Distance(mousePos, circleOnEdit.transform.localPosition)));
             lineOnEditRcTs.rotation = Quaternion.FromToRotation(Vector3.up, (mousePos - circleOnEdit.transform.localPosition).normalized);
         }
     }
@@ -73,7 +80,7 @@ public class LockPattern : MonoBehaviour {
 
     GameObject CreateLine(Vector3 pos, int id) {
         //원들의 부모 오브젝트 좌표가 (0, 0, 0)인지 확인. 아니면 선이 이상하게 그려질 수 있음.
-        var line = GameObject.Instantiate(linePrefab, canvas.transform); //라인프리팹 복제
+        var line = GameObject.Instantiate(linePrefab, lineParent.transform); //라인프리팹 복제
         line.transform.localPosition = pos; //라인의 생성 위치는 클릭된 원의 중점
         var linedf = line.AddComponent<CircleIdentifier>();
         linedf.id = id; //라인의 id == 라인이 생성된 원의 id
@@ -154,6 +161,8 @@ public class LockPattern : MonoBehaviour {
                 foreach (var item in lines) {
                     item.GetComponent<Image>().DOColor(Color.green, .25F);
                 }
+
+                Invoke("F_Out", 1f);
             } else {
                 //패턴 불일치
                 foreach (var item in lines) {
@@ -174,4 +183,31 @@ public class LockPattern : MonoBehaviour {
         }
         unLocking = false;
     }
+
+
+
+    public void F_Out() {
+        StartCoroutine(FadeOutFlow());
+    }
+
+    IEnumerator FadeOutFlow() {
+        Panel.gameObject.SetActive(true);
+        time = 0f;
+        Color alpha = Panel.color;
+
+        while (alpha.a < 1f) {
+            time += Time.deltaTime / F_time;
+            alpha.a = Mathf.Lerp(0, 1, time);
+            Panel.color = alpha;
+            yield return null;
+        }
+        yield return null;
+        NextScene();
+    }
+
+
+    void NextScene() {
+        SceneManager.LoadScene("Medicine");
+    }
+
 }

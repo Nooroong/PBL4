@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class SurgeryStartBtn : MonoBehaviour {
     public GameObject parent; //±×¸®µå

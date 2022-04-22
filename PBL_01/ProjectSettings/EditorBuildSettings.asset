@@ -149,4 +149,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Shooting_game.unity
     guid: 2e510455e0dc6cf4699e1ccd140837c8
+  - enabled: 1
+    path: Assets/Scenes/Festival_bench.unity
+    guid: 78bb6bb5d08a81040b93c21a2d06e90a
+  - enabled: 1
+    path: Assets/Scenes/Stitch.unity
+    guid: a9ecc4fe8ec89544a84eb75b8a83b6be
   m_configObjects: {}
