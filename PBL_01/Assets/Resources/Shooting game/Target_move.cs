@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Target_move : MonoBehaviour
 {
-    float speed = 2f;
+    float speed = 1.5f;
     float yMove;
 
     // Start is called before the first frame update
@@ -34,7 +34,7 @@ public class Target_move : MonoBehaviour
     }
     IEnumerator DownFlow()
     {
-        while (this.transform.position.y > 500.0f)
+        while (this.transform.position.y > 550.0f)
         {
             yMove = 0;
             yMove = -speed;

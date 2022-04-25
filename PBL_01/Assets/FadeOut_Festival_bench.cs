@@ -33,7 +33,7 @@ public class FadeOut_Festival_bench : MonoBehaviour
 
 
     void NextScene() {
-        SceneManager.LoadScene("Festival2");
+        SceneManager.LoadScene("Festival_friends");
     }
 
     
