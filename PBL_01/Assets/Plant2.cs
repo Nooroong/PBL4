@@ -34,14 +34,7 @@ public class Plant2 : MonoBehaviour
     public IEnumerator FadeText() 
     {
         yMove = 0;
-        /*
-        while (text.gameObject.transform.position.y < 550.0f)
-        {
-            yMove = +speed * Time.deltaTime;
-            text.transform.Translate(new Vector3(0, yMove, 0));
-            yield return null;
-        }
-        */
+        
         text.color = new Color(text.color.r, text.color.g, text.color.b, 0);
         while (text.color.a < 1.0f)
         {
