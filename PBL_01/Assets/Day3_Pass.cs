@@ -55,7 +55,7 @@ public class Day3_Pass : MonoBehaviour
             Panel.color = alpha;
             yield return null;
         }
-        Invoke("F_Out2", 2f);
+        Invoke("F_Out2", 1f);
 
     }
 
@@ -85,6 +85,10 @@ public class Day3_Pass : MonoBehaviour
         SceneManager.LoadScene("Day3_End");
     }
 
+    public void Start()
+    {
+        Panel2.gameObject.SetActive(false);
 
+    }
 
 }

@@ -6,8 +6,7 @@ using UnityEngine.UI;
 public class FadeOut_Day2End : MonoBehaviour
 {
     public Image Panel;
-    //public RawImage Background;
-    //public Image Player;
+
 
     float time = 0f;
     float F_time = 2f;
