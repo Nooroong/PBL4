@@ -7,6 +7,7 @@ using UnityEngine.EventSystems;
 
 public class shooting : MonoBehaviour
 {
+    public GameObject direct;
     public Image mark;
     public Image aim;
     public Button btn;
@@ -19,7 +20,7 @@ public class shooting : MonoBehaviour
     void Start() { 
 
     }
-    private void Update()
+    void Update()
     {
         triggered = false;
     }
@@ -31,11 +32,13 @@ public class shooting : MonoBehaviour
     }
     public void Button_click()
     {
-        if (triggered && mark.gameObject.activeSelf==false )
+        if (triggered && mark.gameObject.activeSelf == false )
         {
-            shoot = aim.gameObject.transform.position;
+            shoot = aim.transform.position;
             mark.transform.position = shoot;
             mark.gameObject.SetActive(true);
+
+            direct.GetComponent<Shooting_Director>().gaugeUp();
         }
     }
 }

@@ -4,19 +4,25 @@ using UnityEngine;
 
 public class Joystick_moving : MonoBehaviour
 {
+
+    public Camera m_cam; // 카메라
+
+    //Vector3 aim_screenPos;
     public RectTransform innerPad; //안쪽 원
     public float speed;
 
-    private Joystick joystick;
+    private Joystick_shooting joystick;
 
     void Awake()
     {
-        joystick = GameObject.FindObjectOfType<Joystick>();
+        joystick = GameObject.FindObjectOfType<Joystick_shooting>();
     }
 
 
     void FixedUpdate()
     {
+        //aim_screenPos = m_cam.WorldToScreenPoint(this.gameObject.transform.position);
+
         if (joystick.Horizontal != 0 || joystick.Vertical != 0)
         { //이동
             MoveControl();

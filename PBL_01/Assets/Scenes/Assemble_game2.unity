@@ -734,7 +734,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &624664975
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1117,8 +1117,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uBD80\uD488 3\uAC1C\uB97C \uC870\uD569\uD558\uC5EC \uC2E0\uD638\uAE30
-    \uC678\uBD80\uB97C \uC644\uC131\uD574\uC8FC\uC138\uC694."
+  m_Text: "\uC2E0\uD638\uAE30 \uB0B4\uBD80 \uAE30\uD310 \uC704\uC5D0 \uBD80\uD488
+    3\uAC1C\uB97C \uC870\uD569\uD558\uC5EC \uC2E0\uD638\uAE30 \uC678\uBD80\uB97C
+    \uC644\uC131\uD574\uC8FC\uC138\uC694."
 --- !u!222 &942236721
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1554,7 +1555,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   components: {fileID: 609193393}
-  next: {fileID: 0}
+  next: {fileID: 624664976}
   A1: {fileID: 1986943992}
   A2: {fileID: 955785727}
   A3: {fileID: 2025198049}

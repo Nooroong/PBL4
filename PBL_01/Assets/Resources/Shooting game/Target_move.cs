@@ -4,44 +4,80 @@ using UnityEngine;
 
 public class Target_move : MonoBehaviour
 {
-    float speed = 1.5f;
-    float yMove;
+    public Camera m_cam; // Ä«¸Þ¶ó
 
+    //Vector3 t1_screenPos, t2_screenPos, t3_screenPos, t4_screenPos;
+
+    public GameObject t1, t2, t3, t4;
+
+    public float speed = 0.1f;
+    float yMove;
+    int r_num1, r_num2, r_num3, r_num4;
+
+    void Awake()
+    {
+        r_num1 = Random.Range(0, 10);
+        r_num2 = Random.Range(0, 10);
+        r_num3 = Random.Range(0, 10);
+        r_num4 = Random.Range(0, 10);
+    }
     // Start is called before the first frame update
     void Start()
     {
-        Up();
+        UpandDown(r_num1, t1);
+        UpandDown(r_num2, t2);
+        UpandDown(r_num3, t3);
+        UpandDown(r_num4, t4);
     }
-    public void Up()
+    void Update()
     {
-        StartCoroutine(UpFlow());
+
     }
-    public void Down()
+    public void UpandDown(int random, GameObject target)
     {
-        StartCoroutine(DownFlow());
+        if ( random > 4)
+        {
+            Up(target);
+        }
+        else
+        {
+            Down(target);
+        }
     }
-    IEnumerator UpFlow()
+    public void Up(GameObject target)
     {
-        while (this.transform.position.y < 1000.0f)
+        StartCoroutine(UpFlow(target));
+    }
+    public void Down(GameObject target)
+    {
+        StartCoroutine(DownFlow(target));
+    }
+    public void Stop()
+    {
+        speed = 0;
+    }
+    IEnumerator UpFlow(GameObject target)
+    {
+        while (m_cam.WorldToScreenPoint(target.gameObject.transform.position).y < 1200.0f)
         {
             yMove = 0;
             yMove = speed;
-            this.transform.Translate(new Vector3(0, yMove, 0));
+            target.transform.Translate(new Vector3(0, yMove, 0));
             yield return null;
         }
-        StartCoroutine(DownFlow());
+        StartCoroutine(DownFlow(target));
         yield return null;
     }
-    IEnumerator DownFlow()
+    IEnumerator DownFlow(GameObject target)
     {
-        while (this.transform.position.y > 550.0f)
+        while (m_cam.WorldToScreenPoint(target.gameObject.transform.position).y > 550.0f)
         {
             yMove = 0;
             yMove = -speed;
-            this.transform.Translate(new Vector3(0, yMove, 0));
+            target.transform.Translate(new Vector3(0, yMove, 0));
             yield return null;
         }
-        StartCoroutine(UpFlow());
+        StartCoroutine(UpFlow(target));
         yield return null;
     }
 }

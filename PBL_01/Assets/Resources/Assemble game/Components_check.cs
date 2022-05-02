@@ -10,6 +10,10 @@ public class Components_check : MonoBehaviour
     public Button next;
     public Image A1, A2, A3, B1, B2;
 
+    private void Start()
+    {
+        next.enabled = false;
+    }
     private void Update()
     {
         if (Input.GetMouseButtonUp(0))
@@ -46,11 +50,13 @@ public class Components_check : MonoBehaviour
                     //회로 위에 필요하지 않은 부품이 있는지 체크
                     if (!transform.GetChild(i).name.Contains("A_"))
                     {
-                        next.gameObject.SetActive(false);
+                        //next.gameObject.SetActive(false);
+                        //next.enabled = false;
                         return; 
                     }
                 }
-                next.gameObject.SetActive(true);
+                //next.gameObject.SetActive(true);
+                next.enabled = true;
             }
             else
             { //2개 이하인 경우 모든 부품 움직이도록
@@ -59,7 +65,8 @@ public class Components_check : MonoBehaviour
                 A3.GetComponent<Component_movement>().enabled = true;
                 B1.GetComponent<Component_movement>().enabled = true;
                 B2.GetComponent<Component_movement>().enabled = true;
-                next.gameObject.SetActive(false);
+                //next.gameObject.SetActive(false);
+                next.enabled = false;
             }
         }
 
