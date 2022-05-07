@@ -199,7 +199,6 @@ MonoBehaviour:
   - "\u201C\uB9DE\uC544 \uC194\uC9C1\uD788 \uC7E4\uB791 \uC5B4\uC6B8\uB9AC\uAE30
     \uAC70\uBD81\uD588\uC5B4. \uC5B4? \uC7E4 \uC5EC\uAE30\uB85C \uC628\uB2E4\u2026\u201D"
   typingSpeed: 0.1
-  istyping: 0
 --- !u!114 &424157603
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1067,8 +1066,8 @@ Canvas:
   m_GameObject: {fileID: 1991695127}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
-  m_Camera: {fileID: 0}
+  m_RenderMode: 1
+  m_Camera: {fileID: 554725893}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
