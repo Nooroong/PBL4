@@ -37,7 +37,7 @@ public class Move : MonoBehaviour
 
     IEnumerator MoveFlow()
     {
-        while (move.gameObject.transform.position.x < 1150.0f)
+        while (move.gameObject.transform.position.x < 1300.0f)
         {
             xMove = 0;
             yMove = 0;

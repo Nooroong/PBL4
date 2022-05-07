@@ -11,6 +11,10 @@ public class test : MonoBehaviour
     int cnt = 0;
     public void Start()
     {
+        //StartCoroutine(Move());
+    }
+    public void Moving()
+    {
         StartCoroutine(Move());
     }
     IEnumerator Move()

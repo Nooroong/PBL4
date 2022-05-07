@@ -32,7 +32,7 @@ public class Next_btn2 : MonoBehaviour
         }
         else
         {
-            //SceneManager.LoadScene("Assemble_game2");
+            SceneManager.LoadScene("Pass");
         }
     }
 
