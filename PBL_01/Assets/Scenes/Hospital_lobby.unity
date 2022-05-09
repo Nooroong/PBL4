@@ -569,8 +569,8 @@ GameObject:
   - component: {fileID: 1374088518}
   - component: {fileID: 1374088522}
   - component: {fileID: 1374088521}
-  - component: {fileID: 1374088520}
   - component: {fileID: 1374088519}
+  - component: {fileID: 1374088520}
   m_Layer: 5
   m_Name: Panel
   m_TagString: Untagged
@@ -628,8 +628,8 @@ MonoBehaviour:
   next: {fileID: 211951972}
   dialogGroup: {fileID: 1374088519}
   Set_sentences:
-  - "\uC218\uC220\uC2E4 \uB4E4\uC5B4\uC640\uC8FC\uC138\uC694!"
-  - "\uB124..."
+  - "\uD658\uC790\uBD84! \uC218\uC220\uC2E4\uB85C \uB4E4\uC5B4\uC624\uC2E4\uAC8C\uC694~"
+  - "\uB124..!"
   typingSpeed: 0.1
 --- !u!114 &1374088521
 MonoBehaviour:
@@ -879,6 +879,7 @@ GameObject:
   - component: {fileID: 1618655040}
   - component: {fileID: 1618655042}
   - component: {fileID: 1618655041}
+  - component: {fileID: 1618655043}
   m_Layer: 5
   m_Name: Black
   m_TagString: Untagged
@@ -943,6 +944,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1618655039}
   m_CullTransparentMesh: 1
+--- !u!114 &1618655043
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1618655039}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dee36eb1a99309d4ca7779a6ff19f1f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Panel: {fileID: 1618655041}
+  Background: {fileID: 635474405}
 --- !u!1 &1824791935
 GameObject:
   m_ObjectHideFlags: 0

@@ -182,4 +182,16 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/FootPrint.unity
     guid: c89245a1c08517a4699032d117d337fc
+  - enabled: 1
+    path: Assets/Scenes/HospitalDoor.unity
+    guid: 6aa7131f1642f9f4c8ae7a38d645ee5a
+  - enabled: 1
+    path: Assets/Scenes/HospitalReception.unity
+    guid: 5d0f4e1f6efc19e4aac7eb596de59f91
+  - enabled: 1
+    path: Assets/Scenes/HospitalLeaflet.unity
+    guid: 74e84a66b3724544c95020610577fd87
+  - enabled: 1
+    path: Assets/Scenes/HospitalReception2.unity
+    guid: 14913fee595aa3741b1ef21cba448bda
   m_configObjects: {}
