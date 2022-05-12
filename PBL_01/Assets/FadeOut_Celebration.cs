@@ -34,7 +34,7 @@ public class FadeOut_Celebration : MonoBehaviour
     }
     void NextScene()
     {
-        SceneManager.LoadScene("Day3_Pass");
+        SceneManager.LoadScene("Day3_Pictures");
     }
 
     public void Start()

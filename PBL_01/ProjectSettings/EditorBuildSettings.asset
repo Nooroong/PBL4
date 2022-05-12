@@ -194,4 +194,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/HospitalReception2.unity
     guid: 14913fee595aa3741b1ef21cba448bda
+  - enabled: 1
+    path: Assets/Scenes/Day3_Pictures.unity
+    guid: 09741b4ecd0e99d4b863099b5776c9da
   m_configObjects: {}
