@@ -21,9 +21,6 @@ public class HouseCollisionCheck : MonoBehaviour
     private string[] ign_arr = { "null", "wall", "floor", "phonograph", "sofa" }; //충돌해도 버튼을 활성화 시키지 않는 오브젝트
     private List<string> ign_list = new List<string>(); //ign_arr을 리스트로 변환한 것
 
-    private void Awake() {
-        index = Random.Range(0, 3); //제외할 일 고르기
-    }
 
     // Start is called before the first frame update
     void Start()
@@ -40,6 +37,8 @@ public class HouseCollisionCheck : MonoBehaviour
         //배열을 리스트로
         for (int i = 0; i < ign_arr.Length; i++)
             ign_list.Append(ign_arr[i]);
+
+        index = Random.Range(0, 3); //제외할 일 고르기
 
         Debug.Log(tasks[index]);
 
