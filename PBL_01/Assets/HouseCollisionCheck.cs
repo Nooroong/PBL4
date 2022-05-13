@@ -13,6 +13,7 @@ public class HouseCollisionCheck : MonoBehaviour
     public static bool click1;
     public static bool click2;
     public Text text;
+    public Text text2;
     public Button meal;
     public List<string> tasks = new List<string>(); //할 일
     public int index = -1;
@@ -36,12 +37,24 @@ public class HouseCollisionCheck : MonoBehaviour
 
         //배열을 리스트로
         for (int i = 0; i < ign_arr.Length; i++)
-            ign_list.Append(ign_arr[i]);
+            ign_list.Add(ign_arr[i]);
 
         index = Random.Range(0, 3); //제외할 일 고르기
 
         Debug.Log(tasks[index]);
 
+        switch (index)
+        {
+            case 0:
+                text2.text = "명상하기";
+                break;
+            case 1:
+                text2.text = "산책하기";
+                break;
+            case 2:
+                text2.text = "차 마시기";
+                break;
+        }
         ign_list.Add(tasks[index]);
         tasks.RemoveAt(index);
     }
