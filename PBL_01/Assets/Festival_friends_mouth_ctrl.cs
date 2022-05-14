@@ -36,8 +36,6 @@ public class Festival_friends_mouth_ctrl : MonoBehaviour, IPointerDownHandler
     }
     public void OnPointerDown(PointerEventData eventData)
     {
-        Debug.Log(istyping);
-        Debug.Log(cnt);
         if (!istyping)
         {
             cnt++;

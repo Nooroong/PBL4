@@ -8,6 +8,9 @@ public class WalkingScenectr : MonoBehaviour
 {
     public Button start, finish, Home;
     Animator m_Animator;
+
+    GameObject Memo_ctrl;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -16,6 +19,9 @@ public class WalkingScenectr : MonoBehaviour
         Home.enabled = false;
         m_Animator = GetComponent<Animator>();
         m_Animator.GetComponent<Animator>().enabled = false;
+
+        //메모 가져오기
+        Memo_ctrl = GameObject.Find("Memo_ctrl");
     }
 
     // Update is called once per frame
@@ -39,5 +45,11 @@ public class WalkingScenectr : MonoBehaviour
     public void LoadHouse()
     {
         SceneManager.LoadScene("House");
+        Complete();
     }
+    public void Complete()
+    {
+        Memo_ctrl.gameObject.GetComponent<Memo_dontdestroy>().Random();
+    }
+
 }

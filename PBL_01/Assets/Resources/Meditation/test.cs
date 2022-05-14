@@ -5,13 +5,20 @@ using UnityEngine.UI;
 
 public class test : MonoBehaviour
 {
+    GameObject Memo_ctrl;
+
     public AudioSource Alarm;
 
     float time = 0f;
     int cnt = 0;
     public void Start()
     {
-        //StartCoroutine(Move());
+        //메모 가져오기
+        Memo_ctrl = GameObject.Find("Memo_ctrl");
+    }
+    public void Complete()
+    {
+        Memo_ctrl.gameObject.GetComponent<Memo_dontdestroy>().Random();
     }
     public void Moving()
     {
@@ -44,7 +51,9 @@ public class test : MonoBehaviour
                     yield return new WaitForSeconds(10f);
                 }
             }
+            Complete();
             yield return null;
         }
     }
+
 }

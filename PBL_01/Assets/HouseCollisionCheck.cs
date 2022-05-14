@@ -4,6 +4,7 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 //https://wergia.tistory.com/217 (주의: 2D 함수 써야함)
 
@@ -13,7 +14,7 @@ public class HouseCollisionCheck : MonoBehaviour
     public static bool click1;
     public static bool click2;
     public Text text;
-    public Text text2;
+    public TextMeshProUGUI text2;
     public Button meal;
     public List<string> tasks = new List<string>(); //할 일
     public int index = -1;
@@ -22,7 +23,10 @@ public class HouseCollisionCheck : MonoBehaviour
     private string[] ign_arr = { "null", "wall", "floor", "phonograph", "sofa" }; //충돌해도 버튼을 활성화 시키지 않는 오브젝트
     private List<string> ign_list = new List<string>(); //ign_arr을 리스트로 변환한 것
 
+    void Awake()
+    {
 
+    }
     // Start is called before the first frame update
     void Start()
     {
@@ -55,8 +59,11 @@ public class HouseCollisionCheck : MonoBehaviour
                 text2.text = "차 마시기";
                 break;
         }
-        ign_list.Add(tasks[index]);
         tasks.RemoveAt(index);
+
+        for (int i = 0; i < tasks.Count; i++)
+            ign_list.Add(tasks[i]);
+        
     }
 
     public void BtnOnClick() {

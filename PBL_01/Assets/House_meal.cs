@@ -7,15 +7,18 @@ public class House_meal : MonoBehaviour
 {
     public Button Meal;
     public Text text;
+    GameObject Memo_ctrl;
 
     // Start is called before the first frame update
     void Start()
     {
         text.gameObject.SetActive(false);
+        Memo_ctrl = GameObject.Find("Memo_ctrl");
     }
 
     public void BtnClick()
     {
+        Complete();
         text.gameObject.SetActive(true);
         StartCoroutine(FadeTextToZero());
         Invoke("Hide", 3f);
@@ -30,7 +33,10 @@ public class House_meal : MonoBehaviour
         }
 
     }
-
+    public void Complete()
+    {
+        Memo_ctrl.gameObject.GetComponent<Memo_dontdestroy>().Eating();
+    }
     void Hide()
     {
         Meal.gameObject.SetActive(false);

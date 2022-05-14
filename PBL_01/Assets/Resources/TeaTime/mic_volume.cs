@@ -149,19 +149,15 @@ public class mic_volume : MonoBehaviour
     {
         if (focus)
         {
-            //Debug.Log("Focus");
 
             if (!_isInitialized)
             {
-                //Debug.Log("Init Mic");
                 InitMic();
             }
         }
         if (!focus)
         {
-            //Debug.Log("Pause");
             StopMicrophone();
-            //Debug.Log("Stop Mic");
 
         }
     }

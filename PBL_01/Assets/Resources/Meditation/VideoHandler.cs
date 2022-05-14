@@ -26,7 +26,7 @@ public class VideoHandler : MonoBehaviour
         // 비디오가 준비되는 것을 기다림
         while (!mVideoPlayer.isPrepared)
         {
-            yield return new WaitForSeconds(0.5f);
+            yield return new WaitForSeconds(0f);
         }
 
         // VideoPlayer의 출력 texture를 RawImage의 texture로 설정한다

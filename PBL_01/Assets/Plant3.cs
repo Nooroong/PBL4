@@ -18,7 +18,7 @@ public class Plant3 : MonoBehaviour
     }
     void Update()
     {
-        Debug.Log(text.transform.position.y);
+
     }
     void ShowHeart()
     {

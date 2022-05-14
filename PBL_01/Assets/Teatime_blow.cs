@@ -29,7 +29,6 @@ public class Teatime_blow : MonoBehaviour
         loudness = GetAveragedVolume() * sensitivity;
         if (loudness > 7)
         {
-            Debug.Log("loudness is bigger than 1");
             IncreaseBar();
             text.gameObject.SetActive(true);
         }

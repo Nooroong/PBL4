@@ -16,14 +16,15 @@ public class GardenBtn : MonoBehaviour
     public bool isClicked2 = false;
     public bool isClicked3 = false;
 
-
+    GameObject Memo_ctrl;
 
     // Start is called before the first frame update
     void Start()
     {
         Home.gameObject.SetActive(false);
 
-        
+        //메모 가져오기
+        Memo_ctrl = GameObject.Find("Memo_ctrl");
     }
 
     // Update is called once per frame
@@ -52,7 +53,7 @@ public class GardenBtn : MonoBehaviour
         if((isClicked1==true) && (isClicked2==true) && (isClicked3 == true))
         {
             Invoke("Show", 1f);
-         
+            Complete();
         }
     }
 
@@ -69,4 +70,8 @@ public class GardenBtn : MonoBehaviour
         SceneManager.LoadScene("House");
     }
 
+    public void Complete()
+    {
+        Memo_ctrl.gameObject.GetComponent<Memo_dontdestroy>().Planter();
+    }
 }
