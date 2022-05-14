@@ -5,10 +5,10 @@ using TMPro;
 
 public class Memo_text_ctrl : MonoBehaviour
 {
-    public TextMeshProUGUI text1, text2, text3, text4;
+    public TextMeshProUGUI text1, text2, text3, text4, text5;
     GameObject Memo_ctrl;
     GameObject TMPs;
-    TextMeshProUGUI tmp1, tmp2, tmp3, tmp4;
+    TextMeshProUGUI tmp1, tmp2, tmp3, tmp4, tmp5;
 
     // Start is called before the first frame update
     void Awake()
@@ -19,6 +19,7 @@ public class Memo_text_ctrl : MonoBehaviour
         tmp2 = TMPs.transform.Find("T2").gameObject.GetComponent<TextMeshProUGUI>();
         tmp3 = TMPs.transform.Find("T3").gameObject.GetComponent<TextMeshProUGUI>();
         tmp4 = TMPs.transform.Find("T4").gameObject.GetComponent<TextMeshProUGUI>();
+        tmp5 = TMPs.transform.Find("T5").gameObject.GetComponent<TextMeshProUGUI>();
     }
     void Start()
     {
@@ -31,5 +32,6 @@ public class Memo_text_ctrl : MonoBehaviour
         text2.text = tmp2.text;
         text3.text = tmp3.text;
         text4.text = tmp4.text;
+        text5.text = tmp5.text;
     }
 }

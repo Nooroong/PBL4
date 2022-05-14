@@ -18,7 +18,7 @@ public class test : MonoBehaviour
     }
     public void Complete()
     {
-        Memo_ctrl.gameObject.GetComponent<Memo_dontdestroy>().Random();
+        Memo_ctrl.gameObject.GetComponent<Memo_dontdestroy>().Meditation();
     }
     public void Moving()
     {
@@ -51,9 +51,9 @@ public class test : MonoBehaviour
                     yield return new WaitForSeconds(10f);
                 }
             }
-            Complete();
             yield return null;
         }
+        Complete();
     }
 
 }

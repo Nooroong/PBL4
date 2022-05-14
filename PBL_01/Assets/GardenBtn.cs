@@ -53,7 +53,6 @@ public class GardenBtn : MonoBehaviour
         if((isClicked1==true) && (isClicked2==true) && (isClicked3 == true))
         {
             Invoke("Show", 1f);
-            Complete();
         }
     }
 
@@ -64,6 +63,7 @@ public class GardenBtn : MonoBehaviour
     }
     public void Return()
     {
+        Complete();
         isClicked1 = false;
         isClicked2 = false;
         isClicked3 = false;

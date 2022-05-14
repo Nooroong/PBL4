@@ -36,6 +36,6 @@ public class TeaTime2ctr : MonoBehaviour
     }
     public void Complete()
     {
-        Memo_ctrl.gameObject.GetComponent<Memo_dontdestroy>().Random();
+        Memo_ctrl.gameObject.GetComponent<Memo_dontdestroy>().Tea();
     }
 }
