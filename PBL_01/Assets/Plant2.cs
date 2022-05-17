@@ -25,7 +25,7 @@ public class Plant2 : MonoBehaviour
     void ShowHeart()
     {
         text.gameObject.SetActive(true);
-        text.transform.position = new Vector3(960f, 490f, 0f);
+        text.transform.position = new Vector3(1100f, 490f, 0f);
         StartCoroutine(FadeText());
         
 
