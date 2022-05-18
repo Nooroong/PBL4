@@ -733,6 +733,7 @@ MonoBehaviour:
     \uC7AC\uBC0C\uC796\uC544!"
   - "\uADF8\uB798! \uADF8\uB798!"
   typingSpeed: 0.1
+  cnt: 0
 --- !u!114 &597608680
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -783,7 +784,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a176ea839d768a34590c63648623134c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  istyping: 0
+  dm: {fileID: 597608679}
   panel: {fileID: 597608676}
   friend1: {fileID: 870808445}
   friend2: {fileID: 88653954}

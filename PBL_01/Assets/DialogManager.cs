@@ -21,6 +21,8 @@ public class DialogManager : MonoBehaviour, IPointerDownHandler
 
     public static DialogManager instance;
 
+    int cnt = -1;
+
     private void Awake()
     {
         instance = this;
@@ -48,6 +50,7 @@ public class DialogManager : MonoBehaviour, IPointerDownHandler
     {
         if(sentences.Count != 0)
         {
+            cnt++;
             currentSentence = sentences.Dequeue();
             istyping = true;
             next.SetActive(false);
@@ -56,6 +59,7 @@ public class DialogManager : MonoBehaviour, IPointerDownHandler
         }
         else
         {
+            cnt++;
             dialogGroup.alpha = 0;
             dialogGroup.blocksRaycasts = false;
             button.gameObject.SetActive(true);
@@ -81,9 +85,15 @@ public class DialogManager : MonoBehaviour, IPointerDownHandler
         }
     }
 
+
     public void OnPointerDown(PointerEventData eventData)
     {
         if(!istyping)
             NextSentence();
+    }
+
+    public int Cnt()
+    {
+        return cnt;
     }
 }

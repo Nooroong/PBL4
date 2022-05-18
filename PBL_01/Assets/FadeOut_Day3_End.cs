@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+
 
 public class FadeOut_Day3_End : MonoBehaviour
 {
@@ -28,6 +30,8 @@ public class FadeOut_Day3_End : MonoBehaviour
             Panel.color = alpha;
             yield return null;
         }
+        PlayerPrefs.SetInt("routine", 1);
+        SceneManager.LoadScene("House");
         yield return null;
 
     }

@@ -29,6 +29,7 @@ public class HouseCollisionCheck : MonoBehaviour
         tasks.Add("walking");
         tasks.Add("cooking");
 
+        //랜덤1, 램덤2가 없을 경우에만 할 일 랜덤 지정
         if (!PlayerPrefs.HasKey("random1") && !PlayerPrefs.HasKey("random2"))
         {
             select_random();
@@ -37,6 +38,7 @@ public class HouseCollisionCheck : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        
         btn.interactable = false; //버튼 비활성화
         text.gameObject.SetActive(false);
         meal.gameObject.SetActive(false);
@@ -45,7 +47,11 @@ public class HouseCollisionCheck : MonoBehaviour
         for (int i = 0; i < ign_arr.Length; i++)
             ign_list.Add(ign_arr[i]);
 
-        index = PlayerPrefs.GetInt("task_index", -1);
+        //밖에서 일과를 끝냈다면 활성화 되지 않도록
+        if((bool)Day_manager.GetBool("routine"))
+            ign_list.Add("frontDoor");
+
+        index = PlayerPrefs.GetInt("task_index", -1); // 랜덤으로 지정된 하지 않을 일의 인덱스를 불러옴
 
         ign_list.Add(tasks[index]);
         tasks.RemoveAt(index);
@@ -57,7 +63,7 @@ public class HouseCollisionCheck : MonoBehaviour
 
         Debug.Log(tasks[index]);
 
-        PlayerPrefs.SetInt("task_index", index);
+        PlayerPrefs.SetInt("task_index", index); //제회할 일 저장하기
     }
 
     public void BtnOnClick() {
@@ -66,7 +72,7 @@ public class HouseCollisionCheck : MonoBehaviour
             case "bed":
                 //할 일을 다 했을 때 잠자기
                 if ((bool)Day_manager.GetBool("bap") && (bool)Day_manager.GetBool("pill") && (bool)Day_manager.GetBool("planter") 
-                    && (bool)Day_manager.GetBool("random1") && (bool)Day_manager.GetBool("random2"))
+                    && (bool)Day_manager.GetBool("random1") && (bool)Day_manager.GetBool("random2") && (bool)Day_manager.GetBool("routine"))
                 {
                     PlayerPrefs.SetInt("sleep", 1); //잠자기 True로 전환
                     Invoke("Sleep", 2);
@@ -79,7 +85,16 @@ public class HouseCollisionCheck : MonoBehaviour
                 SceneManager.LoadScene("TeaTime0");
                 break;
             case "frontDoor":
-                //SceneManager.LoadScene("");
+                if (PlayerPrefs.GetInt("day") == 2)
+                {
+                    PlayerPrefs.SetInt("out", 1);
+                    SceneManager.LoadScene("Assistance1");
+                }
+                else if ( PlayerPrefs.GetInt("day") == 3)
+                {
+                    PlayerPrefs.SetInt("out", 1);
+                    SceneManager.LoadScene("Day3_start");
+                }
                 break;
             case "meditation":
                 SceneManager.LoadScene("meditation test");

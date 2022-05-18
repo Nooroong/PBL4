@@ -9,12 +9,16 @@ public class Plant1 : MonoBehaviour
     public Text text;
     int speed = 100;
     float yMove;
+    Vector3 text_pos;
 
     void Start()
     {
         text.gameObject.SetActive(false);
 
         plant1.onClick.AddListener(ShowHeart);
+
+        text_pos = text.transform.position;
+
     }
     void Update()
     {
@@ -23,10 +27,8 @@ public class Plant1 : MonoBehaviour
     void ShowHeart()
     {
         text.gameObject.SetActive(true);
-        text.transform.position = new Vector3(480f, 900f, 0f);
+        text.transform.position = text_pos;
         StartCoroutine(FadeText());
-
-
     }
 
     public IEnumerator FadeText()
@@ -39,6 +41,7 @@ public class Plant1 : MonoBehaviour
             text.color = new Color(text.color.r, text.color.g, text.color.b, text.color.a + (Time.deltaTime / 1.0f));
             yMove = +speed * Time.deltaTime;
             text.transform.Translate(new Vector3(0, yMove, 0));
+            
             if (text.gameObject.transform.position.y > 1000.0f)
             {
                 break;

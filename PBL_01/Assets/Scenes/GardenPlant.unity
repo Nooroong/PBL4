@@ -5567,6 +5567,7 @@ GameObject:
   - component: {fileID: 648629007}
   - component: {fileID: 648629006}
   - component: {fileID: 648629005}
+  - component: {fileID: 648629010}
   - component: {fileID: 648629008}
   - component: {fileID: 648629009}
   m_Layer: 5
@@ -5640,18 +5641,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 648629008}
-        m_TargetAssemblyTypeName: Plant3, Assembly-CSharp
-        m_MethodName: ShowHeart
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 1636728248}
         m_TargetAssemblyTypeName: GardenBtn, Assembly-CSharp
         m_MethodName: IsClicked3
@@ -5667,6 +5656,18 @@ MonoBehaviour:
       - m_Target: {fileID: 648629009}
         m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
         m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 648629010}
+        m_TargetAssemblyTypeName: Plant2, Assembly-CSharp
+        m_MethodName: ShowHeart
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5721,7 +5722,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 648629003}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 54ced2730cc7df547ad951bf1f58caa7, type: 3}
   m_Name: 
@@ -5824,6 +5825,20 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &648629010
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 648629003}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79504509e07eeef4fa1ef47c9568ff5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  plant2: {fileID: 648629005}
+  text: {fileID: 1440578873}
 --- !u!1 &649250569
 GameObject:
   m_ObjectHideFlags: 0
@@ -5915,6 +5930,7 @@ GameObject:
   - component: {fileID: 761385490}
   - component: {fileID: 761385489}
   - component: {fileID: 761385488}
+  - component: {fileID: 761385493}
   - component: {fileID: 761385491}
   - component: {fileID: 761385492}
   m_Layer: 5
@@ -5988,8 +6004,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 761385491}
-        m_TargetAssemblyTypeName: Plant1, Assembly-CSharp
+      - m_Target: {fileID: 761385493}
+        m_TargetAssemblyTypeName: Plant2, Assembly-CSharp
         m_MethodName: ShowHeart
         m_Mode: 1
         m_Arguments:
@@ -6069,7 +6085,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 761385486}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2ccfc73d13728a549a7b239a5a2a2dc5, type: 3}
   m_Name: 
@@ -6172,6 +6188,20 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &761385493
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 761385486}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79504509e07eeef4fa1ef47c9568ff5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  plant2: {fileID: 761385488}
+  text: {fileID: 1606589321}
 --- !u!1 &764844657
 GameObject:
   m_ObjectHideFlags: 0
@@ -6609,7 +6639,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 595, y: 185}
+  m_AnchoredPosition: {x: 595, y: 220}
   m_SizeDelta: {x: 144.5068, y: 94.5551}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1440578873
@@ -6893,7 +6923,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -590, y: 360}
+  m_AnchoredPosition: {x: -590, y: 410}
   m_SizeDelta: {x: 144.1429, y: 87.1222}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1606589321

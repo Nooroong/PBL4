@@ -779,7 +779,6 @@ MonoBehaviour:
   - "\uC9C0\uAD6C\uC5D0\uB9CC \uC788\uB294\uBCD1\uC6D0\uC778\uAC00?"
   - "\uD68C\uC0AC\uC5D0\uC11C \uC77C\uD558\uB294 \uC8FC\uC778\uACF5"
   typingSpeed: 0.1
-  istyping: 0
 --- !u!114 &1094648557
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -854,7 +853,6 @@ GameObject:
   - component: {fileID: 1497744545}
   - component: {fileID: 1497744544}
   - component: {fileID: 1497744543}
-  - component: {fileID: 1497744542}
   - component: {fileID: 1497744546}
   m_Layer: 5
   m_Name: 3_0
@@ -863,18 +861,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1497744542
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1497744541}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 05126a7240233054fadd5cf398a11f40, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1497744543
 MonoBehaviour:
   m_ObjectHideFlags: 0

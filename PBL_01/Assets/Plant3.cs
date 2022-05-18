@@ -9,21 +9,24 @@ public class Plant3 : MonoBehaviour
     public Text text;
     int speed = 100;
     float yMove;
+    Vector3 text_pos;
 
     void Start()
     {
         text.gameObject.SetActive(false);
 
         plant3.onClick.AddListener(ShowHeart);
+
+        text_pos = text.transform.position;
     }
     void Update()
     {
 
     }
-    void ShowHeart()
+    public void ShowHeart()
     {
         text.gameObject.SetActive(true);
-        text.transform.position = new Vector3(1650f, 760f, 0f);
+        text.transform.position = text_pos;
         StartCoroutine(FadeText());
         
 

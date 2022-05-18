@@ -10,6 +10,7 @@ public class Plant2 : MonoBehaviour
     public Text text;
     int speed = 100;
     float yMove;
+    Vector3 text_pos;
 
     // Start is called before the first frame update
     void Start()
@@ -17,15 +18,17 @@ public class Plant2 : MonoBehaviour
         text.gameObject.SetActive(false);
 
         plant2.onClick.AddListener(ShowHeart);
+
+        text_pos = text.transform.position;
     }
      void Update()
     {
 
     }
-    void ShowHeart()
+    public void ShowHeart()
     {
         text.gameObject.SetActive(true);
-        text.transform.position = new Vector3(1100f, 490f, 0f);
+        text.transform.position = text_pos;
         StartCoroutine(FadeText());
         
 
@@ -41,7 +44,7 @@ public class Plant2 : MonoBehaviour
             text.color = new Color(text.color.r, text.color.g, text.color.b, text.color.a + (Time.deltaTime / 1.0f));
             yMove = +speed * Time.deltaTime;
             text.transform.Translate(new Vector3(0, yMove, 0));
-            if (text.gameObject.transform.position.y > 530.0f)
+            if (text.gameObject.transform.position.y - text_pos.y > 50f)
             {
                 break;
             }
