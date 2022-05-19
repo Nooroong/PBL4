@@ -51,6 +51,7 @@ public class FadeIn_H : MonoBehaviour
     }
     public void Start()
     {
+        PlayerPrefs.SetInt("out", 1);
         FadeIn();
     }
 }

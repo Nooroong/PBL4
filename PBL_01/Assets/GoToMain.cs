@@ -44,11 +44,11 @@ public class GoToMain : MonoBehaviour
 
         if (PlayerPrefs.GetInt("out", -1) == 1) {
             PlayerPrefs.SetString("Last_scene", scene_name);
-            Debug.Log(scene_name);
+            
         } else {
             PlayerPrefs.SetString("Last_scene", "House");
         }
-
+        Debug.Log(PlayerPrefs.GetString("Last_scene"));
         Config_Box.SetActive(false);
         SceneManager.LoadScene("SampleScene");
     }
