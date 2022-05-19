@@ -11,12 +11,12 @@ public class FadeOut : MonoBehaviour
     float time = 0f;
     float F_time = 2f;
 
-    public void F_Out()
+    public void F_Out(string scene_name)
     {
-        StartCoroutine(FadeOutFlow());
+        StartCoroutine(FadeOutFlow(scene_name));
     }
 
-    IEnumerator FadeOutFlow()
+    IEnumerator FadeOutFlow(string scene_name)
     {
         Panel.gameObject.SetActive(true);
         time = 0f;
@@ -30,14 +30,15 @@ public class FadeOut : MonoBehaviour
             yield return null;
         }
         yield return null;
-        SceneManager.LoadScene("Prologue_Hospital");
+        SceneManager.LoadScene(scene_name);
     }
 
-    private void Update()
-    {
-        if (Input.GetMouseButtonDown(0))
-        {
-            F_Out();       
-        }
+    public  void Click_Start_Btn() {
+        F_Out("Prologue_Hospital");
     }
+
+    public void Click_Continue_Btn() {
+        F_Out(PlayerPrefs.GetString("Last_scene"));
+    }
+
 }
