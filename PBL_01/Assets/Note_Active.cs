@@ -10,23 +10,28 @@ public class Note_Active : MonoBehaviour
 
     void Awake()
     {
-        text.text = PlayerPrefs.GetString("note");
+        //text.text = PlayerPrefs.GetString("note");
+        
     }
 
     // Start is called before the first frame update
     void Start()
-    { 
-        if(text.text.Contains("ps"))
+    {
+
+
+;        if (PlayerPrefs.GetInt("NoteCp") == 1)
         {
             note1.SetActive(false);
-            note2.SetActive(false);
+            note2.SetActive(false) ;
             note3.SetActive(true);
+            
         }
         else
         {
             note1.SetActive(true);
             note2.SetActive(false);
             note3.SetActive(false);
+
         }
     }
 

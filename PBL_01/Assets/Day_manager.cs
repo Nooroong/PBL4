@@ -8,8 +8,9 @@ public class Day_manager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        
         //초기화 되어서 다음날이 되었을 때 & 처음 시작할 때
-        if( !PlayerPrefs.HasKey("bap") && !PlayerPrefs.HasKey("pill") && !PlayerPrefs.HasKey("planter")
+        if ( !PlayerPrefs.HasKey("bap") && !PlayerPrefs.HasKey("pill") && !PlayerPrefs.HasKey("planter")
             && !PlayerPrefs.HasKey("random1") && !PlayerPrefs.HasKey("random2") && !PlayerPrefs.HasKey("sleep"))
         {
             PlayerPrefs.SetInt("bap", 0); //밥먹기
@@ -19,6 +20,7 @@ public class Day_manager : MonoBehaviour
             PlayerPrefs.SetInt("random2", 0); //랜덤2
             PlayerPrefs.SetInt("routine", 0); //밖에서 일어나는 일
             PlayerPrefs.SetInt("sleep", 0); //잠자기
+            
         }
     }
 
@@ -36,6 +38,8 @@ public class Day_manager : MonoBehaviour
             PlayerPrefs.DeleteKey("random2");
             PlayerPrefs.DeleteKey("routine");
             PlayerPrefs.DeleteKey("sleep");
+            PlayerPrefs.DeleteKey("NoteCp");
+            
 
             cnt += PlayerPrefs.GetInt("day") + 1;
             PlayerPrefs.SetInt("day", cnt);

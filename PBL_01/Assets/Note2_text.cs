@@ -13,15 +13,8 @@ public class Note2_text : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if (text.text.Contains("ps"))
-        {
-            text.text = PlayerPrefs.GetString("note");
-        }
-        else
-        {
-            text.text = note.text + ps.text;
-            PlayerPrefs.SetString("note", text.text);
-        }
+        text.text = PlayerPrefs.GetString("note");
+
     }
 
     // Update is called once per frame
@@ -31,6 +24,7 @@ public class Note2_text : MonoBehaviour
     }
     public void Exit()
     {
+        PlayerPrefs.SetInt("NoteCp", 1);
         SceneManager.LoadScene("desk");  
     } 
 }
