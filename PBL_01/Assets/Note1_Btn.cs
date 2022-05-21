@@ -18,18 +18,18 @@ public class Note1_Btn : MonoBehaviour
         next.interactable = false;
         switch (PlayerPrefs.GetInt("day"))
         {
-            case 1:
+            case 2:
                 note.text = "지구에서 지낼 거처를 마련해주셔서 감사해요." + "\n" +
                             "약 잊지 않고 먹을게요. 우주선 수리할 동안만 신세지겠습니다." + "\n" +
-                            "챙겨주셔서 감사합니다!";
+                            "챙겨주셔서 감사합니다!" + "\n";
 
                 b1text.text = "퇴근하시고 피곤하실텐데 일찍 주무세요!";
                 b2text.text = "말썽 안 피우고 잘 지낼게요!";
                 b3text.text = "내일은 볼 수 있으면 좋겠어요!";
                 break;
-            case 2:
+            case 3:
                 note.text = "어제 길거리에 쓰러진 사람을 봤어요." + "\n" +
-                            "과거의 기억이 잠시 떠올라 겁이 났지만, 용기를 내서 구급차를 부르고 응급처치를 했어요. 많은 일이 있던 하루였어요.";
+                            "과거의 기억이 잠시 떠올라 겁이 났지만, 용기를 내서 구급차를 부르고 응급처치를 했어요. 많은 일이 있던 하루였어요." + "\n";
 
 
                 b1text.text = "매일 쪽지 남겨 주셔서 감사해요!";
@@ -48,7 +48,7 @@ public class Note1_Btn : MonoBehaviour
     }
     public void Btn1()
     {
-        ps.text = b1text.text;
+        ps.text ="ps. " + b1text.text;
         PlayerPrefs.SetString("note", (note.text+"\n"+ps.text));
         next.interactable = true;
 
@@ -56,13 +56,13 @@ public class Note1_Btn : MonoBehaviour
     }
     public void Btn2()
     {
-        ps.text = b2text.text;
+        ps.text = "ps. " + b2text.text;
         PlayerPrefs.SetString("note", (note.text + "\n" + ps.text));
         next.interactable = true;
     }
     public void Btn3()
     {
-        ps.text = b3text.text;
+        ps.text = "ps. " + b3text.text;
         PlayerPrefs.SetString("note", (note.text + "\n" + ps.text));
         next.interactable = true;
     }

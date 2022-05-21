@@ -21,6 +21,7 @@ public class HouseCollisionCheck : MonoBehaviour
 
     private string collisionObj = "null"; //주인공과 충돌한 오브젝트의 이름을 저장하는 변수
     private string[] ign_arr = { "null", "wall", "floor", "phonograph", "sofa" }; //충돌해도 버튼을 활성화 시키지 않는 오브젝트
+    private string[] day1_ign_arr = { "fridge", "frontDoor", "table", "window"}; //day1일 때 충돌해도 버튼을 활성화 시키지 않는 오브젝트
     private List<string> ign_list = new List<string>(); //ign_arr을 리스트로 변환한 것
 
     void Awake()
@@ -29,8 +30,8 @@ public class HouseCollisionCheck : MonoBehaviour
         tasks.Add("walking");
         tasks.Add("cooking");
 
-        //랜덤1, 램덤2가 없을 경우에만 할 일 랜덤 지정
-        if (!PlayerPrefs.HasKey("random1") && !PlayerPrefs.HasKey("random2"))
+        //day1이 아니고 랜덤1, 램덤2가 없을 경우에만 할 일 랜덤 지정
+        if (PlayerPrefs.GetInt("day",-1) != 1 && !PlayerPrefs.HasKey("random1") && !PlayerPrefs.HasKey("random2"))
         {
             select_random();
         }
@@ -47,14 +48,24 @@ public class HouseCollisionCheck : MonoBehaviour
         for (int i = 0; i < ign_arr.Length; i++)
             ign_list.Add(ign_arr[i]);
 
-        //밖에서 일과를 끝냈다면 활성화 되지 않도록
-        if((bool)Day_manager.GetBool("routine"))
-            ign_list.Add("frontDoor");
+        if (PlayerPrefs.GetInt("day", -1) == 1) //day1일 때 bed를 제외하고 비활성화
+        {
+            for (int i = 0; i < day1_ign_arr.Length; i++)
+                ign_list.Add(day1_ign_arr[i]);
+            for (int i = 0; i < 3; i++)
+                ign_list.Add(tasks[i]);
+        }
+        else //day2, 3 
+        {
+            //밖에서 일과를 끝냈다면 활성화 되지 않도록
+            if ((bool)Day_manager.GetBool("routine"))
+                ign_list.Add("frontDoor");
 
-        index = PlayerPrefs.GetInt("task_index", -1); // 랜덤으로 지정된 하지 않을 일의 인덱스를 불러옴
+            index = PlayerPrefs.GetInt("task_index", -1); // 랜덤으로 지정된 하지 않을 일의 인덱스를 불러옴
 
-        ign_list.Add(tasks[index]);
-        tasks.RemoveAt(index);
+            ign_list.Add(tasks[index]);
+            tasks.RemoveAt(index);
+        }
     }
 
     public void select_random()
@@ -70,12 +81,20 @@ public class HouseCollisionCheck : MonoBehaviour
         //이동할 씬 입력해주면 될듯?
         switch (collisionObj) {
             case "bed":
-                //할 일을 다 했을 때 잠자기
-                if ((bool)Day_manager.GetBool("bap") && (bool)Day_manager.GetBool("pill") && (bool)Day_manager.GetBool("planter") 
-                    && (bool)Day_manager.GetBool("random1") && (bool)Day_manager.GetBool("random2") && (bool)Day_manager.GetBool("routine"))
+                if(PlayerPrefs.GetInt("day", -1) == 1) //day1 일 때 바로 잠들기
                 {
                     PlayerPrefs.SetInt("sleep", 1); //잠자기 True로 전환
                     Invoke("Sleep", 2);
+                }
+                else
+                {
+                    //할 일을 다 했을 때 잠자기
+                    if ((bool)Day_manager.GetBool("bap") && (bool)Day_manager.GetBool("pill") && (bool)Day_manager.GetBool("planter")
+                        && (bool)Day_manager.GetBool("random1") && (bool)Day_manager.GetBool("random2") && (bool)Day_manager.GetBool("routine"))
+                    {
+                        PlayerPrefs.SetInt("sleep", 1); //잠자기 True로 전환
+                        Invoke("Sleep", 2);
+                    }
                 }
                 break;
             case "fridge":
