@@ -21,7 +21,7 @@ public class DialogManager : MonoBehaviour, IPointerDownHandler
 
     public static DialogManager instance;
 
-    public int cnt = -1;
+    int cnt = -1;
 
     private void Awake()
     {

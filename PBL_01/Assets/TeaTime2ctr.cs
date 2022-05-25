@@ -10,11 +10,16 @@ public class TeaTime2ctr : MonoBehaviour
     public GameObject Bar;
 
     GameObject Memo_ctrl;
+    public GameObject text;
 
     // Start is called before the first frame update
     void Start()
     {
+        this.gameObject.GetComponent<ListenForAudioCommand>().enabled = false;
+        text.SetActive(false);
         home.interactable = false;
+
+        Invoke("GaugeBarCtrl", 4.5f);
 
         //메모 가져오기
         Memo_ctrl = GameObject.Find("Memo_ctrl");
@@ -37,5 +42,11 @@ public class TeaTime2ctr : MonoBehaviour
     public void Complete()
     {
         Memo_ctrl.gameObject.GetComponent<Memo_dontdestroy>().Tea();
+    }
+
+    public void GaugeBarCtrl()
+    {
+        text.SetActive(true);
+        this.gameObject.GetComponent<ListenForAudioCommand>().enabled = true;
     }
 }

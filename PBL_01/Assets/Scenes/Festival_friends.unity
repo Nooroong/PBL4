@@ -665,7 +665,6 @@ GameObject:
   - component: {fileID: 597608680}
   - component: {fileID: 597608679}
   - component: {fileID: 597608678}
-  - component: {fileID: 597608682}
   - component: {fileID: 597608683}
   m_Layer: 5
   m_Name: Panel
@@ -772,24 +771,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 597608676}
   m_CullTransparentMesh: 1
---- !u!114 &597608682
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 597608676}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a176ea839d768a34590c63648623134c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dm: {fileID: 597608679}
-  panel: {fileID: 597608676}
-  friend1: {fileID: 870808445}
-  friend2: {fileID: 88653954}
-  friend3: {fileID: 31248493}
-  BG: {fileID: 980541098}
 --- !u!114 &597608683
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1373,6 +1354,7 @@ GameObject:
   - component: {fileID: 1739208729}
   - component: {fileID: 1739208728}
   - component: {fileID: 1739208727}
+  - component: {fileID: 1739208730}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -1467,6 +1449,24 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!114 &1739208730
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1739208725}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a176ea839d768a34590c63648623134c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dm: {fileID: 597608679}
+  panel: {fileID: 597608676}
+  friend1: {fileID: 870808445}
+  friend2: {fileID: 88653954}
+  friend3: {fileID: 31248493}
+  BG: {fileID: 980541098}
 --- !u!1 &1813486010
 GameObject:
   m_ObjectHideFlags: 0
