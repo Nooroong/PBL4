@@ -116,7 +116,7 @@ public class HouseCollisionCheck : MonoBehaviour
                 }
                 break;
             case "meditation":
-                SceneManager.LoadScene("meditation test");
+                SceneManager.LoadScene("meditation");
                 break;
             case "table":
                 SceneManager.LoadScene("desk");
