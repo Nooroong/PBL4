@@ -35,6 +35,7 @@ public class FadeOut : MonoBehaviour
 
     public  void Click_Start_Btn() {
         PlayerPrefs.DeleteAll();
+        PlayerPrefs.SetInt("out", 1);
         PlayerPrefs.SetInt("day", 0);
         F_Out("Prologue_Hospital");
     }

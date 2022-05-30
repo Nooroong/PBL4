@@ -11,7 +11,7 @@ public class Sound_manager : MonoBehaviour
     public AudioClip[] bglist;
     public static Sound_manager instance;
 
-    int tea, Out;
+    int tea, Out, day;
     string s_name = "";
     float fadeInTime = 2.0f;
     float fadeOutTime = 1.0f;
@@ -19,10 +19,9 @@ public class Sound_manager : MonoBehaviour
     
     private void Awake()
     {
-        FadeOut fadeOut = new FadeOut();
         tea = -1;
         Out = -1;
-
+        day = -1;
         if (instance== null)
         {
             instance = this;
@@ -53,13 +52,14 @@ public class Sound_manager : MonoBehaviour
                     BGSoundPlay(bglist[i]);
                     break;
                 }
-                else if (tea != PlayerPrefs.GetInt("Tea") | Out != PlayerPrefs.GetInt("out") //차 마시기, 밖으로 나가기, 이전 씬이 main, Walking, meditation 이었을 경우
+                else if (tea != PlayerPrefs.GetInt("Tea") | Out != PlayerPrefs.GetInt("out") | day != PlayerPrefs.GetInt("day") //차 마시기, 밖으로 나가기, 이전 씬이 main, Walking, meditation 이었을 경우
                     | s_name != "")
                 {
                     s_name = "";
 
                     tea = PlayerPrefs.GetInt("Tea");
                     Out = PlayerPrefs.GetInt("out");
+                    day = PlayerPrefs.GetInt("day");
 
                     if (PlayerPrefs.GetInt("Tea") == 1)
                     {

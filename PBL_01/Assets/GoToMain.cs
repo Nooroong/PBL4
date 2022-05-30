@@ -46,6 +46,8 @@ public class GoToMain : MonoBehaviour
             PlayerPrefs.SetString("Last_scene", scene_name);
             
         } else {
+            if (PlayerPrefs.GetInt("Tea") == 1)
+                PlayerPrefs.SetInt("Tea", 0);
             PlayerPrefs.SetString("Last_scene", "House");
         }
         Debug.Log(PlayerPrefs.GetString("Last_scene"));
