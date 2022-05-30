@@ -50,6 +50,6 @@ public class GoToMain : MonoBehaviour
         }
         Debug.Log(PlayerPrefs.GetString("Last_scene"));
         Config_Box.SetActive(false);
-        SceneManager.LoadScene("SampleScene");
+        SceneManager.LoadScene("main");
     }
 }

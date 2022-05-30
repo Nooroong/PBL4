@@ -37,6 +37,7 @@ public class TeaTime2ctr : MonoBehaviour
     public void LoadHome()
     {
         Complete();
+        PlayerPrefs.SetInt("Tea", 0);
         SceneManager.LoadScene("House");
     }
     public void Complete()

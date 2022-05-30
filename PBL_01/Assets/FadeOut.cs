@@ -34,6 +34,8 @@ public class FadeOut : MonoBehaviour
     }
 
     public  void Click_Start_Btn() {
+        PlayerPrefs.DeleteAll();
+        PlayerPrefs.SetInt("day", 0);
         F_Out("Prologue_Hospital");
     }
 
