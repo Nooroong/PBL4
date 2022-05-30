@@ -35,6 +35,7 @@ public class choosetea : MonoBehaviour
     }
     public void LoadHome()
     {
+        PlayerPrefs.SetInt("Tea", 0);
         SceneManager.LoadScene("House");
     }
 }

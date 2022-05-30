@@ -101,6 +101,7 @@ public class HouseCollisionCheck : MonoBehaviour
                 SceneManager.LoadScene("Refrigerator");
                 break;
             case "cooking":
+                PlayerPrefs.SetInt("Tea", 1);
                 SceneManager.LoadScene("TeaTime0");
                 break;
             case "frontDoor":
