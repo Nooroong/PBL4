@@ -12,9 +12,6 @@ EditorBuildSettings:
     path: Assets/Scenes/Prologue_Hospital.unity
     guid: 94911348c2468e64f95c2be4fb7d27f3
   - enabled: 1
-    path: Assets/Scenes/Prologue_Spaceship.unity
-    guid: 417f0b286675e85499cfc7ee119f821b
-  - enabled: 1
     path: Assets/Scenes/Prologue_Toilet.unity
     guid: be692ef2344d5f04a8a7816f6c0513e2
   - enabled: 1
@@ -23,6 +20,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Prologue_Cafe.unity
     guid: f41ac697861a5714f9c56d1615418177
+  - enabled: 1
+    path: Assets/Scenes/Prologue_Spaceship.unity
+    guid: 417f0b286675e85499cfc7ee119f821b
+  - enabled: 1
+    path: Assets/Scenes/Prologue_Spaceship2.unity
+    guid: 209a62eb6ea60e649a0bd265a9358401
   - enabled: 1
     path: Assets/Scenes/Prologue_ForcedLanding.unity
     guid: f3bb97315249fc14992e0abedb5ccd20
@@ -203,4 +206,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Day3_Pictures.unity
     guid: 09741b4ecd0e99d4b863099b5776c9da
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   m_configObjects: {}

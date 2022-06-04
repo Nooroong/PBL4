@@ -13,6 +13,7 @@ public class FadeOut_Day1_Meeting : MonoBehaviour
 
     public void F_Out()
     {
+        PlayerPrefs.SetInt("Rain", 0);
         StartCoroutine(FadeOutFlow());
     }
 

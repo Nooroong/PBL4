@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
+using UnityEngine.SceneManagement;
 
 public class DialogManager_Spaceship : MonoBehaviour, IPointerDownHandler
 {
@@ -64,17 +65,15 @@ public class DialogManager_Spaceship : MonoBehaviour, IPointerDownHandler
             {
                 image.GetComponent<Image>().sprite = Resources.Load("PrologueImage\\17", typeof(Sprite)) as Sprite;
             }
-        
-            if (i == 6)
-            {
-                image.GetComponent<Image>().sprite = Resources.Load("PrologueImage\\20", typeof(Sprite)) as Sprite;
-            }
+       
         }
         else
         {
-            dialogGroup.alpha = 0;
-            dialogGroup.blocksRaycasts = false;
-            button.gameObject.SetActive(true);
+            //dialogGroup.alpha = 0;
+            //dialogGroup.blocksRaycasts = false;
+            //button.gameObject.SetActive(true);
+            //버튼 클릭 없이 바로 다음 씬 넘어가기
+            SceneManager.LoadScene("Prologue_Spaceship2");
         }
     }
 

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Day_manager : MonoBehaviour
 {
+
     int cnt = 0;
     // Start is called before the first frame update
     void Start()
@@ -46,9 +47,9 @@ public class Day_manager : MonoBehaviour
         else
         {
             //모두 진행되었을 때 키 삭제 초기화
-            if ((bool)GetBool("bap") && (bool)GetBool("pill") && (bool)GetBool("planter")
-                && (bool)GetBool("random1") && (bool)GetBool("random2") && (bool)GetBool("routine") && (bool)GetBool("sleep"))
+            if ((bool)GetBool("sleep"))
             {
+
                 PlayerPrefs.DeleteKey("bap");
                 PlayerPrefs.DeleteKey("pill");
                 PlayerPrefs.DeleteKey("planter");
@@ -57,7 +58,6 @@ public class Day_manager : MonoBehaviour
                 PlayerPrefs.DeleteKey("routine");
                 PlayerPrefs.DeleteKey("sleep");
                 PlayerPrefs.DeleteKey("NoteCp");
-
 
                 cnt += PlayerPrefs.GetInt("day") + 1;
                 PlayerPrefs.SetInt("day", cnt);

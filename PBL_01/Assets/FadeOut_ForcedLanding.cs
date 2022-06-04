@@ -30,6 +30,7 @@ public class FadeOut_ForcedLanding : MonoBehaviour
             yield return null;
         }
         yield return null;
+
         SceneManager.LoadScene("StreetStand");
     }
 }

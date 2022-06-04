@@ -6,36 +6,42 @@ using UnityEngine.SceneManagement;
 
 public class StreetWalkingLoad : MonoBehaviour
 {
+    public Image day_panel;
     public Image Panel;
     float time = 0f;
     float F_time = 2f;
+
     private void Awake()
     {
-        FadeIn();
+        FadeIn(day_panel);
+        Invoke("F_In_Black", 2f);
     }
-
+    public void F_In_Black()
+    {
+        FadeIn(Panel);
+    }
     private void Start()
     {
         Invoke("F_Out", 5f);
     }
-    public void FadeIn()
+    public void FadeIn(Image panel)
     {
-        StartCoroutine(FadeInFlow());
+        StartCoroutine(FadeInFlow(panel));
     }
-    IEnumerator FadeInFlow()
+    IEnumerator FadeInFlow(Image panel)
     {
-        Panel.gameObject.SetActive(true);
+        panel.gameObject.SetActive(true);
         time = 0f;
-        Color alpha = Panel.color;
+        Color alpha = panel.color;
 
         while (alpha.a > 0f)
         {
             time += Time.deltaTime / F_time;
             alpha.a = Mathf.Lerp(1, 0, time);
-            Panel.color = alpha;
+            panel.color = alpha;
             yield return null;
         }
-        Panel.gameObject.SetActive(false);
+        panel.gameObject.SetActive(false);
         yield return null;
     }
     public void F_Out()

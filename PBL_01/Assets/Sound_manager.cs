@@ -11,7 +11,7 @@ public class Sound_manager : MonoBehaviour
     public AudioClip[] bglist;
     public static Sound_manager instance;
 
-    int tea, Out, day;
+    int tea, Out, day, rain;
     string s_name = "";
     float fadeInTime = 2.0f;
     float fadeOutTime = 1.0f;
@@ -22,6 +22,7 @@ public class Sound_manager : MonoBehaviour
         tea = -1;
         Out = -1;
         day = -1;
+        rain = -1;
         if (instance== null)
         {
             instance = this;
@@ -46,13 +47,15 @@ public class Sound_manager : MonoBehaviour
         {
             for (int i = 0; i < bglist.Length; i++)
             {
-                if (arg0.name == bglist[i].name) //씬이 main, Walking, meditation 일 경유
-                {
+                //씬이 main, Walking, meditation, Prologue_Spaceship2, Prologue_ForcedLanding, Assistance2, Siren, Shooting_game 일 경우
+               
+                    if (arg0.name == bglist[i].name)
+                { 
                     s_name = arg0.name;
                     BGSoundPlay(bglist[i]);
                     break;
                 }
-                else if (tea != PlayerPrefs.GetInt("Tea") | Out != PlayerPrefs.GetInt("out") | day != PlayerPrefs.GetInt("day") //차 마시기, 밖으로 나가기, 이전 씬이 main, Walking, meditation 이었을 경우
+                else if (rain != PlayerPrefs.GetInt("Rain") | tea != PlayerPrefs.GetInt("Tea") | Out != PlayerPrefs.GetInt("out") | day != PlayerPrefs.GetInt("day") //차 마시기, 밖으로 나가기, 이전 씬이 main, Walking, meditation 이었을 경우
                     | s_name != "")
                 {
                     s_name = "";
@@ -60,10 +63,15 @@ public class Sound_manager : MonoBehaviour
                     tea = PlayerPrefs.GetInt("Tea");
                     Out = PlayerPrefs.GetInt("out");
                     day = PlayerPrefs.GetInt("day");
+                    rain = PlayerPrefs.GetInt("Rain");
 
                     if (PlayerPrefs.GetInt("Tea") == 1)
                     {
                         BGSoundPlay(bglist[3]);
+                    }
+                    else if (PlayerPrefs.GetInt("Rain") == 1)
+                    {
+                        BGSoundPlay(bglist[12]);
                     }
                     else if (PlayerPrefs.GetInt("out") == 0)
                     {

@@ -4,9 +4,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+
 public class GoogleStaticMap : MonoBehaviour
 {
-	public Button start, finish;
+	//public Button start, finish;
 	public static string url;
 	public RawImage rawImage;
 	[Range(0f, 1f)]
@@ -19,6 +20,12 @@ public class GoogleStaticMap : MonoBehaviour
 	public int mapZoom = 30;
 	public int mapWidth = 1080;
 	public int mapHeight =1080;
+
+	float mapCenterLatitude;
+	float mapCenterLongtitude;
+	float markerLatitude;
+	float markerLongtitude;
+
 	public enum MapType
 	{
 		roadmap, satellite, terrain, hybrid,
@@ -44,14 +51,9 @@ public class GoogleStaticMap : MonoBehaviour
 	private Color rawImageColor = Color.white;
 
 	IEnumerator Map()
-	{
-		float mapCenterLatitude;
-		float mapCenterLongtitude;
-		float markerLatitude;
-		float markerLongtitude;
-
-		markerLatitude = GPS.latitude;
-		markerLongtitude = GPS.longitude;
+	{ 
+		//markerLatitude = GPS.latitude;
+		//markerLongtitude = GPS.longitude;
 
 		pLatitude[i] = GPS.latitude;
 		pLongtitude[i] = GPS.longitude;
@@ -78,7 +80,7 @@ public class GoogleStaticMap : MonoBehaviour
 
 		label = Char.ToUpper(label);
 		
-		url = "https://maps.googleapis.com/maps/api/staticmap"
+		url = "https://www.googleapis.com/geolocation/v1/geolocatei"
 			+ "?center=" + mapCenterLatitude + "," + mapCenterLongtitude
 			+ "&zoom=" + mapZoom
 			+ "&size=" + mapWidth + "x" + mapHeight
@@ -105,20 +107,20 @@ public class GoogleStaticMap : MonoBehaviour
 	private void Reset()
 	{
 		rawImage = gameObject.GetComponentInChildren<RawImage>();
-		InvokeRepeating("RefreshMap", 0.0001f, 1f);
+		Invoke("RefreshMap", 1f);
 		//RefreshMap();
 
 	}
 
 	private void Start()
 	{
-		//Invoke("Reset", 1f);
+	
 	}
 
     private void Update()
     {
-		//Reset();
-		//Invoke("Reset", 1f);
+		markerLatitude = GPS.latitude;
+		markerLongtitude = GPS.longitude;
 	}
 
 	public void startWalk()

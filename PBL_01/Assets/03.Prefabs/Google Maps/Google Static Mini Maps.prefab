@@ -214,8 +214,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0973d5a7bd4864a49b289e4b0b9160e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  start: {fileID: 0}
-  finish: {fileID: 0}
   rawImage: {fileID: 114445348425454232}
   transparency: 1
   mapZoom: 14
@@ -292,7 +290,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 2800000, guid: a01a82159885fc541a026c5bdd92cd9e, type: 3}
+  m_Texture: {fileID: 0}
   m_UVRect:
     serializedVersion: 2
     x: 0
