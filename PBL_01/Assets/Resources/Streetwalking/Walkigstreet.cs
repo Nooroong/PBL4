@@ -46,7 +46,7 @@ public class Walkigstreet : MonoBehaviour
         while (P_screenPos.x < 1400)
         {
             xMove = 0;
-            xMove = 1/p_speed;
+            xMove = 2/p_speed;
             player.transform.Translate(new Vector3(xMove, 0, 0));
             yield return null;
         }
