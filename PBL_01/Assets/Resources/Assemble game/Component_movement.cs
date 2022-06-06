@@ -56,6 +56,7 @@ public class Component_movement : MonoBehaviour, IBeginDragHandler, IDragHandler
 
         if (hit)
         {
+            StartCoroutine(UntilPlayback(this.GetComponent<Image>()));
             this.transform.position = wp;
             //부모를 변경. hit.collider.name: ray 맞은 오브젝트 이름인듯?
             transform.SetParent(GameObject.Find(hit.collider.name).transform);
@@ -64,5 +65,12 @@ public class Component_movement : MonoBehaviour, IBeginDragHandler, IDragHandler
         {
             this.transform.position = defaultPosition;
         }
+    }
+
+        
+    IEnumerator UntilPlayback(Image obj)
+    {
+        obj.GetComponent<AudioSource>().Play();
+        yield return new WaitUntil(() => !obj.GetComponent<AudioSource>().isPlaying);
     }
 }

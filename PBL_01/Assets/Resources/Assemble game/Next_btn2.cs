@@ -20,6 +20,8 @@ public class Next_btn2 : MonoBehaviour
 
     public void Onclick()
     {
+        StartCoroutine(UntilPlayback(this.GetComponent<Button>()));
+
         next_cnt++;
 
         if (next_cnt < 2)
@@ -55,5 +57,11 @@ public class Next_btn2 : MonoBehaviour
             yield return null;
         }
         yield return null;
+    }
+
+    IEnumerator UntilPlayback(Button obj)
+    {
+        obj.GetComponent<AudioSource>().Play();
+        yield return new WaitUntil(() => !obj.GetComponent<AudioSource>().isPlaying);
     }
 }

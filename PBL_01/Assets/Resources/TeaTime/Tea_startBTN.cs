@@ -16,6 +16,14 @@ public class Tea_startBTN : MonoBehaviour
     
     public void OnClick()
     {
+        StartCoroutine(OnClick_co());
+    }
+
+    IEnumerator OnClick_co()
+    {
+        this.GetComponent<AudioSource>().Play();
+        yield return new WaitUntil(() => !this.GetComponent<AudioSource>().isPlaying);
+
         this.gameObject.SetActive(false);
         Teabag1.enabled = true; ;
         Teabag2.enabled = true; ;

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class BtnCtl : MonoBehaviour
 {
@@ -16,6 +17,13 @@ public class BtnCtl : MonoBehaviour
     // Update is called once per frame
     public void Onclick()
     {
+        StartCoroutine(Onclick_co(this.GetComponent<Button>()));
+    }
+
+    IEnumerator Onclick_co(Button obj)
+    {
+        obj.GetComponent<AudioSource>().Play();
+        yield return new WaitUntil(() => !obj.GetComponent<AudioSource>().isPlaying);
         this.gameObject.SetActive(false);
         cam.transform.gameObject.GetComponent<MaskCamera>().enabled = true;
         stick.transform.gameObject.GetComponent<Drag>().enabled = true;

@@ -20,6 +20,7 @@ public class nextBtn : MonoBehaviour
 
     public void FadeOut()
     {
+        StartCoroutine(UntilPlayback(this.GetComponent<Button>()));
         StartCoroutine(FadeOutFlow());
     }
 
@@ -38,5 +39,11 @@ public class nextBtn : MonoBehaviour
         }
         SceneManager.LoadScene("Consult1");
         yield return null;
+    }
+
+    IEnumerator UntilPlayback(Button obj)
+    {
+        obj.GetComponent<AudioSource>().Play();
+        yield return new WaitUntil(() => !obj.GetComponent<AudioSource>().isPlaying);
     }
 }

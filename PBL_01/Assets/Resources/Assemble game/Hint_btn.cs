@@ -24,6 +24,8 @@ public class Hint_btn : MonoBehaviour
 
     public void Onclick()
     {
+        StartCoroutine(UntilPlayback(this.GetComponent<Button>()));
+
         cnt++;
         if (cnt % 2 == 0)
         {
@@ -37,5 +39,12 @@ public class Hint_btn : MonoBehaviour
             black.enabled = true;
             this.GetComponent<Image>().sprite = Resources.Load("Assemble game\\open", typeof(Sprite)) as Sprite;
         }
+    }
+
+        
+    IEnumerator UntilPlayback(Button obj)
+    {
+        obj.GetComponent<AudioSource>().Play();
+        yield return new WaitUntil(() => !obj.GetComponent<AudioSource>().isPlaying);
     }
 }

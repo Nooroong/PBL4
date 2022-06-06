@@ -30,10 +30,17 @@ public class Start_btn : MonoBehaviour
     // Update is called once per frame
     public void Onclick()
     {
-        this.gameObject.SetActive(false);
-
+        StartCoroutine(UntilPlayback(this.GetComponent<Button>()));
         circuit.gameObject.GetComponent<Components_check>().enabled = true;
         hint_btn.gameObject.SetActive(true);
         black.enabled = false;
+    }
+
+    
+    IEnumerator UntilPlayback(Button obj)
+    {
+        obj.GetComponent<AudioSource>().Play();
+        yield return new WaitUntil(() => !obj.GetComponent<AudioSource>().isPlaying);
+        this.gameObject.SetActive(false);
     }
 }
