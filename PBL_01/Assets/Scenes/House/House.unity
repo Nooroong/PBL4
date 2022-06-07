@@ -1129,6 +1129,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 919dd5104b675aa4190b41a41af3b0cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  day_image: {fileID: 1051978125}
 --- !u!1 &413396670
 GameObject:
   m_ObjectHideFlags: 0
@@ -2892,6 +2893,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1051978126}
+  - component: {fileID: 1051978127}
   m_Layer: 5
   m_Name: Day_Image_ctrl
   m_TagString: Untagged
@@ -2920,6 +2922,20 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1051978127
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1051978125}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8056d2650cbe15045a13b71ca9c6cec1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  day_panel: {fileID: 1121870432}
+  Black: {fileID: 309244051}
 --- !u!1 &1103145621
 GameObject:
   m_ObjectHideFlags: 0

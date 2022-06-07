@@ -2,20 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
 
 public class day_Image_ctrl : MonoBehaviour
 {
     public Image day_panel;
     public Image Black;
     float time = 0f;
-    float F_time = 2f;
+    float F_time = 1.5f;
 
-    private void Start()
+    void Awake()
     {
-        if(PlayerPrefs.GetInt("day") == 1)
+        if(PlayerPrefs.GetInt("day") == 2)
             day_panel.GetComponent<Image>().sprite = Resources.Load("Day_Image\\day2", typeof(Sprite)) as Sprite;
-        else if (PlayerPrefs.GetInt("day") == 2)
+        else if (PlayerPrefs.GetInt("day") == 3)
             day_panel.GetComponent<Image>().sprite = Resources.Load("Day_Image\\day3", typeof(Sprite)) as Sprite;
     }
     void Update()
@@ -39,6 +38,7 @@ public class day_Image_ctrl : MonoBehaviour
     IEnumerator P_FadeInFlow()
     {
         day_panel.gameObject.SetActive(true);
+        Black.gameObject.SetActive(true);
         time = 0f;
         Color alpha = day_panel.color;
 
@@ -55,7 +55,6 @@ public class day_Image_ctrl : MonoBehaviour
     }
     IEnumerator B_FadeInFlow()
     {
-        Black.gameObject.SetActive(true);
         time = 0f;
         Color alpha = Black.color;
 
@@ -67,7 +66,6 @@ public class day_Image_ctrl : MonoBehaviour
             yield return null;
         }
         Black.gameObject.SetActive(false);
-        SceneManager.LoadScene("House");
         yield return null;
     }
 }

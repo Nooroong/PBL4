@@ -138,9 +138,8 @@ public class HouseCollisionCheck : MonoBehaviour
             case "bed":
                 if(PlayerPrefs.GetInt("day", -1) == 1) //day1 일 때 바로 잠들기
                 {
-                    //day_Image.GetComponent<day_Image_ctrl>().Day_Image();
                     PlayerPrefs.SetInt("sleep", 1); //잠자기 True로 전환
-                    Invoke("Sleep", 4);
+                    Invoke("Sleep", 1);
                 }
                 else
                 {
@@ -148,9 +147,8 @@ public class HouseCollisionCheck : MonoBehaviour
                     if ((bool)Day_manager.GetBool("bap") && (bool)Day_manager.GetBool("pill") && (bool)Day_manager.GetBool("planter")
                         && (bool)Day_manager.GetBool("random1") && (bool)Day_manager.GetBool("random2") && (bool)Day_manager.GetBool("routine"))
                     {
-                        //day_Image.GetComponent<day_Image_ctrl>().Day_Image();
                         PlayerPrefs.SetInt("sleep", 1); //잠자기 True로 전환
-                        Invoke("Sleep", 4);
+                        Invoke("Sleep", 1);
                     }
                 }
                 break;

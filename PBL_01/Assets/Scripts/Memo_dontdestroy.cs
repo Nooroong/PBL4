@@ -67,9 +67,8 @@ public class Memo_dontdestroy : MonoBehaviour
     void Update()
     {
         if (!PlayerPrefs.HasKey("bap") && !PlayerPrefs.HasKey("pill") && !PlayerPrefs.HasKey("planter")
-            && !PlayerPrefs.HasKey("random1") && !PlayerPrefs.HasKey("random2") && !PlayerPrefs.HasKey("sleep"))
+            && !PlayerPrefs.HasKey("random1") && !PlayerPrefs.HasKey("random2"))
         {
-            //Debug.Log("¿·");
             Destroy(Memo_ctrl);
         }
     }

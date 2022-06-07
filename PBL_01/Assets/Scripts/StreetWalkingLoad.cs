@@ -9,7 +9,7 @@ public class StreetWalkingLoad : MonoBehaviour
     public Image day_panel;
     public Image Panel;
     float time = 0f;
-    float F_time = 2f;
+    float F_time = 1.5f;
 
     private void Awake()
     {
@@ -30,7 +30,6 @@ public class StreetWalkingLoad : MonoBehaviour
     }
     IEnumerator FadeInFlow(Image panel)
     {
-        panel.gameObject.SetActive(true);
         time = 0f;
         Color alpha = panel.color;
 

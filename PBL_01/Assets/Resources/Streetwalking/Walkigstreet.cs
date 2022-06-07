@@ -9,7 +9,7 @@ public class Walkigstreet : MonoBehaviour
     public Camera m_cam;
 
     public GameObject tree, building, sky, fly;
-    Vector3 P_screenPos;
+    Vector3 P_screenPos, F_screenPos;
 
     Animator m_Animator;
 
@@ -22,18 +22,22 @@ public class Walkigstreet : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
-        m_Animator = GetComponent<Animator>();
-        walking();
+
     }
     void Start()
     {
-
+        m_Animator = GetComponent<Animator>();
+        P_screenPos = m_cam.WorldToScreenPoint(player.gameObject.transform.position);
+        F_screenPos = m_cam.WorldToScreenPoint(fly.gameObject.transform.position);
+        walking();
     }
 
     // Update is called once per frame
     void Update()
     {
-        P_screenPos= m_cam.WorldToScreenPoint(player.gameObject.transform.position);
+        P_screenPos = m_cam.WorldToScreenPoint(player.gameObject.transform.position);
+        Debug.Log(F_screenPos.x - P_screenPos.x);
+        F_screenPos = m_cam.WorldToScreenPoint(fly.gameObject.transform.position);
         time += Time.deltaTime / F_time;
     }
     public void walking()
@@ -43,7 +47,7 @@ public class Walkigstreet : MonoBehaviour
 
     IEnumerator WalkingFlow()
     {
-        while (P_screenPos.x < 1400)
+        while (F_screenPos.x - P_screenPos.x > 400)
         {
             xMove = 0;
             xMove = 2/p_speed;

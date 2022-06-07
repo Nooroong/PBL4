@@ -65,7 +65,8 @@ public class Components_check2 : MonoBehaviour
                 A3.GetComponent<Component_movement>().enabled = true;
                 B1.GetComponent<Component_movement>().enabled = true;
                 B2.GetComponent<Component_movement>().enabled = true;
-               //next.gameObject.SetActive(false);
+                //next.gameObject.SetActive(false);
+                next.enabled = false;
             }
         }
 
