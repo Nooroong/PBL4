@@ -17,7 +17,7 @@ public class GoogleStaticMap : MonoBehaviour
 	float[] pLatitude = new float[100];
 	float[] pLongtitude = new float[100];
 	[Range(1, 20)]
-	public int mapZoom = 30;
+	public int mapZoom =16;
 	public int mapWidth = 1080;
 	public int mapHeight =1080;
 
@@ -52,12 +52,10 @@ public class GoogleStaticMap : MonoBehaviour
 
 	IEnumerator Map()
 	{ 
-		//markerLatitude = GPS.latitude;
-		//markerLongtitude = GPS.longitude;
 
 		pLatitude[i] = GPS.latitude;
 		pLongtitude[i] = GPS.longitude;
-        //path = "%7C" + pLatitude[0] + "," + pLongtitude[0];
+
 
         if (i < 1)
         {
@@ -72,15 +70,18 @@ public class GoogleStaticMap : MonoBehaviour
 				i++;
 			}
 		}
-		mapCenterLatitude = GPS.latitude;
-		mapCenterLongtitude = GPS.longitude;
+		markerLatitude = GPS.latitude;
+		markerLongtitude = GPS.longitude;
+
+		mapCenterLatitude = markerLatitude;
+		mapCenterLongtitude = markerLongtitude;
 
 		rawImageColor.a = transparency;
 		rawImage.color = rawImageColor;
 
 		label = Char.ToUpper(label);
 		
-		url = "https://www.googleapis.com/geolocation/v1/geolocatei"
+		url = "https://maps.googleapis.com/maps/api/staticmap"
 			+ "?center=" + mapCenterLatitude + "," + mapCenterLongtitude
 			+ "&zoom=" + mapZoom
 			+ "&size=" + mapWidth + "x" + mapHeight
@@ -90,6 +91,7 @@ public class GoogleStaticMap : MonoBehaviour
 			+ "&path=weight:5%7Ccolor:orange" + path
 			+ "&key=" + apiKey;
 
+		//Debug.Log(url);
 		WWW www = new WWW(url);
 		yield return www;
 		rawImage.texture = www.texture;
@@ -107,7 +109,7 @@ public class GoogleStaticMap : MonoBehaviour
 	private void Reset()
 	{
 		rawImage = gameObject.GetComponentInChildren<RawImage>();
-		Invoke("RefreshMap", 1f);
+		InvokeRepeating("RefreshMap", 1f, 5f);
 		//RefreshMap();
 
 	}
@@ -119,8 +121,8 @@ public class GoogleStaticMap : MonoBehaviour
 
     private void Update()
     {
-		markerLatitude = GPS.latitude;
-		markerLongtitude = GPS.longitude;
+		//markerLatitude = GPS.latitude;
+		//markerLongtitude = GPS.longitude;
 	}
 
 	public void startWalk()
