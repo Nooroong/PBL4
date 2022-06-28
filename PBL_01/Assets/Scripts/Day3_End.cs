@@ -15,7 +15,7 @@ public class Day3_End : MonoBehaviour
         player.gameObject.SetActive(true);
 
 
-        xMove = -speed * Time.deltaTime;
+        xMove = +speed * Time.deltaTime;
         player.transform.Translate(new Vector3(xMove, 0, 0));
 
     }
