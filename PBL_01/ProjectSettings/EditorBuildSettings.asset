@@ -39,7 +39,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Day1/StreetLeaflet.unity
     guid: b79f01a8a98ce6946af5d909dabd5938
   - enabled: 1
-    path: Assets/Scenes/Prologue/ReadLeaflet.unity
+    path: Assets/Scenes/Day1/ReadLeaflet.unity
     guid: daaa29f1ee23d1544b86294e3b09e23f
   - enabled: 1
     path: Assets/Scenes/Day1/HospitalDesktop.unity
@@ -183,7 +183,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Day3/Day3_Pass.unity
     guid: 2fa6c9482e14c6a44ac1f87a89f88879
   - enabled: 1
-    path: Assets/Scenes/Prologue/Day1_Meeting.unity
+    path: Assets/Scenes/Day1/Day1_Meeting.unity
     guid: 04e9c859641be334fb73f46ed32023b6
   - enabled: 1
     path: Assets/Scenes/Day1/EHome.unity
@@ -206,7 +206,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Day3/Day3_Pictures.unity
     guid: 09741b4ecd0e99d4b863099b5776c9da
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
+  - enabled: 1
+    path: Assets/Scenes/Ending_Credit.unity
+    guid: e0f64689ea28d694ba5898dd8891269a
   m_configObjects: {}
