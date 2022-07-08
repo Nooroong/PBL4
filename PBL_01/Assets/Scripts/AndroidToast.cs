@@ -124,7 +124,7 @@ public class AndroidToast : MonoBehaviour
 
         if (toastStyle == null) {
             toastStyle = new GUIStyle(GUI.skin.box);
-            toastStyle.fontSize = 36;
+            toastStyle.fontSize = UnityEngine.Screen.width / 100;
             toastStyle.fontStyle = FontStyle.Bold;
             toastStyle.alignment = TextAnchor.MiddleCenter;
             toastStyle.normal.textColor = Color.white;

@@ -11,6 +11,11 @@ public class GameExit : MonoBehaviour
     private float time = 0f;
     private float F_time = 2f;
 
+    private void Awake() {
+        AndroidToast instance;
+        GameObject container = new GameObject("AndroidToast Singleton Container");
+        instance = container.AddComponent<AndroidToast>();
+    }
 
 #if UNITY_ANDROID
     private bool _preparedToQuit = false;
@@ -18,7 +23,7 @@ public class GameExit : MonoBehaviour
     private void Update() {
         if (Input.GetKeyDown(KeyCode.Escape)) {
             if (_preparedToQuit == false) {
-                AndroidToast.I.ShowToastMessage("µÚ·Î°¡±â ¹öÆ°À» ÇÑ ¹ø ´õ ´©¸£¸é Á¾·áµË´Ï´Ù.");
+                AndroidToast.I.ShowToastMessage("ë’¤ë¡œê°€ê¸° ë²„íŠ¼ì„ í•œ ë²ˆ ë” ëˆ„ë¥´ë©´ ì¢…ë£Œë©ë‹ˆë‹¤.");
                 PrepareToQuit();
             } else {
                 Debug.Log("Quit");

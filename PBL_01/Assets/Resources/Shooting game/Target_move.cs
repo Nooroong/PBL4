@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Target_move : MonoBehaviour
 {
-    public Camera m_cam; // ī�޶�
+    public Camera m_cam; // 카메라
 
     //Vector3 t1_screenPos, t2_screenPos, t3_screenPos, t4_screenPos;
 

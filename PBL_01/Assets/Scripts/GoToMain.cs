@@ -10,6 +10,7 @@ public class GoToMain : MonoBehaviour
     public GameObject Config_Box;
 
     private string scene_name;
+    private List<string> igr_scene = new List<string>(); // 여기서 나가도 저장하면 안되는 씬
 
     // Start is called before the first frame update
     private void Awake()
@@ -22,6 +23,9 @@ public class GoToMain : MonoBehaviour
         } else {
             Destroy(gameObject);
         }
+
+        igr_scene.Add("main");
+        igr_scene.Add("Ending_Credit");
     }
 
     private void Start() {
@@ -42,14 +46,16 @@ public class GoToMain : MonoBehaviour
     public void GoToMain_Btn_Click() {
         scene_name = SceneManager.GetActiveScene().name;
 
-        if (PlayerPrefs.GetInt("out", -1) == 1) {
-            PlayerPrefs.SetString("Last_scene", scene_name);
-            
-        } else {
-            if (PlayerPrefs.GetInt("Tea") == 1)
-                PlayerPrefs.SetInt("Tea", 0);
-            PlayerPrefs.SetString("Last_scene", "House");
+        if (!igr_scene.Contains(scene_name)) { 
+            if (PlayerPrefs.GetInt("out", -1) == 1) {
+                PlayerPrefs.SetString("Last_scene", scene_name);
+            } else {
+                if (PlayerPrefs.GetInt("Tea") == 1)
+                    PlayerPrefs.SetInt("Tea", 0);
+                PlayerPrefs.SetString("Last_scene", "House");
+            }
         }
+
         Debug.Log(PlayerPrefs.GetString("Last_scene"));
         
         StartCoroutine(UntilPlayback(Button));

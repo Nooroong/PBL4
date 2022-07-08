@@ -32,7 +32,8 @@ public class FootPrint : MonoBehaviour
         Foot1.GetComponent<AudioSource>().Play();
         yield return new WaitUntil(() => !Foot1.GetComponent<AudioSource>().isPlaying);
 
-        while (player.gameObject.transform.position.x < 570.0f)
+        // player.gameObject.transform.position.x < 570.0f
+        while (player.gameObject.transform.position.x < Foot1.gameObject.transform.position.x - 50)
         {
             m_Animator.GetComponent<Animator>().enabled = true;
             Foot1.gameObject.SetActive(false);
@@ -53,8 +54,9 @@ public class FootPrint : MonoBehaviour
     {
         Foot2.GetComponent<AudioSource>().Play();
         yield return new WaitUntil(() => !Foot2.GetComponent<AudioSource>().isPlaying);
-
-        while ((player.gameObject.transform.position.x > 570.0f) && (player.gameObject.transform.position.x < 760.0f))
+        
+        // (player.gameObject.transform.position.x > 570.0f) && (player.gameObject.transform.position.x < 760.0f)
+        while (player.gameObject.transform.position.x < Foot2.gameObject.transform.position.x - 50)
         {
             m_Animator.GetComponent<Animator>().enabled = true;
             Foot2.gameObject.SetActive(false);
@@ -74,8 +76,9 @@ public class FootPrint : MonoBehaviour
     {
         Foot3.GetComponent<AudioSource>().Play();
         yield return new WaitUntil(() => !Foot3.GetComponent<AudioSource>().isPlaying);
-
-        while ((player.gameObject.transform.position.x > 750.0f) && (player.gameObject.transform.position.x < 880.0f))
+        
+        // (player.gameObject.transform.position.x > 750.0f) && (player.gameObject.transform.position.x < 880.0f)
+        while (player.gameObject.transform.position.x < Foot3.gameObject.transform.position.x - 50)
         {
             m_Animator.GetComponent<Animator>().enabled = true;
             Foot3.gameObject.SetActive(false);
@@ -95,8 +98,9 @@ public class FootPrint : MonoBehaviour
     {
         Foot4.GetComponent<AudioSource>().Play();
         yield return new WaitUntil(() => !Foot4.GetComponent<AudioSource>().isPlaying);
-
-        while ((player.gameObject.transform.position.x > 880.0f) && (player.gameObject.transform.position.x < 1100.0f))
+        
+        // (player.gameObject.transform.position.x > 880.0f) && (player.gameObject.transform.position.x < 1100.0f)
+        while (player.gameObject.transform.position.x < Foot4.gameObject.transform.position.x - 50)
         {
             m_Animator.GetComponent<Animator>().enabled = true;
             Foot4.gameObject.SetActive(false);
@@ -117,8 +121,9 @@ public class FootPrint : MonoBehaviour
     {
         Foot5.GetComponent<AudioSource>().Play();
         yield return new WaitUntil(() => !Foot5.GetComponent<AudioSource>().isPlaying);
-
-        while ((player.gameObject.transform.position.x > 1050.0f) && (player.gameObject.transform.position.x < 1220.0f))
+        
+        // (player.gameObject.transform.position.x > 1050.0f) && (player.gameObject.transform.position.x < 1220.0f)
+        while (player.gameObject.transform.position.x < Foot5.gameObject.transform.position.x - 50)
         {
             m_Animator.GetComponent<Animator>().enabled = true;
             Foot5.gameObject.SetActive(false);

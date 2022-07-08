@@ -18,41 +18,41 @@ public class Day3_Pictures_VideoCtrl : MonoBehaviour
         Panel.gameObject.SetActive(false);
 
         if (mScreen != null && mVideoPlayer != null) {
-            mVideoPlayer.loopPointReached += CheckOver; //¿µ»ó ³¡³µ´ÂÁö È®ÀÎ(https://mentum.tistory.com/170)
-            // ºñµğ¿À ÁØºñ ÄÚ·çÆ¾ È£Ãâ
+            mVideoPlayer.loopPointReached += CheckOver; //ì˜ìƒ ëë‚¬ëŠ”ì§€ í™•ì¸(https://mentum.tistory.com/170)
+            // ë¹„ë””ì˜¤ ì¤€ë¹„ ì½”ë£¨í‹´ í˜¸ì¶œ
             StartCoroutine(PrepareVideo());
         }
     }
 
     protected IEnumerator PrepareVideo() {
-        // ºñµğ¿À ÁØºñ
+        // ë¹„ë””ì˜¤ ì¤€ë¹„
         mVideoPlayer.Prepare();
 
-        // ºñµğ¿À°¡ ÁØºñµÇ´Â °ÍÀ» ±â´Ù¸²
+        // ë¹„ë””ì˜¤ê°€ ì¤€ë¹„ë˜ëŠ” ê²ƒì„ ê¸°ë‹¤ë¦¼
         while (!mVideoPlayer.isPrepared) {
             yield return new WaitForSeconds(0.5f);
         }
 
-        // VideoPlayerÀÇ Ãâ·Â texture¸¦ RawImageÀÇ texture·Î ¼³Á¤ÇÑ´Ù
+        // VideoPlayerì˜ ì¶œë ¥ textureë¥¼ RawImageì˜ textureë¡œ ì„¤ì •í•œë‹¤
         mScreen.texture = mVideoPlayer.texture;
     }
 
     public void PlayVideo() {
         if (mVideoPlayer != null && mVideoPlayer.isPrepared) {
-            // ºñµğ¿À Àç»ı
+            // ë¹„ë””ì˜¤ ì¬ìƒ
             mVideoPlayer.Play();
         }
     }
 
     public void StopVideo() {
         if (mVideoPlayer != null && mVideoPlayer.isPrepared) {
-            // ºñµğ¿À ¸ØÃã
+            // ë¹„ë””ì˜¤ ë©ˆì¶¤
             mVideoPlayer.Stop();
         }
     }
 
     void CheckOver(UnityEngine.Video.VideoPlayer vp) {
-        Invoke("F_Out", 0.5f); //¿µ»ó ³¡³ª¸é ´ÙÀ½ ¾ÀÀ¸·Î ³Ñ¾î°¨
+        Invoke("F_Out", 0.5f); //ì˜ìƒ ëë‚˜ë©´ ë‹¤ìŒ ì”¬ìœ¼ë¡œ ë„˜ì–´ê°
     }
 
 

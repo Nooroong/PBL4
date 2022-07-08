@@ -13,7 +13,7 @@ public class test : MonoBehaviour
     int cnt = 0;
     public void Start()
     {
-        //¸Þ¸ð °¡Á®¿À±â
+        //ë©”ëª¨ ê°€ì ¸ì˜¤ê¸°
         Memo_ctrl = GameObject.Find("Memo_ctrl");
     }
     public void Complete()
