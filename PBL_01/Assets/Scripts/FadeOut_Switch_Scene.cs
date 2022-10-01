@@ -39,7 +39,6 @@ public class FadeOut_Switch_Scene : MonoBehaviour
     public void Start()
     {
         Panel.gameObject.SetActive(false);
-
     }
 
     
