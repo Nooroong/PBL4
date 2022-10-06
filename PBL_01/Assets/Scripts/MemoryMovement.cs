@@ -2,37 +2,37 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.EventSystems; //»ó¼Ó¿¡ »ç¿ë
+using UnityEngine.EventSystems; //ìƒì†ì— ì‚¬ìš©
 
 public class MemoryMovement : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
-    /*Âü°í ¸µÅ©
-    https://greenteacat.tistory.com/35 (µå·¡±× ¾Ø µå·Ó)
-    https://sensol2.tistory.com/35 (ÀÌ¹ÌÁö ¿µ¿ª)
+    /*ì°¸ê³  ë§í¬
+    https://greenteacat.tistory.com/35 (ë“œë˜ê·¸ ì•¤ ë“œë¡­)
+    https://sensol2.tistory.com/35 (ì´ë¯¸ì§€ ì˜ì—­)
     */
 
-    public Vector3 defaultPosition; //µå·Ó ÈÄ ¿øÀ§Ä¡·Î º¸³»±â À§ÇÑ º¯¼ö
+    public Vector3 defaultPosition; //ë“œë¡­ í›„ ì›ìœ„ì¹˜ë¡œ ë³´ë‚´ê¸° ìœ„í•œ ë³€ìˆ˜
     public float smoothTime = 0.0005f;
 
-    //ÅÍÄ¡ ¿µ¿ª °ü·Ã ÄÚµå1. ÀÌ¹ÌÁöµéÀ» ÆĞÅ·ÇÏ¸é ÀÌ ±â´ÉÀ» ¾µ ¼ö ¾ø´Ù...
+    //í„°ì¹˜ ì˜ì—­ ê´€ë ¨ ì½”ë“œ1. ì´ë¯¸ì§€ë“¤ì„ íŒ¨í‚¹í•˜ë©´ ì´ ê¸°ëŠ¥ì„ ì“¸ ìˆ˜ ì—†ë‹¤...
     public float AlphaThreshold = 0.1f;
 
-    string parent_name; //ºÎ¸ğ°¡ µÉ ¿ÀºêÁ§Æ®ÀÇ ÀÌ¸§
+    string parent_name; //ë¶€ëª¨ê°€ ë  ì˜¤ë¸Œì íŠ¸ì˜ ì´ë¦„
 
 
     // Start is called before the first frame update
     void Start()
     {
-        //ÅÍÄ¡ ¿µ¿ª °ü·Ã ÄÚµå2
+        //í„°ì¹˜ ì˜ì—­ ê´€ë ¨ ì½”ë“œ2
         this.GetComponent<Image>().alphaHitTestMinimumThreshold = AlphaThreshold;
     }
 
 
 
     public void OnBeginDrag(PointerEventData eventData) {
-        //µå·¡±×¸¦ ½ÃÀÛÇÒ ¶§ÀÇ ¸¶¿ì½º ÁÂÇ¥¸¦ ÀúÀå... ÇÏ¸é À§Ä¡°¡ Á¶±İ¾¿ ¾î±ß³ª°Ô µÈ´Ù.
-        //(¸¶¿ì½º ÁÂÇ¥¿Í ½ÇÁ¦ ¿ÀºêÁ§Æ®ÀÇ ÁÂÇ¥ Â÷ÀÌ ¶§¹®.)
-        //¹æ±İ Å¬¸¯ÇÑ ¿ÀºêÁ§Æ®ÀÇ ÁÂÇ¥¸¦ ÀúÀåÇÏ´Â °Ô °¡Àå È®½ÇÇÏ´Ù.
+        //ë“œë˜ê·¸ë¥¼ ì‹œì‘í•  ë•Œì˜ ë§ˆìš°ìŠ¤ ì¢Œí‘œë¥¼ ì €ì¥... í•˜ë©´ ìœ„ì¹˜ê°€ ì¡°ê¸ˆì”© ì–´ê¸‹ë‚˜ê²Œ ëœë‹¤.
+        //(ë§ˆìš°ìŠ¤ ì¢Œí‘œì™€ ì‹¤ì œ ì˜¤ë¸Œì íŠ¸ì˜ ì¢Œí‘œ ì°¨ì´ ë•Œë¬¸.)
+        //ë°©ê¸ˆ í´ë¦­í•œ ì˜¤ë¸Œì íŠ¸ì˜ ì¢Œí‘œë¥¼ ì €ì¥í•˜ëŠ” ê²Œ ê°€ì¥ í™•ì‹¤í•˜ë‹¤.
         Vector2 mouseDragPosition = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
         Vector2 worldObjectPosition = Camera.main.ScreenToWorldPoint(mouseDragPosition);
 
@@ -41,35 +41,35 @@ public class MemoryMovement : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
     }
 
     public void OnDrag(PointerEventData eventData) {
-        //µå·¡±×°¡ ÀÌ·ïÁö´Â ¼ø°£ÀÇ ¸¶¿ì½º Æ÷Áö¼ÇÀ» ¹Ş¾Æ ¿ÀºêÁ§Æ®°¡ Æ÷ÀÎÅÍ¸¦ µû¶ó°¡°Ô ÇÔ.
+        //ë“œë˜ê·¸ê°€ ì´ë¤„ì§€ëŠ” ìˆœê°„ì˜ ë§ˆìš°ìŠ¤ í¬ì§€ì…˜ì„ ë°›ì•„ ì˜¤ë¸Œì íŠ¸ê°€ í¬ì¸í„°ë¥¼ ë”°ë¼ê°€ê²Œ í•¨.
         Vector2 mouseDragPosition = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
         Vector2 worldObjectPosition = Camera.main.ScreenToWorldPoint(mouseDragPosition);
         this.transform.position = worldObjectPosition;
-        //±â¾ï Á¶°¢ÀÌ ¸Ç ¾Õ¿¡ À§Ä¡ÇÏµµ·Ï ÀÓ½Ã·Î ºÎ¸ğ º¯°æ
+        //ê¸°ì–µ ì¡°ê°ì´ ë§¨ ì•ì— ìœ„ì¹˜í•˜ë„ë¡ ì„ì‹œë¡œ ë¶€ëª¨ ë³€ê²½
         transform.SetParent(GameObject.Find("emptyImage").transform);
     }
 
     public void OnEndDrag(PointerEventData eventData) {
-        //Ä«¸Ş¶ó¿¡¼­ ¸¶¿ì½º À§Ä¡·Î Ray¸¦ ½÷¼­ 'Äİ¶óÀÌ´õ'¿Í ¸Â¾Ò´ÂÁö ÆÇº°
-        //°¨Áö¸¦ ¿øÇÏ´Â ¿ÀºêÁ§Æ®¿¡ Äİ¶óÀÌ´õ¸¦ Ãß°¡ÇØ¾ßÇÑ´Ù.
+        //ì¹´ë©”ë¼ì—ì„œ ë§ˆìš°ìŠ¤ ìœ„ì¹˜ë¡œ Rayë¥¼ ì´ì„œ 'ì½œë¼ì´ë”'ì™€ ë§ì•˜ëŠ”ì§€ íŒë³„
+        //ê°ì§€ë¥¼ ì›í•˜ëŠ” ì˜¤ë¸Œì íŠ¸ì— ì½œë¼ì´ë”ë¥¼ ì¶”ê°€í•´ì•¼í•œë‹¤.
 
         Vector2 mouseDragPosition = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
         Vector2 worldObjectPosition = Camera.main.ScreenToWorldPoint(mouseDragPosition);
 
-        Vector2 wp = worldObjectPosition; //¹öÆ°À» ¶ÃÀ» ¶§ ÁÂÇ¥¸¦ °¡Á®¿È
-        Ray2D ray = new Ray2D(wp, Vector2.zero); //¿øÁ¡¿¡¼­ ¸¶¿ì½º ÁÂÇ¥ ¹æÇâÀ¸·Î Ray¸¦ ½ô
-        float distance = Mathf.Infinity; //Ray ³»¿¡¼­ °¨ÁöÇÒ ÃÖ´ë °Å¸®
+        Vector2 wp = worldObjectPosition; //ë²„íŠ¼ì„ ë—ì„ ë•Œ ì¢Œí‘œë¥¼ ê°€ì ¸ì˜´
+        Ray2D ray = new Ray2D(wp, Vector2.zero); //ì›ì ì—ì„œ ë§ˆìš°ìŠ¤ ì¢Œí‘œ ë°©í–¥ìœ¼ë¡œ Rayë¥¼ ì¨
+        float distance = Mathf.Infinity; //Ray ë‚´ì—ì„œ ê°ì§€í•  ìµœëŒ€ ê±°ë¦¬
 
         RaycastHit2D hit = Physics2D.Raycast(ray.origin, ray.direction, distance);
 
-        this.GetComponent<AudioSource>().Play(); //È¿°úÀ½ Àç»ı
+        this.GetComponent<AudioSource>().Play(); //íš¨ê³¼ìŒ ì¬ìƒ
 
         if (hit) {
             this.transform.position = wp;
-            //ºÎ¸ğ¸¦ º¯°æ. hit.collider.name: ray ¸ÂÀº ¿ÀºêÁ§Æ® ÀÌ¸§ÀÎµí?
+            //ë¶€ëª¨ë¥¼ ë³€ê²½. hit.collider.name: ray ë§ì€ ì˜¤ë¸Œì íŠ¸ ì´ë¦„ì¸ë“¯?
             transform.SetParent(GameObject.Find(hit.collider.name).transform);
         } else {
-            //¿ø·¡ À§Ä¡·Î µ¹¾Æ°¥ »Ó¸¸ ¾Æ´Ï¶ó, ¿ø·¡ ºÎ¸ğ·Îµµ µ¹¾Æ°¡¾ß ÇÔ.
+            //ì›ë˜ ìœ„ì¹˜ë¡œ ëŒì•„ê°ˆ ë¿ë§Œ ì•„ë‹ˆë¼, ì›ë˜ ë¶€ëª¨ë¡œë„ ëŒì•„ê°€ì•¼ í•¨.
             this.transform.position = defaultPosition;
             transform.SetParent(GameObject.Find(parent_name).transform);
         }

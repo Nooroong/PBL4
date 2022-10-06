@@ -31,7 +31,7 @@ public class LockPattern : MonoBehaviour {
     Dictionary<int, CircleIdentifier> circles = new Dictionary<int, CircleIdentifier>();
 
     bool unLocking; //잠금해제 상태를 저장하는 변수
-    bool enabled = true;
+    bool enable = true;
     // Start is called before the first frame update
     void Start() {
         for (int i = 0; i < transform.childCount; i++) {
@@ -44,7 +44,7 @@ public class LockPattern : MonoBehaviour {
 
     // Update is called once per frame
     void Update() {
-        if (!enabled) {
+        if (!enable) {
             return;
         }
 
@@ -57,7 +57,7 @@ public class LockPattern : MonoBehaviour {
     }
 
     IEnumerator Release() {
-        enabled = false;
+        enable = false;
 
         yield return new WaitForSeconds(3);
 
@@ -75,7 +75,7 @@ public class LockPattern : MonoBehaviour {
         lineOnEditRcTs = null;
         circleOnEdit = null;
 
-        enabled = true;
+        enable = true;
     }
 
     GameObject CreateLine(Vector3 pos, int id) {
@@ -115,7 +115,7 @@ public class LockPattern : MonoBehaviour {
     }
 
     public void OnMouseEnterCircle(CircleIdentifier idf) {
-        if (!enabled) {
+        if (!enable) {
             return;
         }
         if (unLocking) {
@@ -127,7 +127,7 @@ public class LockPattern : MonoBehaviour {
         }
     }
     public void OnMouseExitCircle(CircleIdentifier idf) {
-        if (!enabled) {
+        if (!enable) {
             return;
         }
         StartCoroutine(OnMouseExitCircle(idf.id));
@@ -139,14 +139,14 @@ public class LockPattern : MonoBehaviour {
     }
 
     public void OnMouseDownCircle(CircleIdentifier idf) {
-        if (!enabled) {
+        if (!enable) {
             return;
         }
         unLocking = true;
         TrySetLineEdit(idf);
     }
     public void OnMouseUpCircle(CircleIdentifier idf) {
-        if (!enabled) {
+        if (!enable) {
             return;
         }
         if (unLocking) {

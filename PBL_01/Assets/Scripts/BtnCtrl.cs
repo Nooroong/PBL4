@@ -30,13 +30,13 @@ public class BtnCtrl : MonoBehaviour
     private Button btn;
 
     public void Start() {
-        //¾Æ·¡ µû¿ÈÇ¥ ¾È¿¡ ÇØ´çµÇ´Â ¹öÆ° ¿ÀºêÁ§Æ®ÀÇ ÀÌ¸§À» Àû´Â´Ù.
+        //ï¿½Æ·ï¿½ ï¿½ï¿½ï¿½ï¿½Ç¥ ï¿½È¿ï¿½ ï¿½Ø´ï¿½Ç´ï¿½ ï¿½ï¿½Æ° ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ®ï¿½ï¿½ ï¿½Ì¸ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Â´ï¿½.
         btn = GameObject.Find("Complete").GetComponent<Button>();
-        btn.interactable = false; //¹öÆ° »óÈ£ÀÛ¿ë ºñÈ°¼ºÈ­
+        btn.interactable = false; //ï¿½ï¿½Æ° ï¿½ï¿½È£ï¿½Û¿ï¿½ ï¿½ï¿½È°ï¿½ï¿½È­
     }
 
     public void BtnState() {
-        //!¾Æ·¡ Á¶°Ç º¯°æ!
+        //!ï¿½Æ·ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½!
         if ((toggle1_1.isOn == true || toggle1_2.isOn == true) && 
             (toggle2_1.isOn == true || toggle2_2.isOn == true) &&
             (toggle3_1.isOn == true || toggle3_2.isOn == true) &&
@@ -46,10 +46,10 @@ public class BtnCtrl : MonoBehaviour
             (toggle7_1.isOn == true || toggle7_2.isOn == true) &&
             (toggle8_1.isOn == true || toggle8_2.isOn == true) &&
             (toggle9_1.isOn == true || toggle9_2.isOn == true) &&
-            (toggle10_1.isOn == true || toggle10_2.isOn == true)) { //¸ðµç Ç×¸ñÀ» Ã¼Å©ÇÑ °æ¿ì
-            btn.interactable = true; //¹öÆ° »óÈ£ÀÛ¿ë È°¼ºÈ­
-        } else { //Ç×¸ñÀÌ ¸ðµÎ Ã¼Å©µÇÁö ¾ÊÀº °æ¿ì
-            btn.interactable = false; //¹öÆ° »óÈ£ÀÛ¿ë ºñÈ°¼ºÈ­
+            (toggle10_1.isOn == true || toggle10_2.isOn == true)) { //ï¿½ï¿½ï¿½ ï¿½×¸ï¿½ï¿½ï¿½ Ã¼Å©ï¿½ï¿½ ï¿½ï¿½ï¿½
+            btn.interactable = true; //ï¿½ï¿½Æ° ï¿½ï¿½È£ï¿½Û¿ï¿½ È°ï¿½ï¿½È­
+        } else { //ï¿½×¸ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ Ã¼Å©ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
+            btn.interactable = false; //ï¿½ï¿½Æ° ï¿½ï¿½È£ï¿½Û¿ï¿½ ï¿½ï¿½È°ï¿½ï¿½È­
         }
     }
     public void Update()

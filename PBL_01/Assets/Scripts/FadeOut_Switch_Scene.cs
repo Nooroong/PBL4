@@ -44,8 +44,10 @@ public class FadeOut_Switch_Scene : MonoBehaviour
     
     IEnumerator UntilPlayback(Button obj)
     {
-        obj.GetComponent<AudioSource>().Play();
-        yield return new WaitUntil(() => !obj.GetComponent<AudioSource>().isPlaying);
+        if(obj != null) {
+            obj.GetComponent<AudioSource>().Play();
+            yield return new WaitUntil(() => !obj.GetComponent<AudioSource>().isPlaying);
+        }
     }
     
 }

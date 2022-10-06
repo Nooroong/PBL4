@@ -236,7 +236,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   btn: {fileID: 1392465792}
   Panel: {fileID: 1548489502}
-  nextScene: 
+  nextScene: PuzzleGame
 --- !u!114 &50387760
 MonoBehaviour:
   m_ObjectHideFlags: 0

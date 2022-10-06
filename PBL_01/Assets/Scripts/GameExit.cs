@@ -8,8 +8,8 @@ public class GameExit : MonoBehaviour
 {
     private int width = (int)(Screen.width * 0.5f);
     private int height = (int)(Screen.height * 0.5f);
-    private float time = 0f;
-    private float F_time = 2f;
+    // private float time = 0f;
+    // private float F_time = 2f;
 
     private void Awake() {
         AndroidToast instance;
