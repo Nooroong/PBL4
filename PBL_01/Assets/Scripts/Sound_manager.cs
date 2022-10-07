@@ -11,7 +11,7 @@ public class Sound_manager : MonoBehaviour
     public AudioClip[] bglist;
     public static Sound_manager instance;
 
-    int tea, Out, day, rain;
+    int tea, Out, day, rain, bully;
     string s_name = "";
     float fadeInTime = 2.0f;
     float fadeOutTime = 1.0f;
@@ -23,6 +23,7 @@ public class Sound_manager : MonoBehaviour
         Out = -1;
         day = -1;
         rain = -1;
+        bully = -1;
         if (instance== null)
         {
             instance = this;
@@ -49,13 +50,14 @@ public class Sound_manager : MonoBehaviour
             {
                 //씬이 main, Walking, meditation, Prologue_Spaceship2, Prologue_ForcedLanding, Assistance2, Siren, Shooting_game 일 경우
                
-                    if (arg0.name == bglist[i].name)
+                if (arg0.name == bglist[i].name)
                 { 
                     s_name = arg0.name;
                     BGSoundPlay(bglist[i]);
                     break;
                 }
                 else if (rain != PlayerPrefs.GetInt("Rain") | tea != PlayerPrefs.GetInt("Tea") | Out != PlayerPrefs.GetInt("out") | day != PlayerPrefs.GetInt("day") //차 마시기, 밖으로 나가기, 이전 씬이 main, Walking, meditation 이었을 경우
+                   | bully != PlayerPrefs.GetInt("Bully")
                     | s_name != "")
                 {
                     s_name = "";
@@ -64,6 +66,7 @@ public class Sound_manager : MonoBehaviour
                     Out = PlayerPrefs.GetInt("out");
                     day = PlayerPrefs.GetInt("day");
                     rain = PlayerPrefs.GetInt("Rain");
+                    bully = PlayerPrefs.GetInt("Bully");
 
                     if (PlayerPrefs.GetInt("Tea") == 1)
                     {
@@ -72,6 +75,10 @@ public class Sound_manager : MonoBehaviour
                     else if (PlayerPrefs.GetInt("Rain") == 1)
                     {
                         BGSoundPlay(bglist[12]);
+                    }
+                    else if (PlayerPrefs.GetInt("Bully") == 1)
+                    {
+                        BGSoundPlay(bglist[17]);
                     }
                     else if (PlayerPrefs.GetInt("out") == 0)
                     {
@@ -92,6 +99,9 @@ public class Sound_manager : MonoBehaviour
                                 break;
                             case 3:
                                 BGSoundPlay(bglist[7]);
+                                break;
+                            case 4:
+                                BGSoundPlay(bglist[15]);
                                 break;
                         }
 

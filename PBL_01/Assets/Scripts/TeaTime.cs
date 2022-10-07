@@ -9,7 +9,13 @@ public class TeaTime : MonoBehaviour
     public Image kettle, tea;
     int speed = 320;
     float yMove;
-
+    float kettel_y, tea_y;
+    float time_k, time_t;
+    void Start()
+    {
+        kettel_y = kettle.gameObject.transform.position.y;
+        tea_y = tea.gameObject.transform.position.y;
+    }
     public void B_water()
     {
         StartCoroutine(BoilingWaterFlow());
@@ -18,9 +24,11 @@ public class TeaTime : MonoBehaviour
     IEnumerator BoilingWaterFlow()
     {
         yMove = 0;
-
-        while (kettle.gameObject.transform.position.y < 1500.0f)
+        time_k = 0;
+        //while (kettle.gameObject.transform.position.y < 1500.0f)
+        while(time_k <= 3.0f)
         {
+            time_k = time_k + Time.deltaTime;
             yMove = speed * Time.deltaTime;
             kettle.transform.Translate(new Vector3(0, yMove, 0));
             yield return null;
@@ -28,8 +36,8 @@ public class TeaTime : MonoBehaviour
         yield return new WaitForSeconds(3.0f);
 
         yMove = 0;
-
-        while (kettle.gameObject.transform.position.y >= 540.0f)
+       // while (kettle.gameObject.transform.position.y >= 540.0f)
+        while (kettle.gameObject.transform.position.y >= kettel_y)
         {
             yMove = -speed * Time.deltaTime;
             kettle.transform.Translate(new Vector3(0, yMove, 0));
@@ -46,9 +54,10 @@ public class TeaTime : MonoBehaviour
     IEnumerator AddTea()
     {
         yMove = 0;
-
-        while (tea.gameObject.transform.position.y < 1500.0f)
+        time_t = 0; 
+        while (time_t <= 3.0f)
         {
+            time_t = time_t + Time.deltaTime;
             yMove = speed * Time.deltaTime;
             tea.transform.Translate(new Vector3(0, yMove, 0));
             yield return null;
@@ -57,7 +66,7 @@ public class TeaTime : MonoBehaviour
 
         yMove = 0;
 
-        while (tea.gameObject.transform.position.y >= 683.0f)
+        while (tea.gameObject.transform.position.y >= tea_y)
         {
             yMove = -speed * Time.deltaTime;
             tea.transform.Translate(new Vector3(0, yMove, 0));

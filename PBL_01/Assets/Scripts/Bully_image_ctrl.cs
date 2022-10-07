@@ -10,9 +10,13 @@ public class Bully_image_ctrl : MonoBehaviour
     public GameObject panel, BG;
 
     // Start is called before the first frame update
+    void Awake()
+    {
+        PlayerPrefs.SetInt("Bully", 1); //BGM을 위해 Bully true로 설정
+    }
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame

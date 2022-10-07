@@ -16,6 +16,7 @@ public class day_Image_ctrl : MonoBehaviour
             day_panel.GetComponent<Image>().sprite = Resources.Load("Day_Image\\day2", typeof(Sprite)) as Sprite;
         else if (PlayerPrefs.GetInt("day") == 3)
             day_panel.GetComponent<Image>().sprite = Resources.Load("Day_Image\\day3", typeof(Sprite)) as Sprite;
+    
     }
     void Update()
     {

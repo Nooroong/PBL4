@@ -170,6 +170,11 @@ public class HouseCollisionCheck : MonoBehaviour
                     PlayerPrefs.SetInt("out", 1);
                     SceneManager.LoadScene("Day3_start");
                 }
+                else if (PlayerPrefs.GetInt("day") == 4)
+                {
+                    PlayerPrefs.SetInt("out", 1);
+                    SceneManager.LoadScene("Day4_Start");
+                }
                 break;
             case "meditation":
                 SceneManager.LoadScene("meditation");
