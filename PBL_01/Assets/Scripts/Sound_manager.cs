@@ -101,7 +101,7 @@ public class Sound_manager : MonoBehaviour
                                 BGSoundPlay(bglist[7]);
                                 break;
                             case 4:
-                                BGSoundPlay(bglist[19]);
+                                BGSoundPlay(bglist[15]);
                                 break;
                         }
 
