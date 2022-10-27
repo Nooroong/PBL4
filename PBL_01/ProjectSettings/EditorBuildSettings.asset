@@ -236,4 +236,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Day6/Day6_BackToUnemotion03.unity
     guid: 2bb427187482d4b4790a0ee8d1a17e69
+  - enabled: 1
+    path: Assets/Scenes/Day6/Day6_Video.unity
+    guid: 58c60215390965049a5c3143cc9dc4c3
   m_configObjects: {}
