@@ -11,7 +11,7 @@ public class Sound_manager : MonoBehaviour
     public AudioClip[] bglist;
     public static Sound_manager instance;
 
-    int tea, Out, day, rain, bully;
+    int tea, Out, day, rain, bully, guitar, after_busking;
     string s_name = "";
     float fadeInTime = 2.0f;
     float fadeOutTime = 1.0f;
@@ -24,6 +24,8 @@ public class Sound_manager : MonoBehaviour
         day = -1;
         rain = -1;
         bully = -1;
+        guitar = -1;
+        after_busking = -1;
         if (instance== null)
         {
             instance = this;
@@ -48,7 +50,8 @@ public class Sound_manager : MonoBehaviour
         {
             for (int i = 0; i < bglist.Length; i++)
             {
-                //씬이 main, Walking, meditation, Prologue_Spaceship2, Prologue_ForcedLanding, Assistance2, Siren, Shooting_game 일 경우
+                //씬이 main, Walking, meditation, Prologue_Spaceship2, Prologue_ForcedLanding,
+                //Assistance2, Siren, Shooting_game, Day4_comfort, PuzzleGame, Assistance2, Day4_Start, fight_game 일 경우
                
                 if (arg0.name == bglist[i].name)
                 { 
@@ -57,7 +60,7 @@ public class Sound_manager : MonoBehaviour
                     break;
                 }
                 else if (rain != PlayerPrefs.GetInt("Rain") | tea != PlayerPrefs.GetInt("Tea") | Out != PlayerPrefs.GetInt("out") | day != PlayerPrefs.GetInt("day") //차 마시기, 밖으로 나가기, 이전 씬이 main, Walking, meditation 이었을 경우
-                   | bully != PlayerPrefs.GetInt("Bully")
+                   | bully != PlayerPrefs.GetInt("Bully") | guitar != PlayerPrefs.GetInt("Guitar") | after_busking != PlayerPrefs.GetInt("BuskingEnd")
                     | s_name != "")
                 {
                     s_name = "";
@@ -80,6 +83,14 @@ public class Sound_manager : MonoBehaviour
                     {
                         BGSoundPlay(bglist[17]);
                     }
+                    else if (PlayerPrefs.GetInt("Guitar") == 1)
+                    {
+                        BGSoundPlay(bglist[20]);
+                    }
+                    else if (PlayerPrefs.GetInt("BuskingEnd") == 1)
+                    {
+                        BGSoundPlay(bglist[21]);
+                    }
                     else if (PlayerPrefs.GetInt("out") == 0)
                     {
                         BGSoundPlay(bglist[0]);
@@ -101,7 +112,7 @@ public class Sound_manager : MonoBehaviour
                                 BGSoundPlay(bglist[7]);
                                 break;
                             case 4:
-                                BGSoundPlay(bglist[15]);
+                                BGSoundPlay(bglist[15]); //말싸움 대화 장면
                                 break;
                         }
 

@@ -9,7 +9,7 @@ public class Teatime_blow : MonoBehaviour
     public float sensitivity = 100;
     public float loudness = 0;
     private AudioSource _audio;
-    public Text text;
+
     void Awake()
     {
         _audio = GetComponent<AudioSource>();
@@ -22,7 +22,6 @@ public class Teatime_blow : MonoBehaviour
         while (!(Microphone.GetPosition(null) > 0)) { }
         _audio.Play();
 
-        text.gameObject.SetActive(false);
     }
     void Update()
     {
@@ -30,12 +29,10 @@ public class Teatime_blow : MonoBehaviour
         if (loudness > 7)
         {
             IncreaseBar();
-            text.gameObject.SetActive(true);
         }
         else
         {
             // Movie2.SetActive(false);
-            text.gameObject.SetActive(false);
             //Debug.Log("Ready");
         }
         if (Input.GetButtonDown("Cancel"))

@@ -23,6 +23,7 @@ public class HouseCollisionCheck : MonoBehaviour
     private string collisionObj = "null"; //주인공과 충돌한 오브젝트의 이름을 저장하는 변수
     private string[] ign_arr = { "null", "wall", "floor", "phonograph", "sofa" }; //충돌해도 버튼을 활성화 시키지 않는 오브젝트
     private string[] day1_ign_arr = { "fridge", "frontDoor", "table", "window"}; //day1일 때 충돌해도 버튼을 활성화 시키지 않는 오브젝트
+    private string[] day6_ign_arr = { "fridge", "frontDoor", "table", "window", "bed" }; //day6일 때 충돌해도 버튼을 활성화 시키지 않는 오브젝트
     private List<string> ign_list = new List<string>(); //ign_arr을 리스트로 변환한 것
 
     void Awake()
@@ -31,8 +32,8 @@ public class HouseCollisionCheck : MonoBehaviour
         tasks.Add("walking");
         tasks.Add("cooking");
 
-        //day1이 아니고 랜덤1, 램덤2가 없을 경우에만 할 일 랜덤 지정
-        if (PlayerPrefs.GetInt("day",-1) != 1 && !PlayerPrefs.HasKey("random1") && !PlayerPrefs.HasKey("random2"))
+        //day1 day6이 아니고 랜덤1, 램덤2가 없을 경우에만 할 일 랜덤 지정
+        if (PlayerPrefs.GetInt("day",-1) != 1 && PlayerPrefs.GetInt("day", -1) != 6 && !PlayerPrefs.HasKey("random1") && !PlayerPrefs.HasKey("random2"))
         {
             select_random();
         }
@@ -56,7 +57,14 @@ public class HouseCollisionCheck : MonoBehaviour
             for (int i = 0; i < 3; i++)
                 ign_list.Add(tasks[i]);
         }
-        else //day2, 3 
+        else if (PlayerPrefs.GetInt("day", -1) == 6) //day6일 때 mechanic을 제외하고 비활성화
+        {
+            for (int i = 0; i < day6_ign_arr.Length; i++)
+                ign_list.Add(day6_ign_arr[i]);
+            for (int i = 0; i < 3; i++)
+                ign_list.Add(tasks[i]);
+        }
+        else //day2, 3, 4, 5
         {
             //밖에서 일과를 끝냈다면 활성화 되지 않도록
             if ((bool)Day_manager.GetBool("routine"))
@@ -75,7 +83,7 @@ public class HouseCollisionCheck : MonoBehaviour
 
         Debug.Log(tasks[index]);
 
-        PlayerPrefs.SetInt("task_index", index); //제회할 일 저장하기
+        PlayerPrefs.SetInt("task_index", index); //제외할 일 저장하기
     }
 
     public void BtnOnClick() {
@@ -175,6 +183,11 @@ public class HouseCollisionCheck : MonoBehaviour
                     PlayerPrefs.SetInt("out", 1);
                     SceneManager.LoadScene("Day4_Start");
                 }
+                else if (PlayerPrefs.GetInt("day") == 5)
+                {
+                    PlayerPrefs.SetInt("out", 1);
+                    SceneManager.LoadScene("FollowMusic");
+                }
                 break;
             case "meditation":
                 SceneManager.LoadScene("meditation");
@@ -187,6 +200,9 @@ public class HouseCollisionCheck : MonoBehaviour
                 break;
             case "window":
                 SceneManager.LoadScene("GardenPlant");
+                break;
+            case "mechanic":
+                SceneManager.LoadScene("Day6_PassParts");
                 break;
             default:
                 //혹여나 잘못 활성화 되는 경우

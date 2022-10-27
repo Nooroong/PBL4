@@ -70,7 +70,7 @@ public class PuzzleClearSensing : MonoBehaviour
             yield return null;
         }
         yield return null;
-
+        PlayerPrefs.SetInt("routine", 1);// 하루 일과 끝
         SceneManager.LoadScene(nextScene);
     }
 

@@ -318,6 +318,7 @@ MonoBehaviour:
   Panel: {fileID: 1448614534}
   Panel2: {fileID: 368859307}
   Button: {fileID: 2135952536}
+  nextScene: Day3_End
 --- !u!1 &566821304
 GameObject:
   m_ObjectHideFlags: 0
