@@ -7,16 +7,37 @@ public class day_Image_ctrl : MonoBehaviour
 {
     public Image day_panel;
     public Image Black;
+    public GameObject mechanic;
     float time = 0f;
     float F_time = 1.5f;
 
     void Awake()
     {
+        /*
         if(PlayerPrefs.GetInt("day") == 2)
             day_panel.GetComponent<Image>().sprite = Resources.Load("Day_Image\\day2", typeof(Sprite)) as Sprite;
         else if (PlayerPrefs.GetInt("day") == 3)
             day_panel.GetComponent<Image>().sprite = Resources.Load("Day_Image\\day3", typeof(Sprite)) as Sprite;
-    
+        */
+        switch (PlayerPrefs.GetInt("day", -1))
+        {
+            case 2:
+                day_panel.GetComponent<Image>().sprite = Resources.Load("Day_Image\\day2", typeof(Sprite)) as Sprite;
+                break;
+            case 3:
+                day_panel.GetComponent<Image>().sprite = Resources.Load("Day_Image\\day3", typeof(Sprite)) as Sprite;
+                break;
+            case 4:
+                day_panel.GetComponent<Image>().sprite = Resources.Load("Day_Image\\day4", typeof(Sprite)) as Sprite;
+                break;
+            case 5:
+                day_panel.GetComponent<Image>().sprite = Resources.Load("Day_Image\\day5", typeof(Sprite)) as Sprite;
+                break;
+            case 6:
+                day_panel.GetComponent<Image>().sprite = Resources.Load("Day_Image\\day6", typeof(Sprite)) as Sprite;
+                mechanic.gameObject.SetActive(true);
+                break;
+        }
     }
     void Update()
     {

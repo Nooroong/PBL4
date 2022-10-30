@@ -31,6 +31,7 @@ public class FadeOut_Day2End : MonoBehaviour
             yield return null;
         }
         PlayerPrefs.SetInt("routine", 1);
+        PlayerPrefs.SetInt("BuskingEnd", 0);
         SceneManager.LoadScene("House");
         yield return null;
 

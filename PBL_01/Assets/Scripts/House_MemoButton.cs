@@ -12,7 +12,7 @@ public class House_MemoButton : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if (PlayerPrefs.GetInt("day", -1) == 1) //day1 일 때 안보이기
+        if (PlayerPrefs.GetInt("day", -1) == 1 | PlayerPrefs.GetInt("day", -1) == 6 ) //day1 일 때 안보이기
         {
             this.gameObject.SetActive(false);
         }

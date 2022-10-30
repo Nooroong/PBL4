@@ -615,9 +615,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Bar: {fileID: 1199016958}
-  sensitivity: 100
+  sensitivity: 30
   loudness: 0
-  text: {fileID: 1000441715}
 --- !u!114 &501905998
 MonoBehaviour:
   m_ObjectHideFlags: 0
