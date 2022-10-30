@@ -41,9 +41,10 @@ public class Fight_game : MonoBehaviour
     {
         SceneManager.LoadScene("Day4_fight1");
     }
+
     IEnumerator UntilPlayback(AudioSource obj, string scene)
     {
-        //obj.Play(0);
+        //obj.Play();
         //yield return new WaitUntil(() => !obj.isPlaying);
         black.SetActive(true);
         black.GetComponent<fightgame_black>().enabled = true;

@@ -151,7 +151,7 @@ public class HouseCollisionCheck : MonoBehaviour
                 }
                 else
                 {
-                    //할 일을 다 했을 때 잠자기
+                    //할 일을 다 했을 때 잠자기 (밥먹기, 약먹기, 화분가꾸기, 랜덤할 일1, 랜덤할 일2, 밖에 나갔다 오기)
                     if ((bool)Day_manager.GetBool("bap") && (bool)Day_manager.GetBool("pill") && (bool)Day_manager.GetBool("planter")
                         && (bool)Day_manager.GetBool("random1") && (bool)Day_manager.GetBool("random2") && (bool)Day_manager.GetBool("routine"))
                     {

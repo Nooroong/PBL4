@@ -723,7 +723,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1125791681}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 100}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1699767994}
@@ -779,7 +779,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1125791681}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1d6c2e62c360a7c49ae7f270dcf263a6, type: 3}
   m_Name: 
@@ -987,6 +987,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   game_ctrl: {fileID: 1799568411}
   start: {fileID: 1912109091}
+  faceBTN: {fileID: 967666465}
 --- !u!4 &1525231882
 Transform:
   m_ObjectHideFlags: 0
@@ -1069,7 +1070,7 @@ Canvas:
   m_GameObject: {fileID: 1699767990}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 1
+  m_RenderMode: 0
   m_Camera: {fileID: 1508558860}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
@@ -1162,7 +1163,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 36675f8c8256b814ba75feebac7b6162, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 8723da66428a8e84484a0eda111d2a39, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1

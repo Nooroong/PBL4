@@ -5,7 +5,6 @@ using UnityEngine;
 public class Target_move : MonoBehaviour
 {
     public Camera m_cam; // 카메라
-
     //Vector3 t1_screenPos, t2_screenPos, t3_screenPos, t4_screenPos;
 
     public GameObject t1, t2, t3, t4;
@@ -58,7 +57,8 @@ public class Target_move : MonoBehaviour
     }
     IEnumerator UpFlow(GameObject target)
     {
-        while (m_cam.WorldToScreenPoint(target.gameObject.transform.position).y < 760.0f)
+       
+        while (m_cam.WorldToScreenPoint(target.gameObject.transform.position).y < 755.0f)
         {
             yMove = 0;
             yMove = speed;
@@ -70,10 +70,9 @@ public class Target_move : MonoBehaviour
     }
     IEnumerator DownFlow(GameObject target)
     {
-        while (m_cam.WorldToScreenPoint(target.gameObject.transform.position).y > 250.0f)
+
+        while (m_cam.WorldToScreenPoint(target.gameObject.transform.position).y > 255.0f)
         {
-            Debug.Log("m_cam.WorldToScreenPoint target.gameObject.transform.position" + m_cam.WorldToScreenPoint(target.gameObject.transform.position).y);
-            Debug.Log("target.gameObject.transform.position" + target.gameObject.transform.position.y);
             yMove = 0;
             yMove = -speed;
             target.transform.Translate(new Vector3(0, yMove, 0));

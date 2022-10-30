@@ -315,8 +315,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02564eb60891130488d97f1928b1b8cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Panel: {fileID: 1448614534}
-  Panel2: {fileID: 368859307}
+  tool: {fileID: 1448614534}
+  Black: {fileID: 368859307}
   Button: {fileID: 2135952536}
   nextScene: Day3_End
 --- !u!1 &566821304
