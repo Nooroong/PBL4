@@ -209,7 +209,7 @@ public class LockPattern : MonoBehaviour {
 
 
     void NextScene() {
-        SceneManager.LoadScene("Medicine");
+        SceneManager.LoadScene("Treatment");
     }
 
 
