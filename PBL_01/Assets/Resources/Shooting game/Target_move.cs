@@ -57,8 +57,9 @@ public class Target_move : MonoBehaviour
     }
     IEnumerator UpFlow(GameObject target)
     {
-       
-        while (m_cam.WorldToScreenPoint(target.gameObject.transform.position).y < 755.0f)
+        
+        // m_cam.WorldToScreenPoint(target.gameObject.transform.position).y < 755.0f
+        while (target.GetComponent<RectTransform>().anchoredPosition.y < 1212.0f)
         {
             yMove = 0;
             yMove = speed;
@@ -71,7 +72,8 @@ public class Target_move : MonoBehaviour
     IEnumerator DownFlow(GameObject target)
     {
 
-        while (m_cam.WorldToScreenPoint(target.gameObject.transform.position).y > 255.0f)
+        // m_cam.WorldToScreenPoint(target.gameObject.transform.position).y > 255.0f
+        while (target.GetComponent<RectTransform>().anchoredPosition.y > 650.0f)
         {
             yMove = 0;
             yMove = -speed;

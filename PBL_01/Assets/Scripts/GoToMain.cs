@@ -66,6 +66,6 @@ public class GoToMain : MonoBehaviour
         obj.GetComponent<AudioSource>().Play();
         yield return new WaitUntil(() => !obj.GetComponent<AudioSource>().isPlaying);
         Config_Box.SetActive(false);
-        SceneManager.LoadScene("main");
+        SceneManager.LoadScene("LoadingScene");
     }
 }

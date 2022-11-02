@@ -29,7 +29,7 @@ public class test : MonoBehaviour
         while (true)
         { 
             time += Time.deltaTime;
-            transform.Translate(Vector2.up *0.9f* Time.deltaTime);
+            transform.Translate(Vector2.up *0.935f* Time.deltaTime); // 기존 값: 0.9f
             
             if(time >= 2f)
             {

@@ -26,7 +26,7 @@ public class shooting : MonoBehaviour
     }
     private void OnTriggerStay2D(Collider2D collision)
     {
-        Debug.Log("�浹");
+        Debug.Log("충돌");
         triggered = true;
 
     }
