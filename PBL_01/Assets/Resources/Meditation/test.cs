@@ -33,12 +33,11 @@ public class test : MonoBehaviour
             
             if(time >= 2f)
             {
-                Alarm.Play();
                 if ( cnt == 4 || cnt == 5)
                 {
                     time = 0f;
                     cnt++;
-                    yield return new WaitForSeconds(2f);
+                    yield return new WaitForSeconds(5f);
                 }
                 else if (cnt == 14)
                 {
@@ -50,6 +49,8 @@ public class test : MonoBehaviour
                     cnt++;
                     yield return new WaitForSeconds(10f);
                 }
+                Alarm.Play();
+
             }
             yield return null;
         }
