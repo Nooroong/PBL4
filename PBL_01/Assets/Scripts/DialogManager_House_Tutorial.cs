@@ -3,15 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
-using System;
 
-public class DialogManager : MonoBehaviour, IPointerDownHandler
+public class DialogManager_House_Tutorial : MonoBehaviour, IPointerDownHandler
 {
+    public List<GameObject> obj_list = new List<GameObject>();
     public GameObject button;
     public Text dialogText;
     public GameObject next;
     public CanvasGroup dialogGroup;
     public Queue<string> sentences;
+
+    int i = 0;
 
     public string[] Set_sentences;
 
@@ -20,7 +22,7 @@ public class DialogManager : MonoBehaviour, IPointerDownHandler
     public float typingSpeed = 0.1f;
     public static bool istyping;
 
-    public static DialogManager instance;
+    public static DialogManager_House_Tutorial instance;
 
     int cnt = -1;
 
@@ -32,6 +34,12 @@ public class DialogManager : MonoBehaviour, IPointerDownHandler
     {
         sentences = new Queue<string>();
         instance.Ondialogue(Set_sentences);
+
+        dialogGroup.gameObject.SetActive(true);
+
+        foreach(GameObject obj in obj_list) {
+            obj.SetActive(false);
+        }
     }
 
     public void Ondialogue(string[] lines)
@@ -49,18 +57,51 @@ public class DialogManager : MonoBehaviour, IPointerDownHandler
 
     public void NextSentence()
     {
-        if(sentences.Count != 0)
+        if (sentences.Count != 0)
         {
-            cnt++;
             currentSentence = sentences.Dequeue();
+
             istyping = true;
             next.SetActive(false);
             StartCoroutine(Typing(currentSentence));
 
+            switch(i) {
+                case 1:
+                    this.GetComponent<RectTransform>().anchoredPosition = new Vector3(0, 500, 0);
+                    obj_list[0].gameObject.SetActive(true);
+                    // image.GetComponent<Image>().sprite = Resources.Load("PrologueImage\\5", typeof(Sprite)) as Sprite;
+                    break;
+                case 2:
+                    this.GetComponent<RectTransform>().anchoredPosition = new Vector3(0, 0, 0);
+                    obj_list[0].gameObject.SetActive(false);
+                    break;
+                case 3:
+                    obj_list[1].gameObject.SetActive(true);
+                    break;
+                case 4:
+                    obj_list[1].gameObject.SetActive(false);
+                    obj_list[2].gameObject.SetActive(true);
+                    break;
+                case 5:
+                    obj_list[3].gameObject.SetActive(true);
+                    break;
+                case 6:
+                    obj_list[2].gameObject.SetActive(false);
+                    obj_list[3].gameObject.SetActive(false);
+                    obj_list[4].gameObject.SetActive(true);
+                    break;
+                case 7:
+                    obj_list[4].gameObject.SetActive(false);
+                    obj_list[5].gameObject.SetActive(true);
+                    break;
+            }
+
+            i++;
         }
         else
         {
-            cnt++;
+            obj_list[5].gameObject.SetActive(false);
+            
             dialogGroup.alpha = 0;
             dialogGroup.blocksRaycasts = false;
             button.gameObject.SetActive(true);
@@ -106,10 +147,5 @@ public class DialogManager : MonoBehaviour, IPointerDownHandler
         obj.GetComponent<AudioSource>().Play();
         yield return new WaitUntil(() => !obj.GetComponent<AudioSource>().isPlaying);
         NextSentence();
-    }
-
-    public static implicit operator DialogManager(DialogManager_House_Tutorial v)
-    {
-        throw new NotImplementedException();
     }
 }

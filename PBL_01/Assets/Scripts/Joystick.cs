@@ -31,9 +31,10 @@ public class Joystick : MonoBehaviour, IDragHandler, IPointerUpHandler, IPointer
     public void OnDrag(PointerEventData eventData) {
         //anchors 설정: outer pad는 bottom-left, inner pad는 middle-center (이유는 몰루)
         Vector2 radius = outerPad.sizeDelta / 2;
-        input = (eventData.position - outerPad.anchoredPosition) / (radius * canvas.scaleFactor); //(터치 좌표-)
+        input = (eventData.position - outerPad.anchoredPosition) / (radius * canvas.scaleFactor);
         HandleInput(input.magnitude, input.normalized); //magnitude: length of vector, normalized: 벡터 정규화
         innerPad.anchoredPosition = input * radius * handleRange;
+        // innerPad.anchoredPosition = input * radius * handleRange;
     }
 
     private void HandleInput(float magnitude, Vector2 normalised) {

@@ -33,7 +33,7 @@ public class Ehome_Btn : MonoBehaviour
             yield return null;
         }
         yield return null;
-        SceneManager.LoadScene("House");
+        SceneManager.LoadScene("House_Tutorial");
 
     }
 
