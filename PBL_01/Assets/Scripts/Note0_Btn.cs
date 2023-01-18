@@ -14,7 +14,7 @@ public class Note0_Btn : MonoBehaviour
     void Start()
     {
         ps.gameObject.SetActive(false);
-        switch (PlayerPrefs.GetInt("day"))
+        switch (PlayerPrefs.GetInt("day")) // case 3, 4 ps.text 앞에 "ps. " + 추가
         {
             case 2:
 
@@ -41,7 +41,7 @@ public class Note0_Btn : MonoBehaviour
                 text.text = "아침 일찍 나가고 밤 늦게 들어오니까 얼굴 볼 일이 적네." + "\n" +
                             "오늘 하루도 조심히 잘 지내! 여기서 지내는 동안 마음놓고 편하게 있으렴." + "\n" +
                             "오늘도 밥 먹고 약 잊지마. 오늘 마을에 축제 열리니까 구경해봐." + "\n" +
-                            ps.text;
+                            "ps. " + ps.text;
                 break;
             case 4:
 
@@ -60,7 +60,7 @@ public class Note0_Btn : MonoBehaviour
                 text.text = "여러가지 일들이 있었구나. 여기 온지 얼마 되지도 않아서 힘들었을 텐데 고생 많았어." + "\n" +
                             "아, 한 가지 부탁할게 있어. 식재료가 떨어져서 근처 마트에서 사다줬으면 해." + "\n" +
                             "식탁 위에 돈이랑 목록 적어 놓은 포스트잇 붙여놨어 부탁할게, 고마워." + "\n" +
-                            ps.text;
+                            "ps. " + ps.text;
                 break;
             case 5:
 

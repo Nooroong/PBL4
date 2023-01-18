@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 
 public class Note2_text : MonoBehaviour
 {
+    GameObject Memo_ctrl;
+
     public Text text;
     public Text note, ps;
     public Button exit;
@@ -15,6 +17,8 @@ public class Note2_text : MonoBehaviour
     {
         text.text = PlayerPrefs.GetString("note");
 
+        //메모 가져오기
+        Memo_ctrl = GameObject.Find("Memo_ctrl");
     }
 
     // Update is called once per frame
@@ -24,6 +28,7 @@ public class Note2_text : MonoBehaviour
     }
     public void Exit()
     {
+
         StartCoroutine(Exit_co(exit));
     }
 
@@ -31,7 +36,7 @@ public class Note2_text : MonoBehaviour
     {
         obj.GetComponent<AudioSource>().Play();
         yield return new WaitUntil(() => !obj.GetComponent<AudioSource>().isPlaying);
-        PlayerPrefs.SetInt("NoteCp", 1);
+        Memo_ctrl.gameObject.GetComponent<Memo_dontdestroy>().Reply();
         SceneManager.LoadScene("desk");
     }
 }

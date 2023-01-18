@@ -21,6 +21,7 @@ public class Day_manager : MonoBehaviour
             {
                 day_image.GetComponent<day_Image_ctrl>().Day_Image();
 
+                PlayerPrefs.SetInt("NoteCp", 0); //쪽지 답장
                 PlayerPrefs.SetInt("bap", 0); //밥먹기
                 PlayerPrefs.SetInt("pill", 0); //약먹기
                 PlayerPrefs.SetInt("planter", 0); //화분 가꾸기
@@ -49,8 +50,10 @@ public class Day_manager : MonoBehaviour
         else
         {
             //모두 진행되었을 때 키 삭제 초기화
-            if ((bool)GetBool("sleep") && (bool)GetBool("bap") && (bool)GetBool("pill") && (bool)GetBool("planter")
-                        && (bool)GetBool("random1") && (bool)GetBool("random2") && (bool)GetBool("routine"))
+            if ((bool)GetBool("NoteCp") && (bool)GetBool("sleep") && (bool)GetBool("bap") 
+                && (bool)GetBool("pill") && (bool)GetBool("planter")
+                    && (bool)GetBool("random1") && (bool)GetBool("random2") 
+                        && (bool)GetBool("routine"))
             {
                 cnt += PlayerPrefs.GetInt("day") + 1;
                 PlayerPrefs.SetInt("day", cnt);
@@ -66,7 +69,7 @@ public class Day_manager : MonoBehaviour
             }
         }
     }
-    // int 값이 1이면 true, 2이면 false
+    // int 값이 1이면 true, 0이면 false
     public static bool? GetBool(string key)
     {
         int tmp = PlayerPrefs.GetInt(key);

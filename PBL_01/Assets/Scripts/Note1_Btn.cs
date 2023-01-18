@@ -69,25 +69,25 @@ public class Note1_Btn : MonoBehaviour
     public void Btn1()
     {
         ps.text ="ps. " + b1text.text;
-        PlayerPrefs.SetString("note", (note.text+"\n"+ps.text));
+        PlayerPrefs.SetString("note", (note.text+ps.text));
         next.interactable = true;
     }
     public void Btn2()
     {
         ps.text = "ps. " + b2text.text;
-        PlayerPrefs.SetString("note", (note.text + "\n" + ps.text));
+        PlayerPrefs.SetString("note", (note.text + ps.text));
         next.interactable = true;
     }
     public void Btn3()
     {
         ps.text = "ps. " + b3text.text;
-        PlayerPrefs.SetString("note", (note.text + "\n" + ps.text));
+        PlayerPrefs.SetString("note", (note.text + ps.text));
         next.interactable = true;
     }
     public void Btn4()
     {
         ps.text = "ps. " + b4text.text;
-        PlayerPrefs.SetString("note", (note.text + "\n" + ps.text));
+        PlayerPrefs.SetString("note", (note.text + ps.text));
         next.interactable = true;
     }
     public void nextNote()
