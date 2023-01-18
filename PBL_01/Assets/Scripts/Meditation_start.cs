@@ -7,6 +7,7 @@ public class Meditation_start : MonoBehaviour
 {
     public GameObject Text;
     public GameObject home;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -16,6 +17,7 @@ public class Meditation_start : MonoBehaviour
     public void Onclick()
     {
         StartCoroutine(OnClick_co(this.GetComponent<Button>()));
+
     }
 
     IEnumerator OnClick_co(Button obj)
