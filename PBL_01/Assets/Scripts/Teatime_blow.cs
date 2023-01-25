@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Audio;
 
 public class Teatime_blow : MonoBehaviour
 {
@@ -9,6 +10,10 @@ public class Teatime_blow : MonoBehaviour
     public float sensitivity = 100;
     public float loudness = 0;
     private AudioSource _audio;
+
+    public AudioMixer masterMixer;
+
+    public bool disableOutputSound = false;
 
     void Awake()
     {
@@ -18,7 +23,7 @@ public class Teatime_blow : MonoBehaviour
     {
         _audio.clip = Microphone.Start(null, true, 10, 44100);
         _audio.loop = true;
-        _audio.mute = false;
+        //_audio.mute = false;
         while (!(Microphone.GetPosition(null) > 0)) { }
         _audio.Play();
 
@@ -26,7 +31,7 @@ public class Teatime_blow : MonoBehaviour
     void Update()
     {
         loudness = GetAveragedVolume() * sensitivity;
-        if (loudness > 7)
+        if (loudness > 10)
         {
             IncreaseBar();
         }
@@ -45,6 +50,7 @@ public class Teatime_blow : MonoBehaviour
         float[] data = new float[256];
         float a = 0;
         _audio.GetOutputData(data, 0);
+        
         foreach (float s in data)
         {
             a += Mathf.Abs(s);

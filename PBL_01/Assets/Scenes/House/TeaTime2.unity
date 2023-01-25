@@ -501,7 +501,7 @@ AudioSource:
   m_GameObject: {fileID: 501905994}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: -7097369468634915691, guid: b9db18bebfeb0544daab601abe52c5fe, type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 1
@@ -617,6 +617,8 @@ MonoBehaviour:
   Bar: {fileID: 1199016958}
   sensitivity: 30
   loudness: 0
+  masterMixer: {fileID: 24100000, guid: b9db18bebfeb0544daab601abe52c5fe, type: 2}
+  disableOutputSound: 0
 --- !u!114 &501905998
 MonoBehaviour:
   m_ObjectHideFlags: 0

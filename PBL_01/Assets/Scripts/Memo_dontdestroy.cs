@@ -44,6 +44,10 @@ public class Memo_dontdestroy : MonoBehaviour
                 text4.text = "명상하기";
                 text5.text = "산책하기";
                 break;
+            default:
+                text4.text = "default";
+                text5.text = "default";
+                break;
         }
 
         //다른 공간에 있다가 House씬으로 돌아왔을 때 or 이어서하기 House 씬에서 시작할 때 할 일이 True 라면 취소선

@@ -38,10 +38,12 @@ public class Consult2 : MonoBehaviour
     
     public void NextScene()
     {
+        SceneManager.LoadScene("Consult3");
+        /*
         if (D_screenPos.x < 570.0f)
         {
             SceneManager.LoadScene("Consult3");
-        }
+        }*/
     }
 
   

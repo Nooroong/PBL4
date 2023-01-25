@@ -36,7 +36,7 @@ public class Walkigstreet : MonoBehaviour
     void Update()
     {
         P_screenPos = m_cam.WorldToScreenPoint(player.gameObject.transform.position);
-        Debug.Log(F_screenPos.x - P_screenPos.x);
+        //Debug.Log(F_screenPos.x - P_screenPos.x);
         F_screenPos = m_cam.WorldToScreenPoint(fly.gameObject.transform.position);
         time += Time.deltaTime / F_time;
     }

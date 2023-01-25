@@ -40,7 +40,7 @@ public class Sound_manager : MonoBehaviour
     private void OnSceneLoaded(Scene arg0, LoadSceneMode arg1) //씬이 변경할 때 사운드 변경
     {
 
-        Debug.Log("씬 바뀜");
+        //Debug.Log("씬 바뀜");
         cnt += 1;
         if(cnt == 1) //게임 첫 시작 사운드 페이드 아웃X
         {
