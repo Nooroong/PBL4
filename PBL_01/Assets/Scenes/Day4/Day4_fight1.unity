@@ -690,9 +690,9 @@ MonoBehaviour:
   next: {fileID: 56848523}
   dialogGroup: {fileID: 988175281}
   Set_sentences:
-  - "...\uB108\uB124\uAC00 \uACC4\uC18D \uADF8\uB7F0\uB2E4\uBA74 \uC9C0\uAE08 \uB2F9\uC7A5
-    \uACBD\uCC30\uC744 \uBD80\uB974\uACA0\uC5B4. \uC5B4\uB5A1\uD560\uB798?"
-  - "\uC528... \uC57C \uAC4D \uAC00\uC790."
+  - "\u2026 \uB108\uB124\uAC00 \uACC4\uC18D \uADF8\uB7F0\uB2E4\uBA74 \uC9C0\uAE08
+    \uB2F9\uC7A5 \uACBD\uCC30\uC744 \uBD80\uB974\uACA0\uC5B4. \uC5B4\uB5A1\uD560\uB798?"
+  - "\uC528\u2026 \uC57C \uAC4D \uAC00\uC790."
   typingSpeed: 0.1
 --- !u!114 &988175283
 MonoBehaviour:

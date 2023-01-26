@@ -694,8 +694,8 @@ MonoBehaviour:
   next: {fileID: 187959783}
   dialogGroup: {fileID: 1374088519}
   Set_sentences:
-  - "\uD658\uC790\uBD84! \uC218\uC220\uC2E4\uB85C \uB4E4\uC5B4\uC624\uC2E4\uAC8C\uC694~"
-  - "\uB124..!"
+  - "\uD1A0\uBBF8 \uD658\uC790\uBD84! \uC218\uC220\uC2E4\uB85C \uB4E4\uC5B4\uC624\uC2E4\uAC8C\uC694~"
+  - "\uB124\u2026!"
   typingSpeed: 0.1
 --- !u!114 &1374088521
 MonoBehaviour:

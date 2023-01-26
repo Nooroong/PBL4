@@ -638,9 +638,9 @@ MonoBehaviour:
   next: {fileID: 1394139033}
   dialogGroup: {fileID: 1220233424}
   Set_sentences:
-  - "\uC800... \uC548\uB155\uD558\uC138\uC694"
+  - "\uC800\u2026 \uC548\uB155\uD558\uC138\uC694."
   - "\uB124, \uC548\uB155\uD558\uC138\uC694~ \uBB34\uC2A8 \uC77C\uB85C \uC624\uC168\uB098\uC694?"
-  - "\uADF8\uAC8C.. \uC774\uAC70 \uBCF4\uACE0 \uC654\uAC70\uB4E0\uC694."
+  - "\uADF8\uAC8C \uC774\uAC70 \uBCF4\uACE0 \uC654\uAC70\uB4E0\uC694\u2026"
   typingSpeed: 0.1
 --- !u!114 &1220233426
 MonoBehaviour:
