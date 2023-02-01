@@ -19,7 +19,7 @@ public class ChangeHomeSprite : MonoBehaviour
     void Update()
     {
 
-        if (dialogText.text == "침")
+        if (dialogText.text == "(침")
         {
             m_Animator.GetComponent<Animator>().enabled = true;
             image.GetComponent<Image>().sprite = Resources.Load("PrologueImage\\2", typeof(Sprite)) as Sprite;

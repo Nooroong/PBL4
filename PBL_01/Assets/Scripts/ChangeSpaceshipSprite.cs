@@ -24,13 +24,13 @@ public class ChangeSpaceshipSprite : MonoBehaviour
             m_Animator.GetComponent<Animator>().enabled = true;
         }
         
-        if (dialogText.text == "주인공은 지")
+        if (dialogText.text == "(토미는 지")
         {
             m_Animator.GetComponent<Animator>().enabled = false;
             image.GetComponent<Image>().sprite = Resources.Load("PrologueImage\\19_0", typeof(Sprite)) as Sprite;
         }
 
-        if (dialogText.text == "주인공은 지시에 따라 안전벨트를 맨다.")
+        if (dialogText.text == "(토미는 지시에 따라 안전벨트를 맨다.)")
         {
             image.GetComponent<Image>().sprite = Resources.Load("PrologueImage\\19_1", typeof(Sprite)) as Sprite;
         }
