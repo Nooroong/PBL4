@@ -168,7 +168,7 @@ public class LockPattern : MonoBehaviour {
                 //패턴 불일치
                 foreach (var item in lines) {
                     circles[item.id].GetComponent<Image>().DOColor(Color.red, .25F);
-                    circles[item.id].GetComponent<AudioSource>().enabled = true;
+                    circles[item.id].GetComponent<AudioSource>().volume = 1;
                 }
 
                 Destroy(lines[lines.Count - 1].gameObject);

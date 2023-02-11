@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class StitchStartBtn : MonoBehaviour
 {
-    public GameObject parent; //±×¸®µå
+    public GameObject parent; //ê·¸ë¦¬ë“œ
 
     // Start is called before the first frame update
     void Start() {
