@@ -5,15 +5,14 @@ using UnityEngine.UI;
 
 public class ChagneForecedLandingSprite : MonoBehaviour
 {
-    Animator m_Animator;
     public GameObject image;
     public Text dialogText;
     public Image spaceship;
+    public Image tomee_eyes;
 
     void Start()
     {
-        m_Animator = GetComponent<Animator>();
-        m_Animator.GetComponent<Animator>().enabled = false;
+        tomee_eyes.gameObject.SetActive(false);
     }
 
     // Update is called once per frame
@@ -22,13 +21,13 @@ public class ChagneForecedLandingSprite : MonoBehaviour
 
         if (dialogText.text == "(토미는 기절을")
         {
-            m_Animator.GetComponent<Animator>().enabled = true;
+            tomee_eyes.gameObject.SetActive(true);
             spaceship.gameObject.SetActive(false);
         }
 
         if (dialogText.text == "(정신을")
         {
-            m_Animator.GetComponent<Animator>().enabled = false;
+            tomee_eyes.gameObject.SetActive(false);
             image.GetComponent<Image>().sprite = Resources.Load("PrologueImage\\23_0", typeof(Sprite)) as Sprite;
         }
 

@@ -6,6 +6,7 @@ using UnityEngine.EventSystems;
 
 public class DialogManager_Home : MonoBehaviour, IPointerDownHandler
 {
+    public Image tomee_eyes2;
     public GameObject image;
     public GameObject button;
     public Text dialogText;
@@ -34,6 +35,7 @@ public class DialogManager_Home : MonoBehaviour, IPointerDownHandler
     {
         sentences = new Queue<string>();
         instance.Ondialogue(Set_sentences);
+        tomee_eyes2.gameObject.SetActive(false);
     }
 
     public void Ondialogue(string[] lines)
@@ -66,7 +68,8 @@ public class DialogManager_Home : MonoBehaviour, IPointerDownHandler
             }
             if (i == 6)
             {
-                image.GetComponent<Image>().sprite = Resources.Load("PrologueImage\\11_0", typeof(Sprite)) as Sprite;
+                tomee_eyes2.gameObject.SetActive(true);
+                image.GetComponent<Image>().sprite = Resources.Load("PrologueImage\\11_BG", typeof(Sprite)) as Sprite;
             }
         }
         else

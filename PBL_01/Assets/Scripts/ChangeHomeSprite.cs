@@ -5,14 +5,13 @@ using UnityEngine.UI;
 
 public class ChangeHomeSprite : MonoBehaviour
 {
-    Animator m_Animator;
     public GameObject image;
+    public Image tomee_eyes1;
     public Text dialogText;
 
     void Start()
     {
-        m_Animator = GetComponent<Animator>();
-        m_Animator.GetComponent<Animator>().enabled = false;
+        tomee_eyes1.gameObject.SetActive(false);
     }
 
     // Update is called once per frame
@@ -21,14 +20,13 @@ public class ChangeHomeSprite : MonoBehaviour
 
         if (dialogText.text == "(침")
         {
-            m_Animator.GetComponent<Animator>().enabled = true;
-            image.GetComponent<Image>().sprite = Resources.Load("PrologueImage\\2", typeof(Sprite)) as Sprite;
+            tomee_eyes1.gameObject.SetActive(true);
+            image.GetComponent<Image>().sprite = Resources.Load("PrologueImage\\8_BG", typeof(Sprite)) as Sprite;
         }
         if (dialogText.text == "")
         {
-            m_Animator.GetComponent<Animator>().enabled = false;
+            tomee_eyes1.gameObject.SetActive(false);
             image.GetComponent<Image>().sprite = Resources.Load("PrologueImage\\9", typeof(Sprite)) as Sprite;
-
         }
     }
 }

@@ -5,14 +5,12 @@ using UnityEngine.UI;
 
 public class ChangeSpaceshipSprite : MonoBehaviour
 {
-    Animator m_Animator;
-    public GameObject image;
+    public Image Alarm;
     public Text dialogText;
 
     void Start()
     {
-        m_Animator = GetComponent<Animator>();
-        m_Animator.GetComponent<Animator>().enabled = false;
+        Alarm.gameObject.SetActive(false);
     }
 
     // Update is called once per frame
@@ -21,18 +19,22 @@ public class ChangeSpaceshipSprite : MonoBehaviour
 
         if (dialogText.text == "'")
         {
-            m_Animator.GetComponent<Animator>().enabled = true;
+            Alarm.gameObject.SetActive(true);
         }
         
         if (dialogText.text == "(토미는 지")
         {
-            m_Animator.GetComponent<Animator>().enabled = false;
-            image.GetComponent<Image>().sprite = Resources.Load("PrologueImage\\19_0", typeof(Sprite)) as Sprite;
+            Alarm.gameObject.SetActive(false);
+            this.GetComponent<Image>().sprite = Resources.Load("PrologueImage\\19_0", typeof(Sprite)) as Sprite;
         }
 
         if (dialogText.text == "(토미는 지시에 따라 안전벨트를 맨다.)")
         {
-            image.GetComponent<Image>().sprite = Resources.Load("PrologueImage\\19_1", typeof(Sprite)) as Sprite;
+            this.GetComponent<Image>().sprite = Resources.Load("PrologueImage\\19_1", typeof(Sprite)) as Sprite;
+        }
+        if (dialogText.text == "(토미는 심")
+        {
+            this.GetComponent<Image>().sprite = Resources.Load("PrologueImage\\20", typeof(Sprite)) as Sprite;
         }
     }
 }
