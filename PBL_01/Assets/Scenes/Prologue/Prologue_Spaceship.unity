@@ -496,7 +496,7 @@ MonoBehaviour:
     \uD56D\uD574 \uBAA9\uC801\uC9C0\uB85C \uC124\uC815\uD55C\uB2E4.)"
   - "(\uC6B0\uC8FC\uB97C \uD56D\uD574\uD558\uB358 \uC911 \uAC11\uC790\uAE30 \uBE44\uC0C1
     \uC54C\uB78C\uC774 \uC6B8\uB9B0\uB2E4.)"
-  typingSpeed: 0.1
+  typingSpeed: 0.08
   istyping: 0
   F_instance: {fileID: 0}
 --- !u!114 &428871408

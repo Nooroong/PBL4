@@ -1208,7 +1208,7 @@ MonoBehaviour:
   - "(\uC6C5\uC131\uAC70\uB9AC\uB294 \uC18C\uB9AC)"
   - "\uB0B4\uAC00 \uC5EC\uD589\uAC14\uB2E4\uAC00 \uC9C0\uAD6C\uC5D0\uC11C \uC788\uC5C8\uB358
     \uC77C\uC778\uB370..."
-  typingSpeed: 0.1
+  typingSpeed: 0.08
 --- !u!114 &1948299200
 MonoBehaviour:
   m_ObjectHideFlags: 0

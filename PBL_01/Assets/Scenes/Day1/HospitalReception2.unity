@@ -771,7 +771,7 @@ MonoBehaviour:
     \uC124\uBB38\uC9C0\uB97C \uB4DC\uB9B4 \uD14C\uB2C8 \uC791\uC131\uD574 \uC8FC\uC2DC\uACE0,
     \uC644\uB8CC\uB418\uC2DC\uBA74 \uBC14\uB85C \uAE30\uC5B5 \uAC80\uC0AC \uC9C4\uD589\uD560\uAC8C\uC694~"
   - "\uB124, \uC54C\uACA0\uC2B5\uB2C8\uB2E4."
-  typingSpeed: 0.1
+  typingSpeed: 0.08
 --- !u!225 &758969325
 CanvasGroup:
   m_ObjectHideFlags: 0

@@ -19,7 +19,7 @@ public class DialogManager_House_Tutorial : MonoBehaviour, IPointerDownHandler
 
     private string currentSentence;
 
-    public float typingSpeed = 0.1f;
+    public float typingSpeed = 0.08f;
     public static bool istyping;
 
     public static DialogManager_House_Tutorial instance;

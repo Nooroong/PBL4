@@ -351,8 +351,8 @@ GameObject:
   - component: {fileID: 397218445}
   - component: {fileID: 397218444}
   - component: {fileID: 397218443}
-  - component: {fileID: 397218447}
   - component: {fileID: 397218448}
+  - component: {fileID: 397218447}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -483,7 +483,6 @@ GameObject:
   m_Component:
   - component: {fileID: 501905996}
   - component: {fileID: 501905995}
-  - component: {fileID: 501905997}
   - component: {fileID: 501905998}
   m_Layer: 0
   m_Name: Mic
@@ -602,23 +601,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &501905997
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 501905994}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 02312545c60d2d0478e46c09cc33e415, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Bar: {fileID: 1199016958}
-  sensitivity: 30
-  loudness: 0
-  masterMixer: {fileID: 24100000, guid: b9db18bebfeb0544daab601abe52c5fe, type: 2}
-  disableOutputSound: 0
 --- !u!114 &501905998
 MonoBehaviour:
   m_ObjectHideFlags: 0

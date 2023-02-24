@@ -293,6 +293,7 @@ MonoBehaviour:
   view_time:
   - 0.7
   - 1
+  Btn: {fileID: 0}
 --- !u!1 &143579046
 GameObject:
   m_ObjectHideFlags: 0
@@ -902,7 +903,7 @@ MonoBehaviour:
   dialogGroup: {fileID: 983682242}
   Set_sentences:
   - "\uC5B8\uC774\uBAA8\uC158 \uD50C\uB798\uB2DB\uC73C\uB85C \uB3CC\uC544\uC628 \uC8FC\uC778\uACF5."
-  typingSpeed: 0.1
+  typingSpeed: 0.08
 --- !u!114 &983682244
 MonoBehaviour:
   m_ObjectHideFlags: 0

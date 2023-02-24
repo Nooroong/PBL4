@@ -362,7 +362,7 @@ MonoBehaviour:
   - "\uADF8\uB798\uB3C4 \uAD1C\uCC2E\uC744\uAE4C\uC694?"
   - "\uC624\uB298 \uB3C4\uC6C0 \uC8FC\uC2E0 \uAC83\uC5D0 \uBE44\uD558\uBA74 \uC544\uBB34\uAC83\uB3C4
     \uC544\uB2C8\uC5D0\uC694. \uBD80\uD488 \uAC00\uAC8C \uC55E\uC5D0\uC11C \uB9CC\uB098\uC694!"
-  typingSpeed: 0.1
+  typingSpeed: 0.08
 --- !u!114 &295036297
 MonoBehaviour:
   m_ObjectHideFlags: 0

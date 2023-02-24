@@ -768,7 +768,7 @@ MonoBehaviour:
     \uACAA\uC5C8\uB358 \uC77C \uC911\uC5D0 \uACC4\uC18D \uB5A0\uC624\uB974\uB294
     \uC77C \uC788\uC744\uAE4C\uC694?"
   - "\uADF8\uAC8C\u2026"
-  typingSpeed: 0.1
+  typingSpeed: 0.08
 --- !u!114 &1179526190
 MonoBehaviour:
   m_ObjectHideFlags: 0

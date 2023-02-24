@@ -601,7 +601,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_TypingText: {fileID: 666030291}
   m_Message: 
-  m_Speed: 0.1
+  m_Speed: 0.08
   Panel: {fileID: 824403420}
 --- !u!114 &824403420
 MonoBehaviour:

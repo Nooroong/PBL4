@@ -1371,7 +1371,7 @@ MonoBehaviour:
     \uD558\uB2C8\uAE4C \uC880 \uBCF4\uAE30\uAC00 \uADF8\uB798.\u201D"
   - "\"\uADF8\uCE58? \uC0AC\uB78C\uC774 \uC9C4\uC911\uD558\uC9C0 \uBABB\uD574\uC11C
     \uBCC4\uB85C\uB354\uB77C. \uC5B4? \uC7E4 \uC5EC\uAE30\uB85C \uC628\uB2E4\u2026\u201D"
-  typingSpeed: 0.1
+  typingSpeed: 0.08
 --- !u!114 &1687053516
 MonoBehaviour:
   m_ObjectHideFlags: 0

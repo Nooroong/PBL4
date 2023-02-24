@@ -323,7 +323,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4fb206eb504294a4eaccd35bee6a3044, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  image: {fileID: 187764510}
   Alarm: {fileID: 240978560}
   dialogText: {fileID: 377964623}
 --- !u!1 &213060159
@@ -1163,7 +1162,7 @@ MonoBehaviour:
     \uB9E8\uB2E4.)"
   - "(\uD1A0\uBBF8\uB294 \uC2EC\uC7A5\uC774 \uC870\uC5EC\uC624\uB294 \uBD88\uC548\uAC10\uC744
     \uB290\uB07C\uB294\uB370\u2026)"
-  typingSpeed: 0.1
+  typingSpeed: 0.08
   istyping: 0
   F_instance: {fileID: 0}
 --- !u!1 &1235321840

@@ -603,7 +603,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_TypingText: {fileID: 1705083627}
   m_Message: 
-  m_Speed: 0.1
+  m_Speed: 0.08
   Panel: {fileID: 2081340275}
 --- !u!225 &2081340274
 CanvasGroup:

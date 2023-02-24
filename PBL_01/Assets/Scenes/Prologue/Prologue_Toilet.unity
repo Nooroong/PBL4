@@ -1085,7 +1085,7 @@ MonoBehaviour:
   - "\uC815\uC2E0\uAC74\uAC15\uC758\uD559\uACFC? \uCC98\uC74C \uB4E4\uC5B4\uBCF4\uB294
     \uACFC\uC778\uB370. "
   - "\uC9C0\uAD6C\uC5D0\uB9CC \uC788\uB294 \uBCD1\uC6D0\uC778\uAC00\u2026"
-  typingSpeed: 0.1
+  typingSpeed: 0.08
   istyping: 0
   F_instance: {fileID: 0}
 --- !u!1 &1497744541

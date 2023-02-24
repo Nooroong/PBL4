@@ -696,7 +696,7 @@ MonoBehaviour:
   Set_sentences:
   - "\uD1A0\uBBF8 \uD658\uC790\uBD84! \uC218\uC220\uC2E4\uB85C \uB4E4\uC5B4\uC624\uC2E4\uAC8C\uC694~"
   - "\uB124\u2026!"
-  typingSpeed: 0.1
+  typingSpeed: 0.08
 --- !u!114 &1374088521
 MonoBehaviour:
   m_ObjectHideFlags: 0

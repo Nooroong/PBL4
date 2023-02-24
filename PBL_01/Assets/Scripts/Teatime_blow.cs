@@ -35,15 +35,6 @@ public class Teatime_blow : MonoBehaviour
         {
             IncreaseBar();
         }
-        else
-        {
-            // Movie2.SetActive(false);
-            //Debug.Log("Ready");
-        }
-        if (Input.GetButtonDown("Cancel"))
-        {
-            Application.Quit();
-        }
     }
     float GetAveragedVolume()
     {

@@ -24,6 +24,6 @@ public class ListenForAudioCommand : MonoBehaviour
     }
     public void IncreaseBar()
     {
-        Bar.GetComponent<Image>().fillAmount += 0.003f;
+        Bar.GetComponent<Image>().fillAmount += 0.006f;
     }
 }

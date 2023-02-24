@@ -616,7 +616,7 @@ MonoBehaviour:
   - 
   - ...
   - "(\uACFC\uAC70\uC758 \uC0DD\uAC01\uC5D0 \uBE60\uC9C4 \uD1A0\uBBF8.)"
-  typingSpeed: 0.1
+  typingSpeed: 0.08
   istyping: 0
   F_instance: {fileID: 0}
 --- !u!1 &1021521564

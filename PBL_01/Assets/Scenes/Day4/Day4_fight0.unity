@@ -708,7 +708,7 @@ MonoBehaviour:
     \uBCF4\uBA74 \uBAB0\uB77C\uC694? \uC544 \uC9C4\uC9DC \uB2F5\uB2F5\uD558\uB124."
   - "\uC57C, \uBB58 \uB9D0\uB85C \uD574\uACB0\uD558\uB824\uACE0 \uADF8\uB798. \uD55C
     \uB300 \uD328\uBA74 \uC54C\uC544\uC11C \uAEBC\uC9C0\uACA0\uC9C0."
-  typingSpeed: 0.1
+  typingSpeed: 0.08
 --- !u!114 &988175283
 MonoBehaviour:
   m_ObjectHideFlags: 0

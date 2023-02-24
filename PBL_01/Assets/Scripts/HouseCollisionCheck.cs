@@ -69,6 +69,8 @@ public class HouseCollisionCheck : MonoBehaviour
             //밖에서 일과를 끝냈다면 활성화 되지 않도록
             if ((bool)Day_manager.GetBool("routine"))
                 ign_list.Add("frontDoor");
+            else
+                ign_list.Add("bed");
 
             index = PlayerPrefs.GetInt("task_index", -1); // 랜덤으로 지정된 하지 않을 일의 인덱스를 불러옴
 

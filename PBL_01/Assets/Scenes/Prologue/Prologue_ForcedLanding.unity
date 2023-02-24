@@ -676,7 +676,7 @@ MonoBehaviour:
   - "(\uC815\uC2E0\uC744 \uCC28\uB9B0 \uD1A0\uBBF8\uB294 \uC6B0\uC8FC\uC120\uC744
     \uB098\uAC00\uB824\uACE0 \uD558\uB294\uB370.)"
   - "(\uC6B0\uC8FC\uC120\uC758 \uBB38\uC744 \uC5F0 \uD1A0\uBBF8.)"
-  typingSpeed: 0.1
+  typingSpeed: 0.08
   istyping: 0
   F_instance: {fileID: 0}
 --- !u!225 &805791294

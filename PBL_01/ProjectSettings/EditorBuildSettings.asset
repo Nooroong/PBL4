@@ -95,7 +95,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/House/meditation.unity
     guid: a036bf6d4aba1d0498db629b00c08770
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/House/House.unity
     guid: 7212c475f2ea11148bd5d3ef9b62cf8d
   - enabled: 1

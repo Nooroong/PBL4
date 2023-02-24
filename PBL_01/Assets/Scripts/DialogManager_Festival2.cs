@@ -7,7 +7,7 @@ public class DialogManager_Festival2 : MonoBehaviour
 {
     public Text m_TypingText;
     public string m_Message;
-    public float m_Speed = 0.1f;
+    public float m_Speed = 0.08f;
     public Image Panel;
 
     // Start is called before the first frame update 

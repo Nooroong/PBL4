@@ -371,7 +371,7 @@ MonoBehaviour:
     \uAC83 \uAC19\uC544.\u201D"
   - "\"\uADF8\uCE58? \uB098\uB9CC \uADF8\uB807\uAC8C \uB290\uB07C\uB294\uAC00 \uD588\uB124\u2026
     \uC5B4? \uC7E4 \uC5EC\uAE30\uB85C \uC628\uB2E4\u2026\u201D"
-  typingSpeed: 0.1
+  typingSpeed: 0.08
 --- !u!114 &424157603
 MonoBehaviour:
   m_ObjectHideFlags: 0

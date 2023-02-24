@@ -683,7 +683,7 @@ MonoBehaviour:
     \uADC0\uCC2E\uC9C0 \uC54A\uACA0\uC5B4?"
   - "\uBB50\uAC00 \uADC0\uCC2E\uC544! \uAC19\uC774 \uB178\uB294 \uAC74\uB370 \uC77C\uB2E8
     \uC800\uAE30\uB85C \uAC00\uC790."
-  typingSpeed: 0.1
+  typingSpeed: 0.08
 --- !u!114 &1218342813
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -434,7 +434,7 @@ MonoBehaviour:
   - "\u2026"
   - "\uB9D0 \uC548 \uB4E4\uB824? \uB108 \uC9C0\uAE08 \uB9D0 \uC548 \uB4E3\uB294 \uAC70\uC57C?"
   - "\uBBF8\uCCE4\uB098. \uB9D0 \uB4E4\uC73C\uB77C\uACE0. \uC57C! \uC57C!"
-  typingSpeed: 0.1
+  typingSpeed: 0.08
 --- !u!1 &886645105
 GameObject:
   m_ObjectHideFlags: 0
