@@ -190,7 +190,7 @@ public class HouseCollisionCheck : MonoBehaviour
                 else if (PlayerPrefs.GetInt("day") == 5)
                 {
                     PlayerPrefs.SetInt("out", 1);
-                    SceneManager.LoadScene("FollowMusic");
+                    SceneManager.LoadScene("Day5_Start");
                 }
                 break;
             case "meditation":

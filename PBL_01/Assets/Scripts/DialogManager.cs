@@ -30,6 +30,7 @@ public class DialogManager : MonoBehaviour, IPointerDownHandler
     }
     void Start()
     {
+        button.gameObject.SetActive(false);
         sentences = new Queue<string>();
         instance.Ondialogue(Set_sentences);
     }

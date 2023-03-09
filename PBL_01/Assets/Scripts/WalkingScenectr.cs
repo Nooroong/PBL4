@@ -35,7 +35,7 @@ public class WalkingScenectr : MonoBehaviour
         m_Animator.GetComponent<Animator>().enabled = true;
         finish.gameObject.SetActive(true);
         finish.enabled = true;
-        StartCoroutine("Destory_Btn");
+        StartCoroutine(Destory_Btn(start));
     }
     public void finishWalk()
     {
@@ -52,10 +52,14 @@ public class WalkingScenectr : MonoBehaviour
     }
 
     //효과음 재생 뒤에 오브젝트 비활성화
-    IEnumerator Destory_Btn() {
+    IEnumerator Destory_Btn(Button obj) {
+        // StopWatch.StartWalking() 실행 시간 확보?
         yield return new WaitForSeconds(0.15f);
-        if(!start.GetComponent<AudioSource>().isPlaying)
-            start.gameObject.SetActive(false);
+
+        obj.GetComponent<AudioSource>().Play();
+        yield return new WaitUntil(() => !obj.GetComponent<AudioSource>().isPlaying);
+
+        start.gameObject.SetActive(false);
     }
 
     IEnumerator LoadHouse_co(Button obj)

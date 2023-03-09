@@ -177,8 +177,13 @@ public class VworldStaticMap : MonoBehaviour
             // 오류메세지 출력
             Debug.Log(request.downloadHandler.text);
         } else {
+            if(!request.downloadHandler.text.Contains("error")) {
+                // vworld 쪽에서 오류를 반환하지 않은 경우에만 텍스쳐 적용.
+                // Map_error가 json, xml 일때만 적용됨.
+                mapRawImage.texture = DownloadHandlerTexture.GetContent(request);
+            }
+            
             updateMap = true;
-            mapRawImage.texture = DownloadHandlerTexture.GetContent(request);
 
             strAPIKeyLast = strAPIKey;
             latitudeLast = latitude;
