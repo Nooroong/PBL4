@@ -12,7 +12,7 @@ public class Components_check2 : MonoBehaviour
 
     private void Start()
     {
-        next.enabled = false;
+        next.interactable = false;
     }
 
     private void Update()
@@ -56,7 +56,7 @@ public class Components_check2 : MonoBehaviour
                     }
                 }
                 //next.gameObject.SetActive(true);
-                next.enabled = true;
+                next.interactable = true;
             }
             else
             { //2개 이하인 경우 모든 부품 움직이도록
@@ -66,7 +66,7 @@ public class Components_check2 : MonoBehaviour
                 B1.GetComponent<Component_movement>().enabled = true;
                 B2.GetComponent<Component_movement>().enabled = true;
                 //next.gameObject.SetActive(false);
-                next.enabled = false;
+                next.interactable = false;
             }
         }
 

@@ -10,7 +10,7 @@ public class GoToMain : MonoBehaviour
     public GameObject Config_Box;
 
     private string scene_name;
-    private List<string> igr_scene = new List<string>(); // ¿©±â¼­ ³ª°¡µµ ÀúÀåÇÏ¸é ¾ÈµÇ´Â ¾À
+    private List<string> igr_scene = new List<string>(); // ì—¬ê¸°ì„œ ë‚˜ê°€ë„ ì €ì¥í•˜ë©´ ì•ˆë˜ëŠ” ì”¬
 
     // Start is called before the first frame update
     private void Awake()
@@ -32,7 +32,7 @@ public class GoToMain : MonoBehaviour
         Config_Box.SetActive(false);
     }
 
-    //ÀÚ½Äµéµµ ¸ğµÎ DontDestroyOnLoad¸¦ Àû¿ë
+    //ìì‹ë“¤ë„ ëª¨ë‘ DontDestroyOnLoadë¥¼ ì ìš©
     private void DontDestory_Child(GameObject obj) {
         for (int i = 0; i < obj.transform.childCount; i++)
             DontDestory_Child(obj.transform.GetChild(i).gameObject);
