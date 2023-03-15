@@ -49,11 +49,27 @@ public class GoToMain : MonoBehaviour
         if (!igr_scene.Contains(scene_name)) { 
             if (PlayerPrefs.GetInt("out", -1) == 1) {
                 PlayerPrefs.SetString("Last_scene", scene_name);
-            } else {
+            } 
+            else if (PlayerPrefs.GetInt("day", -1) == 6)
+            {
+                /*day6일 때 씬을 저장하기 위한 조건문
+                  day6의 브금은 main과 House에서 재생되는 음악과 동일하기(out==0) 때문에 
+                  out==0인 상황에서 Last_scene이 House로 저장되지 않기 위한 조건문이다.*/
+
+                PlayerPrefs.SetString("Last_scene", scene_name);
+            }
+            else {
                 if (PlayerPrefs.GetInt("Tea") == 1)
                     PlayerPrefs.SetInt("Tea", 0);
                 PlayerPrefs.SetString("Last_scene", "House");
             }
+        }
+        else if(scene_name == "Ending_Credit" & PlayerPrefs.GetInt("day", -1) == 6) 
+        {
+            //메인 화면에서 크레딧 버튼을 누른 경우가 아닌,
+            //day6가 끝난 후 재생되는 엔딩 크레딧 장면에서의 Last_scene 저장 조건문
+            
+            PlayerPrefs.SetString("Last_scene", "House");
         }
 
         Debug.Log(PlayerPrefs.GetString("Last_scene"));
