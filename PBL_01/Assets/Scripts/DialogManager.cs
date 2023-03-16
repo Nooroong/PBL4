@@ -7,6 +7,7 @@ using System;
 
 public class DialogManager : MonoBehaviour, IPointerDownHandler
 {
+    public Image image;
     public GameObject button;
     public Text dialogText;
     public GameObject next;
@@ -23,6 +24,8 @@ public class DialogManager : MonoBehaviour, IPointerDownHandler
     public static DialogManager instance;
 
     int cnt = -1;
+    float time = 0f;
+    float F_time = 1f;
 
     private void Awake()
     {
@@ -33,6 +36,23 @@ public class DialogManager : MonoBehaviour, IPointerDownHandler
         button.gameObject.SetActive(false);
         sentences = new Queue<string>();
         instance.Ondialogue(Set_sentences);
+    }
+
+    IEnumerator FadeIn()
+    {
+        image.gameObject.SetActive(true);
+        time = 0f;
+        Color alpha = image.color;
+
+        while (alpha.a < 1f)
+        {
+            time += Time.deltaTime / F_time;
+            alpha.a = Mathf.Lerp(0, 1, time);
+            image.color = alpha;
+            yield return null;
+        }
+        yield return null;
+        button.gameObject.SetActive(true);
     }
 
     public void Ondialogue(string[] lines)
@@ -64,7 +84,8 @@ public class DialogManager : MonoBehaviour, IPointerDownHandler
             cnt++;
             dialogGroup.alpha = 0;
             dialogGroup.blocksRaycasts = false;
-            button.gameObject.SetActive(true);
+            StartCoroutine(FadeIn());
+
         }
     }
 
