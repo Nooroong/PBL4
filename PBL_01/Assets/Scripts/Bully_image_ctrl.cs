@@ -32,5 +32,10 @@ public class Bully_image_ctrl : MonoBehaviour
             BG.GetComponent<Image>().sprite = Resources.Load("Day4\\4_4", typeof(Sprite)) as Sprite;
 
         }
+        if (dm.gameObject.GetComponent<DialogManager>().Cnt() == 4)
+        {
+            BG.GetComponent<Image>().sprite = Resources.Load("Day4\\4_4_1", typeof(Sprite)) as Sprite;
+
+        }
     }
 }
