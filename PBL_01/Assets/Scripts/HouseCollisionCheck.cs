@@ -47,9 +47,10 @@ public class HouseCollisionCheck : MonoBehaviour
         meal.gameObject.SetActive(false);
 
         //배열을 리스트로
+        
         for (int i = 0; i < ign_arr.Length; i++)
             ign_list.Add(ign_arr[i]);
-
+        
         if (PlayerPrefs.GetInt("day", -1) == 1) //day1일 때 bed를 제외하고 비활성화
         {
             for (int i = 0; i < day1_ign_arr.Length; i++)
@@ -152,16 +153,15 @@ public class HouseCollisionCheck : MonoBehaviour
                     Invoke("Sleep", 1);
                 }
                 else
-                {
-                    //할 일을 다 했을 때 잠자기 (쪽지답장, 밥먹기, 약먹기, 화분가꾸기, 랜덤 할 일1, 랜덤 할 일2, 밖에 나갔다 오기)
+                {/*
                     if ((bool)Day_manager.GetBool("NoteCp") && (bool)Day_manager.GetBool("bap") && 
                         (bool)Day_manager.GetBool("pill") && (bool)Day_manager.GetBool("planter") && 
                         (bool)Day_manager.GetBool("random1") && (bool)Day_manager.GetBool("random2") && 
                         (bool)Day_manager.GetBool("routine"))
-                    {
+                    {*/
                         PlayerPrefs.SetInt("sleep", 1); //잠자기 True로 전환
                         Invoke("Sleep", 1);
-                    }
+                   // }
                 }
                 break;
             case "fridge":
@@ -172,25 +172,31 @@ public class HouseCollisionCheck : MonoBehaviour
                 SceneManager.LoadScene("TeaTime0");
                 break;
             case "frontDoor":
-                if (PlayerPrefs.GetInt("day") == 2)
+                //집안 일을 다 했을 때 나가기 (쪽지답장, 밥먹기, 약먹기, 화분가꾸기, 랜덤 할 일1, 랜덤 할 일2)
+                if ((bool)Day_manager.GetBool("NoteCp") && (bool)Day_manager.GetBool("bap") &&
+                        (bool)Day_manager.GetBool("pill") && (bool)Day_manager.GetBool("planter") &&
+                        (bool)Day_manager.GetBool("random1") && (bool)Day_manager.GetBool("random2"))
                 {
-                    PlayerPrefs.SetInt("out", 1);
-                    SceneManager.LoadScene("Assistance1");
-                }
-                else if ( PlayerPrefs.GetInt("day") == 3)
-                {
-                    PlayerPrefs.SetInt("out", 1);
-                    SceneManager.LoadScene("Day3_start");
-                }
-                else if (PlayerPrefs.GetInt("day") == 4)
-                {
-                    PlayerPrefs.SetInt("out", 1);
-                    SceneManager.LoadScene("Day4_Start");
-                }
-                else if (PlayerPrefs.GetInt("day") == 5)
-                {
-                    PlayerPrefs.SetInt("out", 1);
-                    SceneManager.LoadScene("Day5_Start");
+                    if (PlayerPrefs.GetInt("day") == 2)
+                    {
+                        PlayerPrefs.SetInt("out", 1);
+                        SceneManager.LoadScene("Assistance1");
+                    }
+                    else if (PlayerPrefs.GetInt("day") == 3)
+                    {
+                        PlayerPrefs.SetInt("out", 1);
+                        SceneManager.LoadScene("Day3_start");
+                    }
+                    else if (PlayerPrefs.GetInt("day") == 4)
+                    {
+                        PlayerPrefs.SetInt("out", 1);
+                        SceneManager.LoadScene("Day4_Start");
+                    }
+                    else if (PlayerPrefs.GetInt("day") == 5)
+                    {
+                        PlayerPrefs.SetInt("out", 1);
+                        SceneManager.LoadScene("Day5_Start");
+                    }
                 }
                 break;
             case "meditation":

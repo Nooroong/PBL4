@@ -1365,6 +1365,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5f53f76403dbce42a47d93918e87a88, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  image: {fileID: 1857349361}
   button: {fileID: 1335753731}
   dialogText: {fileID: 710162357}
   next: {fileID: 681148405}

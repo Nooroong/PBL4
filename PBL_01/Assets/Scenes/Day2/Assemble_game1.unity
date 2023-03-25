@@ -2087,6 +2087,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45b9b90a6a66ee342bdc93613811485a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  nextScene: Assemble_game2
   components: {fileID: 1205174946}
   next: {fileID: 1323596062}
   circuit: {fileID: 1008205825}

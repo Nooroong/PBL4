@@ -764,6 +764,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5f53f76403dbce42a47d93918e87a88, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  image: {fileID: 1374088521}
   button: {fileID: 1580710103}
   dialogText: {fileID: 224236146}
   next: {fileID: 187959783}
