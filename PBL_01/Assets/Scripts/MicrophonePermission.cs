@@ -16,6 +16,7 @@ public class MicrophonePermission : MonoBehaviour
 
     private int MicCheck = 0;
 
+    public Button Cha, Lav, Jas, S_Btn;
 
     void Start()
     {
@@ -26,6 +27,11 @@ public class MicrophonePermission : MonoBehaviour
         }
         else // 사용자가 마이크 사용 권한을 허용하지 않았을 때
         {
+            // 환경설정과 홈 버튼 이외에 비활성화
+            Cha.interactable = false;
+            Lav.interactable = false;
+            Jas.interactable = false;
+            S_Btn.interactable = false;
             StartCoroutine("MicrophonePermissionRequest");
 #endif
         }
@@ -60,6 +66,12 @@ public class MicrophonePermission : MonoBehaviour
             StartCoroutine("MicrophonePermissionRequest");
             yield break;
         }
+
+        //권한을 허용했을 경우 버튼 활성화
+        Cha.interactable = true;
+        Lav.interactable = true;
+        Jas.interactable = true;
+        S_Btn.interactable = true;
 
         Popup.SetActive(false);
     }
