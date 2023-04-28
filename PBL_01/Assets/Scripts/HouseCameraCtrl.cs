@@ -3,14 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 
 /*
- * https://url.kr/42xkjp (Âü°í ¸µÅ©)
+ * https://url.kr/42xkjp (ì°¸ê³  ë§í¬)
  */
 
 public class HouseCameraCtrl : MonoBehaviour
 {
-    public GameObject player; //ÁÖÀÎ°ø ÁÂÇ¥¸¦ À§ÇØ »ç¿ëµÇ´Â º¯¼ö
+    public GameObject player; //ì£¼ì¸ê³µ ì¢Œí‘œë¥¼ ìœ„í•´ ì‚¬ìš©ë˜ëŠ” ë³€ìˆ˜
 
-    //Ä«¸Ş¶ó°¡ ¿òÁ÷ÀÏ ¼ö ÀÖ´Â ÃÖ¼Ò~ÃÖ´ë ¹üÀ§(¼öµ¿À¸·Î ±¸ÇÔ)
+    //ì¹´ë©”ë¼ê°€ ì›€ì§ì¼ ìˆ˜ ìˆëŠ” ìµœì†Œ~ìµœëŒ€ ë²”ìœ„(ìˆ˜ë™ìœ¼ë¡œ êµ¬í•¨)
     public float minPosX = -5.3f;
     public float maxPosX = 5.3f;
     public float minPosY = -3.0f;
@@ -23,15 +23,15 @@ public class HouseCameraCtrl : MonoBehaviour
 
     // Update is called once per frame
     void Update() {
-        //ÁÖÀÎ°ø ÁÂÇ¥
+        //ì£¼ì¸ê³µ ì¢Œí‘œ
         float charX = player.transform.position.x;
         float charY = player.transform.position.y;
 
-        //Clamp: ÃÖ´ë/ÃÖ¼Ò°ªÀ» ¼³Á¤ÇÏ¿© float °ªÀÌ ¹üÀ§ ÀÌ¿ÜÀÇ °ªÀ» ³ÑÁö ¾Êµµ·Ï ÇÑ´Ù.
+        //Clamp: ìµœëŒ€/ìµœì†Œê°’ì„ ì„¤ì •í•˜ì—¬ float ê°’ì´ ë²”ìœ„ ì´ì™¸ì˜ ê°’ì„ ë„˜ì§€ ì•Šë„ë¡ í•œë‹¤.
         float x = Mathf.Clamp(charX, minPosX, maxPosX);
         float y = Mathf.Clamp(charY, minPosY, maxPosY);
 
-        //Ä«¸Ş¶óÀÇ ÁÂÇ¥¸¦ º¯°æ
+        //ì¹´ë©”ë¼ì˜ ì¢Œí‘œë¥¼ ë³€ê²½
         transform.position = new Vector3(x, y, -10);
     }
 }

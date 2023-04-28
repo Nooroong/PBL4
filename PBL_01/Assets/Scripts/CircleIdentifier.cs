@@ -3,5 +3,5 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class CircleIdentifier : MonoBehaviour {
-    public int id; //ÀÎµ¦½º¸¦ º¸°üÇÒ id
+    public int id; //ì¸ë±ìŠ¤ë¥¼ ë³´ê´€í•  id
 }

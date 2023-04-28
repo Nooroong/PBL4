@@ -12,7 +12,7 @@ public class Bully_image_ctrl : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
-        PlayerPrefs.SetInt("Bully", 1); //BGMÀ» À§ÇØ Bully true·Î ¼³Á¤
+        PlayerPrefs.SetInt("Bully", 1); //BGMì„ ìœ„í•´ Bully trueë¡œ ì„¤ì •
     }
     void Start()
     {

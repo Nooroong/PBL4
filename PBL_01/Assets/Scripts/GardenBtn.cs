@@ -23,7 +23,7 @@ public class GardenBtn : MonoBehaviour
     {
         Home.gameObject.SetActive(false);
 
-        //¸Þ¸ð °¡Á®¿À±â
+        //ë©”ëª¨ ê°€ì ¸ì˜¤ê¸°
         Memo_ctrl = GameObject.Find("Memo_ctrl");
     }
 

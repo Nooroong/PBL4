@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class SurgeryStartBtn : MonoBehaviour {
-    public GameObject parent; //±×¸®µå
+    public GameObject parent; //ê·¸ë¦¬ë“œ
     private int childCount;
 
     // Start is called before the first frame update

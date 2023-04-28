@@ -5,14 +5,14 @@ using UnityEngine.UI;
 
 public class Backspace : MonoBehaviour
 {
-    public Text label; //Á¤´ä ÀÔ·Â Ä­
+    public Text label; //ì •ë‹µ ì…ë ¥ ì¹¸
 
 
     public void Onclicked() {
-        //ÀÔ·ÂµÈ ¹®ÀÚ¿­ÀÇ ±æÀÌ
+        //ì…ë ¥ëœ ë¬¸ìì—´ì˜ ê¸¸ì´
         int leng = label.GetComponent<Text>().text.Length;
 
-        //¸Ç ³¡¿¡ ÇÑ ±ÛÀÚ¸¸ ÀÚ¸§
+        //ë§¨ ëì— í•œ ê¸€ìë§Œ ìë¦„
         if (leng > 0)
             label.GetComponent<Text>().text = label.GetComponent<Text>().text.Substring(0, leng - 1);
 

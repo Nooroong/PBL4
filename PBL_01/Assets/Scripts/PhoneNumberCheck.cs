@@ -7,9 +7,9 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class TimeManager : MonoBehaviour {
-    public Text label; //Á¤´ä ÀÔ·Â Ä­
-    public Text alertText; //¾Ë¸²Ã¢
+public class PhoneNumberCheck : MonoBehaviour {
+    public Text label; //ì •ë‹µ ì…ë ¥ ì¹¸
+    public Text alertText; //ì•Œë¦¼ì°½
     public Text alertText2;
     public Image Panel;
     float time = 0f;
@@ -24,29 +24,29 @@ public class TimeManager : MonoBehaviour {
     /*
     // Update is called once per frame
     void Update() {
-        //½Ã°£ÀÌ ³²¾Ò°Å³ª Á¤´äÀ» ÀÔ·ÂÇÏÁö ¾ÊÀº °æ¿ì, ÇÁ·¹ÀÓ¸¶´Ù ½Ã°£À» °¨¼Ò
+        // ì‹œê°„ì´ ë‚¨ì•˜ê±°ë‚˜ ì •ë‹µì„ ì…ë ¥í•˜ì§€ ì•Šì€ ê²½ìš°, í”„ë ˆì„ë§ˆë‹¤ ì‹œê°„ì„ ê°ì†Œ
         if (time > 0f && (label.GetComponent<Text>().text != "119"))
 
-        //½Ã°£ °¨¼Ò
+        // ì‹œê°„ ê°ì†Œ
         time -= Time.deltaTime;
         timeText.text = time.ToString();
         timeText.text = string.Format("{0:N2}", time);
         
-        //½Ã°£ÀÌ À½¼ö·Î ³ª¿À´Â °æ¿ì¸¦ ¹æÁö
+        // ì‹œê°„ì´ ìŒìˆ˜ë¡œ ë„˜ì–´ê°€ì§€ ì•Šê²Œ ë°©ì§€
         if (time <= 0) timeText.text = "0.00";
     }
     */
 
-    //ÀüÈ­ ¹öÆ° Å¬¸¯ ½Ã
+    //ì „í™” ë²„íŠ¼ í´ë¦­ ì‹œ
     public void OnClicked() {
-        if (label.GetComponent<Text>().text != "119") { //ÀÔ·ÂµÈ ÀüÈ­¹øÈ£°¡ 119°¡ ¾Æ´Ò ½Ã
-            //Àß¸øµÈ ¹øÈ£¶ó´Â ¾Ë¸²Ã¢ ¶ç¿ì±â
+        if (label.GetComponent<Text>().text != "119") { // ì…ë ¥ëœ ì „í™”ë²ˆí˜¸ê°€ 119ê°€ ì•„ë‹ ì‹œ
+            //ì˜ëª»ëœ ë²ˆí˜¸ë¼ëŠ” ì•Œë¦¼ì°½ ë„ìš°ê¸°
             StartCoroutine(FadeText());
         }
-        else { //¿Ã¹Ù¸¥ ÀüÈ­¹øÈ£¸¦ ÀÔ·Â
-            //¼ıÀÚ ¹öÆ°µé
-            GameObject BtnsGrid = GameObject.Find("NumGrid"); //¿ä°ÍÀÇ ÀÚ½ÄµéÀ» ÀüºÎ ºñÈ°¼ºÈ­
-            //¿Ã¹Ù¸¥ Á¤º¸¶ó´Â ¾Ë¸²Ã¢ ¶ç¿ì±â
+        else { //ì˜¬ë°”ë¥¸ ì „í™”ë²ˆí˜¸ë¥¼ ì…ë ¥
+            //ìˆ«ì ë²„íŠ¼ë“¤
+            GameObject BtnsGrid = GameObject.Find("NumGrid"); // ìì‹ ì˜¤ë¸Œì íŠ¸ì˜ ë²„íŠ¼ì„ ì „ë¶€ ë¹„í™œì„±í™”
+            //ì˜¬ë°”ë¥¸ ì •ë³´ë¼ëŠ” ì•Œë¦¼ì°½ ë„ìš°ê¸°
             StartCoroutine(FadeText2());
             for (int i = 0; i < BtnsGrid.transform.childCount; i++) {
                 var btn = BtnsGrid.transform.GetChild(i);
@@ -54,8 +54,9 @@ public class TimeManager : MonoBehaviour {
                 Invoke("F_Out", 1f);
             }
 
-            //Áö¿ì±â ¹öÆ°µµ ºñÈ°¼ºÈ­
+            // ì§€ìš°ê¸° ë²„íŠ¼, ì „í™” ë²„íŠ¼ ë¹„í™œì„±í™”
             GameObject.Find("backspace").GetComponent<Button>().interactable = false;
+            GameObject.Find("call").GetComponent<Button>().interactable = false;
         }
     }
 

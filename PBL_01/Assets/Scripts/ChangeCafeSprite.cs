@@ -19,7 +19,7 @@ public class ChangeCafeSprite : MonoBehaviour
     void Update()
     {
 
-        if (dialogText.text == "ÁøÂ¥? ¹«½¼ ÀÏ ÀÖ¾ú¾î?")
+        if (dialogText.text == "ì§„ì§œ? ë¬´ìŠ¨ ì¼ ìˆì—ˆì–´?")
         {
             m_Animator.GetComponent<Animator>().enabled = true;
         }

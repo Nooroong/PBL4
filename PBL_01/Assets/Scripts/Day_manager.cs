@@ -10,25 +10,25 @@ public class Day_manager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if(PlayerPrefs.GetInt("day", -1) == 1) //day1 ÀÏ ¶§
+        if(PlayerPrefs.GetInt("day", -1) == 1) //day1 ì¼ ë•Œ
         {
-            PlayerPrefs.SetInt("sleep", 0); //ÀáÀÚ±â
+            PlayerPrefs.SetInt("sleep", 0); //ì ìê¸°
         }
         else
         {
-            //ÃÊ±âÈ­ µÇ¾î¼­ ´ÙÀ½³¯ÀÌ µÇ¾úÀ» ¶§
+            //ì´ˆê¸°í™” ë˜ì–´ì„œ ë‹¤ìŒë‚ ì´ ë˜ì—ˆì„ ë•Œ
             if ((bool)GetBool("sleep"))
             {
                 day_image.GetComponent<day_Image_ctrl>().Day_Image();
 
-                PlayerPrefs.SetInt("NoteCp", 0); //ÂÊÁö ´äÀå
-                PlayerPrefs.SetInt("bap", 0); //¹ä¸Ô±â
-                PlayerPrefs.SetInt("pill", 0); //¾à¸Ô±â
-                PlayerPrefs.SetInt("planter", 0); //È­ºĞ °¡²Ù±â
-                PlayerPrefs.SetInt("random1", 0); //·£´ı1
-                PlayerPrefs.SetInt("random2", 0); //·£´ı2
-                PlayerPrefs.SetInt("routine", 0); //¹Û¿¡¼­ ÀÏ¾î³ª´Â ÀÏ
-                PlayerPrefs.SetInt("sleep", 0); //ÀáÀÚ±â
+                PlayerPrefs.SetInt("NoteCp", 0); //ìª½ì§€ ë‹µì¥
+                PlayerPrefs.SetInt("bap", 0); //ë°¥ë¨¹ê¸°
+                PlayerPrefs.SetInt("pill", 0); //ì•½ë¨¹ê¸°
+                PlayerPrefs.SetInt("planter", 0); //í™”ë¶„ ê°€ê¾¸ê¸°
+                PlayerPrefs.SetInt("random1", 0); //ëœë¤1
+                PlayerPrefs.SetInt("random2", 0); //ëœë¤2
+                PlayerPrefs.SetInt("routine", 0); //ë°–ì—ì„œ ì¼ì–´ë‚˜ëŠ” ì¼
+                PlayerPrefs.SetInt("sleep", 0); //ì ìê¸°
 
             }
         }
@@ -37,7 +37,7 @@ public class Day_manager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (PlayerPrefs.GetInt("day", -1) == 1) //day1 ÀÏ ¶§ Á¶°Ç X
+        if (PlayerPrefs.GetInt("day", -1) == 1) //day1 ì¼ ë•Œ ì¡°ê±´ X
         {
             if ((bool)GetBool("sleep"))
             {
@@ -49,7 +49,7 @@ public class Day_manager : MonoBehaviour
         }
         else
         {
-            //¸ğµÎ ÁøÇàµÇ¾úÀ» ¶§ Å° »èÁ¦ ÃÊ±âÈ­
+            //ëª¨ë‘ ì§„í–‰ë˜ì—ˆì„ ë•Œ í‚¤ ì‚­ì œ ì´ˆê¸°í™”
             if ((bool)GetBool("NoteCp") && (bool)GetBool("sleep") && (bool)GetBool("bap") 
                 && (bool)GetBool("pill") && (bool)GetBool("planter")
                     && (bool)GetBool("random1") && (bool)GetBool("random2") 
@@ -69,7 +69,7 @@ public class Day_manager : MonoBehaviour
             }
         }
     }
-    // int °ªÀÌ 1ÀÌ¸é true, 0ÀÌ¸é false
+    // int ê°’ì´ 1ì´ë©´ true, 0ì´ë©´ false
     public static bool? GetBool(string key)
     {
         int tmp = PlayerPrefs.GetInt(key);

@@ -55,7 +55,12 @@ public class Shooting_Director : MonoBehaviour
     {
         Joystick.gameObject.GetComponent<Joystick_shooting>().timeIsZero();
         Joystick.gameObject.GetComponent<Joystick_shooting>().enabled = false;
-        targets.gameObject.GetComponent<Target_move>().Stop();
+        
+        for(int i = 0; i < targets.transform.childCount; i++){
+            targets.transform.GetChild(i).GetComponent<Target_move>().enabled = false;
+        }
+
+        
         shoot.enabled = false;
         black.gameObject.SetActive(true);
         black.gameObject.GetComponent<FadeOut_shooting>().enabled = true;

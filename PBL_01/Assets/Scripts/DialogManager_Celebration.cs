@@ -14,7 +14,7 @@ public class DialogManager_Celebration : MonoBehaviour
     // Start is called before the first frame update 
     void Start()
     {
-        m_Message = @"¿ì¿Í ÃàÇÏÇØ! ³Ê°¡ 1µîÀÌ¾ß!";
+        m_Message = @"ìš°ì™€ ì¶•í•˜í•´! ë„ˆê°€ 1ë“±ì´ì•¼!";
 
         StartCoroutine(Typing(m_TypingText, m_Message, m_Speed));
 

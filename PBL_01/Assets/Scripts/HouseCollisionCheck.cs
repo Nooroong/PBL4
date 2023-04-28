@@ -6,25 +6,25 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using TMPro;
 
-//https://wergia.tistory.com/217 (ÁÖÀÇ: 2D ÇÔ¼ö ½á¾ßÇÔ)
+//https://wergia.tistory.com/217 (ì£¼ì˜: 2D í•¨ìˆ˜ ì¨ì•¼í•¨)
 
 public class HouseCollisionCheck : MonoBehaviour
 {
     //public GameObject day_Image;
-    public Button btn; //µ¸º¸±â(¹öÆ°)
+    public Button btn; //ë‹ë³´ê¸°(ë²„íŠ¼)
     public static bool click1;
     public static bool click2;
     public Text text;
     //public TextMeshProUGUI ran1, ran2;
     public Button meal;
-    public List<string> tasks = new List<string>(); //ÇÒ ÀÏ
+    public List<string> tasks = new List<string>(); //í•  ì¼
     public int index = -1;
 
-    private string collisionObj = "null"; //ÁÖÀÎ°ø°ú Ãæµ¹ÇÑ ¿ÀºêÁ§Æ®ÀÇ ÀÌ¸§À» ÀúÀåÇÏ´Â º¯¼ö
-    private string[] ign_arr = { "null", "wall", "floor", "phonograph", "sofa" }; //Ãæµ¹ÇØµµ ¹öÆ°À» È°¼ºÈ­ ½ÃÅ°Áö ¾Ê´Â ¿ÀºêÁ§Æ®
-    private string[] day1_ign_arr = { "fridge", "frontDoor", "table", "window"}; //day1ÀÏ ¶§ Ãæµ¹ÇØµµ ¹öÆ°À» È°¼ºÈ­ ½ÃÅ°Áö ¾Ê´Â ¿ÀºêÁ§Æ®
-    private string[] day6_ign_arr = { "fridge", "frontDoor", "table", "window", "bed" }; //day6ÀÏ ¶§ Ãæµ¹ÇØµµ ¹öÆ°À» È°¼ºÈ­ ½ÃÅ°Áö ¾Ê´Â ¿ÀºêÁ§Æ®
-    private List<string> ign_list = new List<string>(); //ign_arrÀ» ¸®½ºÆ®·Î º¯È¯ÇÑ °Í
+    private string collisionObj = "null"; //ì£¼ì¸ê³µê³¼ ì¶©ëŒí•œ ì˜¤ë¸Œì íŠ¸ì˜ ì´ë¦„ì„ ì €ì¥í•˜ëŠ” ë³€ìˆ˜
+    private string[] ign_arr = { "null", "wall", "floor", "phonograph", "sofa" }; //ì¶©ëŒí•´ë„ ë²„íŠ¼ì„ í™œì„±í™” ì‹œí‚¤ì§€ ì•ŠëŠ” ì˜¤ë¸Œì íŠ¸
+    private string[] day1_ign_arr = { "fridge", "frontDoor", "table", "window"}; //day1ì¼ ë•Œ ì¶©ëŒí•´ë„ ë²„íŠ¼ì„ í™œì„±í™” ì‹œí‚¤ì§€ ì•ŠëŠ” ì˜¤ë¸Œì íŠ¸
+    private string[] day6_ign_arr = { "fridge", "frontDoor", "table", "window", "bed" }; //day6ì¼ ë•Œ ì¶©ëŒí•´ë„ ë²„íŠ¼ì„ í™œì„±í™” ì‹œí‚¤ì§€ ì•ŠëŠ” ì˜¤ë¸Œì íŠ¸
+    private List<string> ign_list = new List<string>(); //ign_arrì„ ë¦¬ìŠ¤íŠ¸ë¡œ ë³€í™˜í•œ ê²ƒ
 
     void Awake()
     {
@@ -32,7 +32,7 @@ public class HouseCollisionCheck : MonoBehaviour
         tasks.Add("walking");
         tasks.Add("cooking");
 
-        //day1 day6ÀÌ ¾Æ´Ï°í ·£´ı1, ·¥´ı2°¡ ¾øÀ» °æ¿ì¿¡¸¸ ÇÒ ÀÏ ·£´ı ÁöÁ¤
+        //day1 day6ì´ ì•„ë‹ˆê³  ëœë¤1, ë¨ë¤2ê°€ ì—†ì„ ê²½ìš°ì—ë§Œ í•  ì¼ ëœë¤ ì§€ì •
         if (PlayerPrefs.GetInt("day",-1) != 1 && PlayerPrefs.GetInt("day", -1) != 6 && !PlayerPrefs.HasKey("random1") && !PlayerPrefs.HasKey("random2"))
         {
             select_random();
@@ -42,23 +42,23 @@ public class HouseCollisionCheck : MonoBehaviour
     void Start()
     {
         
-        btn.interactable = false; //¹öÆ° ºñÈ°¼ºÈ­
+        btn.interactable = false; //ë²„íŠ¼ ë¹„í™œì„±í™”
         text.gameObject.SetActive(false);
         meal.gameObject.SetActive(false);
 
-        //¹è¿­À» ¸®½ºÆ®·Î
+        //ë°°ì—´ì„ ë¦¬ìŠ¤íŠ¸ë¡œ
         
         for (int i = 0; i < ign_arr.Length; i++)
             ign_list.Add(ign_arr[i]);
         
-        if (PlayerPrefs.GetInt("day", -1) == 1) //day1ÀÏ ¶§ bed¸¦ Á¦¿ÜÇÏ°í ºñÈ°¼ºÈ­
+        if (PlayerPrefs.GetInt("day", -1) == 1) //day1ì¼ ë•Œ bedë¥¼ ì œì™¸í•˜ê³  ë¹„í™œì„±í™”
         {
             for (int i = 0; i < day1_ign_arr.Length; i++)
                 ign_list.Add(day1_ign_arr[i]);
             for (int i = 0; i < 3; i++)
                 ign_list.Add(tasks[i]);
         }
-        else if (PlayerPrefs.GetInt("day", -1) == 6) //day6ÀÏ ¶§ mechanicÀ» Á¦¿ÜÇÏ°í ºñÈ°¼ºÈ­
+        else if (PlayerPrefs.GetInt("day", -1) == 6) //day6ì¼ ë•Œ mechanicì„ ì œì™¸í•˜ê³  ë¹„í™œì„±í™”
         {
             for (int i = 0; i < day6_ign_arr.Length; i++)
                 ign_list.Add(day6_ign_arr[i]);
@@ -67,13 +67,13 @@ public class HouseCollisionCheck : MonoBehaviour
         }
         else //day2, 3, 4, 5
         {
-            //¹Û¿¡¼­ ÀÏ°ú¸¦ ³¡³Â´Ù¸é È°¼ºÈ­ µÇÁö ¾Êµµ·Ï
+            //ë°–ì—ì„œ ì¼ê³¼ë¥¼ ëëƒˆë‹¤ë©´ í™œì„±í™” ë˜ì§€ ì•Šë„ë¡
             if ((bool)Day_manager.GetBool("routine"))
                 ign_list.Add("frontDoor");
             else
                 ign_list.Add("bed");
 
-            index = PlayerPrefs.GetInt("task_index", -1); // ·£´ıÀ¸·Î ÁöÁ¤µÈ ÇÏÁö ¾ÊÀ» ÀÏÀÇ ÀÎµ¦½º¸¦ ºÒ·¯¿È
+            index = PlayerPrefs.GetInt("task_index", -1); // ëœë¤ìœ¼ë¡œ ì§€ì •ëœ í•˜ì§€ ì•Šì„ ì¼ì˜ ì¸ë±ìŠ¤ë¥¼ ë¶ˆëŸ¬ì˜´
 
             ign_list.Add(tasks[index]);
             tasks.RemoveAt(index);
@@ -82,11 +82,11 @@ public class HouseCollisionCheck : MonoBehaviour
 
     public void select_random()
     {
-        index = Random.Range(0, 3); //Á¦¿ÜÇÒ ÀÏ °í¸£±â
+        index = Random.Range(0, 3); //ì œì™¸í•  ì¼ ê³ ë¥´ê¸°
 
-        Debug.Log(tasks[index]);
+        // Debug.Log(tasks[index]);
 
-        PlayerPrefs.SetInt("task_index", index); //Á¦¿ÜÇÒ ÀÏ ÀúÀåÇÏ±â
+        PlayerPrefs.SetInt("task_index", index); //ì œì™¸í•  ì¼ ì €ì¥í•˜ê¸°
     }
 
     public void BtnOnClick() {
@@ -95,15 +95,15 @@ public class HouseCollisionCheck : MonoBehaviour
 
 
     private void OnCollisionEnter2D(Collision2D collision) {
-        //Ãæµ¹ ½ÃÀÛ ½Ã
-        //ÁÖÀÎ°ø°ú Ãæµ¹ÇÑ ¿ÀºêÁ§Æ®ÀÇ ÀÌ¸§À» ÀúÀå
+        //ì¶©ëŒ ì‹œì‘ ì‹œ
+        //ì£¼ì¸ê³µê³¼ ì¶©ëŒí•œ ì˜¤ë¸Œì íŠ¸ì˜ ì´ë¦„ì„ ì €ì¥
         collisionObj = collision.gameObject.name;
         
     }
 
     private void OnCollisionStay2D(Collision2D collision) {
-        //Ãæµ¹ÀÌ Áö¼ÓµÇ´Â µ¿¾È
-        //Ãæµ¹ÇÑ ¿ÀºêÁ§Æ®°¡ ¾À ÀÌµ¿°ú °ü°èÀÖ´Ù¸é ¹öÆ° È°¼ºÈ­
+        //ì¶©ëŒì´ ì§€ì†ë˜ëŠ” ë™ì•ˆ
+        //ì¶©ëŒí•œ ì˜¤ë¸Œì íŠ¸ê°€ ì”¬ ì´ë™ê³¼ ê´€ê³„ìˆë‹¤ë©´ ë²„íŠ¼ í™œì„±í™”
         if(!ign_list.Contains(collisionObj)) btn.interactable = true;
         string s = "table";
         if (collisionObj.CompareTo(s) == 0)
@@ -134,7 +134,7 @@ public class HouseCollisionCheck : MonoBehaviour
 
     private void OnCollisionExit2D(Collision2D collision) {
         collisionObj = "null";
-        btn.interactable = false; //¹öÆ° ºñÈ°¼ºÈ­
+        btn.interactable = false; //ë²„íŠ¼ ë¹„í™œì„±í™”
         meal.interactable = false;
     }
 
@@ -144,12 +144,12 @@ public class HouseCollisionCheck : MonoBehaviour
         yield return new WaitUntil(() => !obj.GetComponent<AudioSource>().isPlaying);
 
 
-        //ÀÌµ¿ÇÒ ¾À ÀÔ·ÂÇØÁÖ¸é µÉµí?
+        //ì´ë™í•  ì”¬ ì…ë ¥í•´ì£¼ë©´ ë ë“¯?
         switch (collisionObj) {
             case "bed":
-                if(PlayerPrefs.GetInt("day", -1) == 1) //day1 ÀÏ ¶§ ¹Ù·Î Àáµé±â
+                if(PlayerPrefs.GetInt("day", -1) == 1) //day1 ì¼ ë•Œ ë°”ë¡œ ì ë“¤ê¸°
                 {
-                    PlayerPrefs.SetInt("sleep", 1); //ÀáÀÚ±â True·Î ÀüÈ¯
+                    PlayerPrefs.SetInt("sleep", 1); //ì ìê¸° Trueë¡œ ì „í™˜
                     Invoke("Sleep", 1);
                 }
                 else
@@ -159,7 +159,7 @@ public class HouseCollisionCheck : MonoBehaviour
                         (bool)Day_manager.GetBool("random1") && (bool)Day_manager.GetBool("random2") && 
                         (bool)Day_manager.GetBool("routine"))
                     {*/
-                        PlayerPrefs.SetInt("sleep", 1); //ÀáÀÚ±â True·Î ÀüÈ¯
+                        PlayerPrefs.SetInt("sleep", 1); //ì ìê¸° Trueë¡œ ì „í™˜
                         Invoke("Sleep", 1);
                    // }
                 }
@@ -172,7 +172,7 @@ public class HouseCollisionCheck : MonoBehaviour
                 SceneManager.LoadScene("TeaTime0");
                 break;
             case "frontDoor":
-                //Áı¾È ÀÏÀ» ´Ù ÇßÀ» ¶§ ³ª°¡±â (ÂÊÁö´äÀå, ¹ä¸Ô±â, ¾à¸Ô±â, È­ºĞ°¡²Ù±â, ·£´ı ÇÒ ÀÏ1, ·£´ı ÇÒ ÀÏ2)
+                //ì§‘ì•ˆ ì¼ì„ ë‹¤ í–ˆì„ ë•Œ ë‚˜ê°€ê¸° (ìª½ì§€ë‹µì¥, ë°¥ë¨¹ê¸°, ì•½ë¨¹ê¸°, í™”ë¶„ê°€ê¾¸ê¸°, ëœë¤ í•  ì¼1, ëœë¤ í•  ì¼2)
                 if ((bool)Day_manager.GetBool("NoteCp") && (bool)Day_manager.GetBool("bap") &&
                         (bool)Day_manager.GetBool("pill") && (bool)Day_manager.GetBool("planter") &&
                         (bool)Day_manager.GetBool("random1") && (bool)Day_manager.GetBool("random2"))
@@ -215,7 +215,7 @@ public class HouseCollisionCheck : MonoBehaviour
                 SceneManager.LoadScene("Day6_PassParts");
                 break;
             default:
-                //È¤¿©³ª Àß¸ø È°¼ºÈ­ µÇ´Â °æ¿ì
+                //í˜¹ì—¬ë‚˜ ì˜ëª» í™œì„±í™” ë˜ëŠ” ê²½ìš°
                 break;
         }
     }

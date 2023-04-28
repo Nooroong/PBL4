@@ -7,8 +7,8 @@ using UnityEngine.SceneManagement;
 
 public class PassAndFadeOut_Switch_Scene : MonoBehaviour
 {
-    public Image tool; //ºÎÇ° ÀÌ¹ÌÁö
-    public Image Black; //°ËÁ¤ È­¸é
+    public Image tool; //ë¶€í’ˆ ì´ë¯¸ì§€
+    public Image Black; //ê²€ì • í™”ë©´
     public Button Button;
     float time = 0f;
     float F_time = 1f;
@@ -17,7 +17,7 @@ public class PassAndFadeOut_Switch_Scene : MonoBehaviour
     public void F_In()
     {
         
-        StartCoroutine(FadeInFlow()); //´ÙÀ½ ¹öÆ°À» ´©¸£¸é ºÎÇ°ÀÌ¹ÌÁö°¡ ¶ç¿öÁö´Â ÄÚ·çÆ¾
+        StartCoroutine(FadeInFlow()); //ë‹¤ìŒ ë²„íŠ¼ì„ ëˆ„ë¥´ë©´ ë¶€í’ˆì´ë¯¸ì§€ê°€ ë„ì›Œì§€ëŠ” ì½”ë£¨í‹´
     }
 
     IEnumerator FadeInFlow()
@@ -38,14 +38,14 @@ public class PassAndFadeOut_Switch_Scene : MonoBehaviour
         }
         Button.gameObject.SetActive(false);
 
-        Invoke("F_Out", 1f); //ºÎÇ°ÀÌ¹ÌÁö°¡ ÆäÀÌµå ¾Æ¿ô µÇ´Â ÄÚ·çÆ¾ ½ÇÇà
+        Invoke("F_Out", 1f); //ë¶€í’ˆì´ë¯¸ì§€ê°€ í˜ì´ë“œ ì•„ì›ƒ ë˜ëŠ” ì½”ë£¨í‹´ ì‹¤í–‰
 
 
     }
 
     public void F_Out()
     {
-        StartCoroutine(FadeOutFlow1()); //ºÎÇ°ÀÌ¹ÌÁö°¡ ÆäÀÌµå ¾Æ¿ô µÇ´Â ÄÚ·çÆ¾ ½ÇÇà
+        StartCoroutine(FadeOutFlow1()); //ë¶€í’ˆì´ë¯¸ì§€ê°€ í˜ì´ë“œ ì•„ì›ƒ ë˜ëŠ” ì½”ë£¨í‹´ ì‹¤í–‰
 
     }
 
@@ -61,13 +61,13 @@ public class PassAndFadeOut_Switch_Scene : MonoBehaviour
             tool.color = alpha;
             yield return null;
         }
-        Invoke("F_Out2", 1f);  //°ËÁ¤ È­¸éÀ» ¶ç¿ö ÆäÀÌµå ¾Æ¿ôÇÏ´Â ÄÚ·çÆ¾ ½ÇÇà
+        Invoke("F_Out2", 1f);  //ê²€ì • í™”ë©´ì„ ë„ì›Œ í˜ì´ë“œ ì•„ì›ƒí•˜ëŠ” ì½”ë£¨í‹´ ì‹¤í–‰
 
     }
 
     public void F_Out2()
     {
-        StartCoroutine(FadeOutFlow2()); //°ËÁ¤ È­¸éÀ» ¶ç¿ö ÆäÀÌµå ¾Æ¿ôÇÏ´Â ÄÚ·çÆ¾
+        StartCoroutine(FadeOutFlow2()); //ê²€ì • í™”ë©´ì„ ë„ì›Œ í˜ì´ë“œ ì•„ì›ƒí•˜ëŠ” ì½”ë£¨í‹´
     }
 
     IEnumerator FadeOutFlow2()

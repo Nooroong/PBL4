@@ -19,41 +19,41 @@ public class Note1_Btn : MonoBehaviour
         switch (PlayerPrefs.GetInt("day"))
         {
             case 2:
-                note.text = "Áö±¸¿¡¼­ Áö³¾ °ÅÃ³¸¦ ¸¶·ÃÇØÁÖ¼Å¼­ °¨»çÇØ¿ä." + "\n" +
-                            "¾à ÀØÁö ¾Ê°í ¸ÔÀ»°Ô¿ä. ¿ìÁÖ¼± ¼ö¸®ÇÒ µ¿¾È¸¸ ½Å¼¼Áö°Ú½À´Ï´Ù." + "\n" +
-                            "Ã¬°ÜÁÖ¼Å¼­ °¨»çÇÕ´Ï´Ù!" + "\n";
+                note.text = "ì§€êµ¬ì—ì„œ ì§€ë‚¼ ê±°ì²˜ë¥¼ ë§ˆë ¨í•´ì£¼ì…”ì„œ ê°ì‚¬í•´ìš”." + "\n" +
+                            "ì•½ ìžŠì§€ ì•Šê³  ë¨¹ì„ê²Œìš”. ìš°ì£¼ì„  ìˆ˜ë¦¬í•  ë™ì•ˆë§Œ ì‹ ì„¸ì§€ê² ìŠµë‹ˆë‹¤." + "\n" +
+                            "ì±™ê²¨ì£¼ì…”ì„œ ê°ì‚¬í•©ë‹ˆë‹¤!" + "\n";
 
-                b1text.text = "Åð±ÙÇÏ½Ã°í ÇÇ°ïÇÏ½ÇÅÙµ¥ ÀÏÂï ÁÖ¹«¼¼¿ä!";
-                b2text.text = "¸»½é ¾È ÇÇ¿ì°í Àß Áö³¾°Ô¿ä!";
-                b3text.text = "³»ÀÏÀº º¼ ¼ö ÀÖÀ¸¸é ÁÁ°Ú¾î¿ä!";
+                b1text.text = "í‡´ê·¼í•˜ì‹œê³  í”¼ê³¤í•˜ì‹¤í…ë° ì¼ì° ì£¼ë¬´ì„¸ìš”!";
+                b2text.text = "ë§ì½ ì•ˆ í”¼ìš°ê³  ìž˜ ì§€ë‚¼ê²Œìš”!";
+                b3text.text = "ë‚´ì¼ì€ ë³¼ ìˆ˜ ìžˆìœ¼ë©´ ì¢‹ê² ì–´ìš”!";
                 break;
             case 3:
-                note.text = "¾îÁ¦ ±æ°Å¸®¿¡ ¾²·¯Áø »ç¶÷À» ºÃ¾î¿ä." + "\n" +
-                            "°ú°ÅÀÇ ±â¾ïÀÌ Àá½Ã ¶°¿Ã¶ó °ÌÀÌ ³µÁö¸¸, ¿ë±â¸¦ ³»¼­ ±¸±ÞÂ÷¸¦ ºÎ¸£°í ÀÀ±ÞÃ³Ä¡¸¦ Çß¾î¿ä. ¸¹Àº ÀÏÀÌ ÀÖ´ø ÇÏ·ç¿´¾î¿ä." + "\n";
+                note.text = "ì–´ì œ ê¸¸ê±°ë¦¬ì— ì“°ëŸ¬ì§„ ì‚¬ëžŒì„ ë´¤ì–´ìš”." + "\n" +
+                            "ê³¼ê±°ì˜ ê¸°ì–µì´ ìž ì‹œ ë– ì˜¬ë¼ ê²ì´ ë‚¬ì§€ë§Œ, ìš©ê¸°ë¥¼ ë‚´ì„œ êµ¬ê¸‰ì°¨ë¥¼ ë¶€ë¥´ê³  ì‘ê¸‰ì²˜ì¹˜ë¥¼ í–ˆì–´ìš”. ë§Žì€ ì¼ì´ ìžˆë˜ í•˜ë£¨ì˜€ì–´ìš”." + "\n";
 
 
-                b1text.text = "¸ÅÀÏ ÂÊÁö ³²°Ü ÁÖ¼Å¼­ °¨»çÇØ¿ä!";
-                b2text.text = "¿À´ÃÀº ¹«½¼ ÀÏÀÌ ÀÏ¾î³¯Áö °ÆÁ¤µÅ¿ä.";
-                b3text.text = "¿À´ÃÀº ²À º¼ ¼ö ÀÖ¾úÀ¸¸é ÁÁ°Ú¾î¿ä.";
+                b1text.text = "ë§¤ì¼ ìª½ì§€ ë‚¨ê²¨ ì£¼ì…”ì„œ ê°ì‚¬í•´ìš”!";
+                b2text.text = "ì˜¤ëŠ˜ì€ ë¬´ìŠ¨ ì¼ì´ ì¼ì–´ë‚ ì§€ ê±±ì •ë¼ìš”.";
+                b3text.text = "ì˜¤ëŠ˜ì€ ê¼­ ë³¼ ìˆ˜ ìžˆì—ˆìœ¼ë©´ ì¢‹ê² ì–´ìš”.";
                 break;
             case 4:
-                note.text = "ÂÊÁö Àß ÀÐ¾ú¾î¿ä. ¾î... ¹«½¼ ´À³¦ÀÌ¶ó°í ÇØ¾ßÇÏÁö..." + "\n" +
-                            "µÇ°Ô ºÎ²ô·´³×¿ä. Á¦°¡ ¾Æ´Ï¾ú¾îµµ ´©±¸µç Çß¾î¾ß ÇßÀ» ÀÏÀÌ¾úÀ» °Å¿¹¿ä. ´Ù¸¥ »ç¶÷¿¡°Ô ¿À·£¸¸¿¡ ÄªÂùÀ» µé¾î¼­ »õ·Ó°í, ½º½º·Î º¯ÇÏ´Â °Ô ´À²¸Á®¿ä." + "\n";
+                note.text = "ìª½ì§€ ìž˜ ì½ì—ˆì–´ìš”. ì–´... ë¬´ìŠ¨ ëŠë‚Œì´ë¼ê³  í•´ì•¼í•˜ì§€..." + "\n" +
+                            "ë˜ê²Œ ë¶€ë„ëŸ½ë„¤ìš”. ì œê°€ ì•„ë‹ˆì—ˆì–´ë„ ëˆ„êµ¬ë“  í–ˆì–´ì•¼ í–ˆì„ ì¼ì´ì—ˆì„ ê±°ì˜ˆìš”. ë‹¤ë¥¸ ì‚¬ëžŒì—ê²Œ ì˜¤ëžœë§Œì— ì¹­ì°¬ì„ ë“¤ì–´ì„œ ìƒˆë¡­ê³ , ìŠ¤ìŠ¤ë¡œ ë³€í•˜ëŠ” ê²Œ ëŠê»´ì ¸ìš”." + "\n";
 
 
-                b1text.text = "³»ÀÏ ¾ÆÄ§ ÂÊÁöµµ ±â´ëÇÒ°Ô¿ä.";
-                b2text.text = "Áö±¸¿¡¼­ÀÇ »ýÈ°ÀÌ Á¡Á¡ ÀûÀÀµÇ°í ÀÖ¾î¿ä.";
-                b3text.text = "¿À´ÃÀº º¼ ¼ö ÀÖ°ÚÁÒ?";
+                b1text.text = "ë‚´ì¼ ì•„ì¹¨ ìª½ì§€ë„ ê¸°ëŒ€í• ê²Œìš”.";
+                b2text.text = "ì§€êµ¬ì—ì„œì˜ ìƒí™œì´ ì ì  ì ì‘ë˜ê³  ìžˆì–´ìš”.";
+                b3text.text = "ì˜¤ëŠ˜ì€ ë³¼ ìˆ˜ ìžˆê² ì£ ?";
                 break;
             case 5:
-                note.text = "¾ÆÄ§¹ä °¨»çÇØ¿ä! ¹ä ÁøÂ¥ ¸ÀÀÖ¾ú¾î¿ä." + "\n" +
-                            "ÀÌÁ¦ ¶°³¯ ³¯ÀÌ ¾ó¸¶ ³²Áö ¾Ê¾Ò³×¿ä. Á¦ ¾ê±â¸¦ µè°í ±â»¼´Ù´Ï Àúµµ ÀÌ ÂÊÁö¸¦ º¸¸é¼­ Çàº¹ÇØ¿ä. ¸¶Áö¸·±îÁö Àß Áö³¾°Ô¿ä." + "\n";
+                note.text = "ì•„ì¹¨ë°¥ ê°ì‚¬í•´ìš”! ë°¥ ì§„ì§œ ë§›ìžˆì—ˆì–´ìš”." + "\n" +
+                            "ì´ì œ ë– ë‚  ë‚ ì´ ì–¼ë§ˆ ë‚¨ì§€ ì•Šì•˜ë„¤ìš”. ì œ ì–˜ê¸°ë¥¼ ë“£ê³  ê¸°ë»¤ë‹¤ë‹ˆ ì €ë„ ì´ ìª½ì§€ë¥¼ ë³´ë©´ì„œ í–‰ë³µí•´ìš”. ë§ˆì§€ë§‰ê¹Œì§€ ìž˜ ì§€ë‚¼ê²Œìš”." + "\n";
 
                 btn1.gameObject.SetActive(false);
                 btn2.gameObject.SetActive(false);
                 btn3.gameObject.SetActive(false);
                 btn4.gameObject.SetActive(true);
-                b4text.text = "Áö±Ý±îÁö Àß Ã¬°ÜÁÖ¼Å¼­ °¨»çÇß½À´Ï´Ù. ³ªÁß¿¡ ¸¸³ª°Ô µÇ¸é Á¦°¡ À½½Ä ÇØµå¸±°Ô¿ä!";
+                b4text.text = "ì§€ê¸ˆê¹Œì§€ ìž˜ ì±™ê²¨ì£¼ì…”ì„œ ê°ì‚¬í–ˆìŠµë‹ˆë‹¤. ë‚˜ì¤‘ì— ë§Œë‚˜ê²Œ ë˜ë©´ ì œê°€ ìŒì‹ í•´ë“œë¦´ê²Œìš”!";
 
                 break;
         }

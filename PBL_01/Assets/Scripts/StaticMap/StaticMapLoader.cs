@@ -9,10 +9,10 @@ public class StaticMapLoader : MonoBehaviour
 {
     public RawImage m_RawImage;
 
-    [Header("¸Ê Á¤º¸ ÀÔ·Â")]
+    [Header("ë§µ ì •ë³´ ì…ë ¥")]
     public string URL = "http://api.vworld.kr/req/image?service=image&request=getmap&key=";
-    public string latitude = ""; // À§µµ
-    public string longitude = ""; // °æµµ
+    public string latitude = ""; // ìœ„ë„
+    public string longitude = ""; // ê²½ë„
     public int zoomLevel = 18; // 6~18
     public int mapWidth; // size max = 1024x1024
     public int mapHeigth;
@@ -31,12 +31,12 @@ public class StaticMapLoader : MonoBehaviour
         str.Append(URL.ToString());
         str.Append(APIKey.ToString());
         str.Append("&format=png");
-        str.Append("&basemap=GRAPHIC"); /*NONE : ¾øÀ½(Èò¹è°æ)
-                                        GRAPHIC(±âº»°ª) : ±âº»Áöµµ
-                                        GRAPHIC_GRAY : È¸»öÁöµµ
-                                        GRAPHIC_NIGHT : ¾ß°£Áöµµ
-                                        PHOTO : ¿µ»óÁöµµ
-                                        PHOTO_HYBRID : ¿µ»ó½Ã¼³¹°Áöµµ
+        str.Append("&basemap=GRAPHIC"); /*NONE : ì—†ìŒ(í°ë°°ê²½)
+                                        GRAPHIC(ê¸°ë³¸ê°’) : ê¸°ë³¸ì§€ë„
+                                        GRAPHIC_GRAY : íšŒìƒ‰ì§€ë„
+                                        GRAPHIC_NIGHT : ì•¼ê°„ì§€ë„
+                                        PHOTO : ì˜ìƒì§€ë„
+                                        PHOTO_HYBRID : ì˜ìƒì‹œì„¤ë¬¼ì§€ë„
                                             */
         str.Append("&center=");
         str.Append(longitude.ToString());

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Audio_F : MonoBehaviour
 {
-	public static IEnumerator FadeOut(AudioSource audioSource, float FadeTime) //¿Àµğ¿À ÆäÀÌµå ¾Æ¿ô
+	public static IEnumerator FadeOut(AudioSource audioSource, float FadeTime) //ì˜¤ë””ì˜¤ í˜ì´ë“œ ì•„ì›ƒ
 	{
 		float startVolume = audioSource.volume;
 		while (audioSource.volume > 0)
@@ -15,7 +15,7 @@ public class Audio_F : MonoBehaviour
 		audioSource.Stop();
 	}
 
-	public static IEnumerator FadeIn(AudioSource audioSource, float FadeTime) //¿Àµğ¿À ÆäÀÌµå ÀÎ
+	public static IEnumerator FadeIn(AudioSource audioSource, float FadeTime) //ì˜¤ë””ì˜¤ í˜ì´ë“œ ì¸
 	{
 		audioSource.Play();
 		audioSource.volume = 0f;

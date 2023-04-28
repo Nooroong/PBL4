@@ -7,12 +7,12 @@ public class Memo_dontdestroy : MonoBehaviour
 {
     public GameObject Memo_ctrl;
     public TextMeshProUGUI text0, text1, text2, text3, text4, text5;
-    // text0: ÂÊÁö ´äÀå (PlayerPrefs Å° ÀÌ¸§ NoteCp)
-    // text1: ¹ä¸Ô±â    (PlayerPrefs Å° ÀÌ¸§ bap)
-    // text2: ¾à¸Ô±â    (PlayerPrefs Å° ÀÌ¸§ pill)
-    // text3: È­ºĞ °¡²Ù±â (PlayerPrefs Å° ÀÌ¸§ planter)
-    // text4: ·£´ı1     (PlayerPrefs Å° ÀÌ¸§ random1)
-    // text5: ·£´ı2     (PlayerPrefs Å° ÀÌ¸§ random2)
+    // text0: ìª½ì§€ ë‹µì¥ (PlayerPrefs í‚¤ ì´ë¦„ NoteCp)
+    // text1: ë°¥ë¨¹ê¸°    (PlayerPrefs í‚¤ ì´ë¦„ bap)
+    // text2: ì•½ë¨¹ê¸°    (PlayerPrefs í‚¤ ì´ë¦„ pill)
+    // text3: í™”ë¶„ ê°€ê¾¸ê¸° (PlayerPrefs í‚¤ ì´ë¦„ planter)
+    // text4: ëœë¤1     (PlayerPrefs í‚¤ ì´ë¦„ random1)
+    // text5: ëœë¤2     (PlayerPrefs í‚¤ ì´ë¦„ random2)
 
     void Awake()
     {
@@ -33,16 +33,16 @@ public class Memo_dontdestroy : MonoBehaviour
         switch (PlayerPrefs.GetInt("task_index", -1))
         {
             case 0:
-                text4.text = "»êÃ¥ÇÏ±â";
-                text5.text = "Â÷ ¸¶½Ã±â";
+                text4.text = "ì‚°ì±…í•˜ê¸°";
+                text5.text = "ì°¨ ë§ˆì‹œê¸°";
                 break;
             case 1:
-                text4.text = "¸í»óÇÏ±â";
-                text5.text = "Â÷ ¸¶½Ã±â";
+                text4.text = "ëª…ìƒí•˜ê¸°";
+                text5.text = "ì°¨ ë§ˆì‹œê¸°";
                 break;
             case 2:
-                text4.text = "¸í»óÇÏ±â";
-                text5.text = "»êÃ¥ÇÏ±â";
+                text4.text = "ëª…ìƒí•˜ê¸°";
+                text5.text = "ì‚°ì±…í•˜ê¸°";
                 break;
             default:
                 text4.text = "default";
@@ -50,28 +50,28 @@ public class Memo_dontdestroy : MonoBehaviour
                 break;
         }
 
-        //´Ù¸¥ °ø°£¿¡ ÀÖ´Ù°¡ House¾ÀÀ¸·Î µ¹¾Æ¿ÔÀ» ¶§ or ÀÌ¾î¼­ÇÏ±â House ¾À¿¡¼­ ½ÃÀÛÇÒ ¶§ ÇÒ ÀÏÀÌ True ¶ó¸é Ãë¼Ò¼±
-        if ((bool)Day_manager.GetBool("NoteCp")) // ÂÊÁö ´äÀå¾²±â
+        //ë‹¤ë¥¸ ê³µê°„ì— ìˆë‹¤ê°€ Houseì”¬ìœ¼ë¡œ ëŒì•„ì™”ì„ ë•Œ or ì´ì–´ì„œí•˜ê¸° House ì”¬ì—ì„œ ì‹œì‘í•  ë•Œ í•  ì¼ì´ True ë¼ë©´ ì·¨ì†Œì„ 
+        if ((bool)Day_manager.GetBool("NoteCp")) // ìª½ì§€ ë‹µì¥ì“°ê¸°
         {
             text0.text = "<s>" + text0.text + "</s>";
         }
-        if ((bool)Day_manager.GetBool("bap")) //¹ä ¸Ô±â
+        if ((bool)Day_manager.GetBool("bap")) //ë°¥ ë¨¹ê¸°
         {
             text1.text = "<s>" + text1.text + "</s>";
         }
-        if ((bool)Day_manager.GetBool("pill")) //¾à ¸Ô±â
+        if ((bool)Day_manager.GetBool("pill")) //ì•½ ë¨¹ê¸°
         {
             text2.text = "<s>" + text2.text + "</s>";
         }
-        if ((bool)Day_manager.GetBool("planter")) //È­ºĞ °¡²Ù±â
+        if ((bool)Day_manager.GetBool("planter")) //í™”ë¶„ ê°€ê¾¸ê¸°
         {
             text3.text = "<s>" + text3.text + "</s>";
         }
-        if ((bool)Day_manager.GetBool("random1")) //·£´ı ÇÒ ÀÏ1
+        if ((bool)Day_manager.GetBool("random1")) //ëœë¤ í•  ì¼1
         {
             text4.text = "<s>" + text4.text + "</s>";
         }
-        if ((bool)Day_manager.GetBool("random2")) //·£´ı ÇÒ ÀÏ2
+        if ((bool)Day_manager.GetBool("random2")) //ëœë¤ í•  ì¼2
         {
             text5.text = "<s>" + text5.text + "</s>";
         }
@@ -79,7 +79,7 @@ public class Memo_dontdestroy : MonoBehaviour
 
     // Update is called once per frame
     void Update() 
-    {   /* ¸ğµç ÀÏÀÌ ³¡³ª°í ÀáÀÚ±â ÇßÀ» ¶§ ½ÇÇà */
+    {   /* ëª¨ë“  ì¼ì´ ëë‚˜ê³  ì ìê¸° í–ˆì„ ë•Œ ì‹¤í–‰ */
         if (!PlayerPrefs.HasKey("NoteCp") && !PlayerPrefs.HasKey("bap") && !PlayerPrefs.HasKey("pill") && 
             !PlayerPrefs.HasKey("planter") && !PlayerPrefs.HasKey("random1") && !PlayerPrefs.HasKey("random2"))
         {
@@ -87,30 +87,30 @@ public class Memo_dontdestroy : MonoBehaviour
         }
     }
 
-    /* ÇÒ ÀÏÀÌ ¼öÇà½Ã Ãë¼Ò¼± ±ß´Â ÇÔ¼ö */
-    public void Reply() //ÂÊÁö ´äÀå
+    /* í•  ì¼ì´ ìˆ˜í–‰ì‹œ ì·¨ì†Œì„  ê¸‹ëŠ” í•¨ìˆ˜ */
+    public void Reply() //ìª½ì§€ ë‹µì¥
     {
         text0.text = "<s>" + text0.text + "</s>";
         PlayerPrefs.SetInt("NoteCp", 1);
     }
-    public void Eating() //¹ä¸Ô±â
+    public void Eating() //ë°¥ë¨¹ê¸°
     {
         text1.text = "<s>" + text1.text + "</s>";
         PlayerPrefs.SetInt("bap", 1);
     }
-    public void Take_A_Pill() //¾à¸Ô±â
+    public void Take_A_Pill() //ì•½ë¨¹ê¸°
     {
         text2.text = "<s>" + text2.text + "</s>";
         PlayerPrefs.SetInt("pill", 1);
     }
-    public void Planter() //È­ºĞ °¡²Ù±â
+    public void Planter() //í™”ë¶„ ê°€ê¾¸ê¸°
     {
         text3.text = "<s>" + text3.text + "</s>";
         PlayerPrefs.SetInt("planter", 1);
     }
-    public void Walking() //»êÃ¥
+    public void Walking() //ì‚°ì±…
     {
-        if (text4.text.Contains("»êÃ¥")) //random1ÀÎÁö random2ÀÎÁö È®ÀÎÇÏ±â À§ÇÑ Á¶°Ç¹®
+        if (text4.text.Contains("ì‚°ì±…")) //random1ì¸ì§€ random2ì¸ì§€ í™•ì¸í•˜ê¸° ìœ„í•œ ì¡°ê±´ë¬¸
         {
             text4.text = "<s>" + text4.text + "</s>";
             PlayerPrefs.SetInt("random1", 1);
@@ -122,9 +122,9 @@ public class Memo_dontdestroy : MonoBehaviour
             PlayerPrefs.SetInt("random2", 1);
         }
     }
-    public void Meditation() //¸í»ó
+    public void Meditation() //ëª…ìƒ
     {
-        if (text4.text.Contains("¸í»ó")) //random1ÀÎÁö random2ÀÎÁö È®ÀÎÇÏ±â À§ÇÑ Á¶°Ç¹®
+        if (text4.text.Contains("ëª…ìƒ")) //random1ì¸ì§€ random2ì¸ì§€ í™•ì¸í•˜ê¸° ìœ„í•œ ì¡°ê±´ë¬¸
         {
             text4.text = "<s>" + text4.text + "</s>";
             PlayerPrefs.SetInt("random1", 1);
@@ -136,9 +136,9 @@ public class Memo_dontdestroy : MonoBehaviour
             PlayerPrefs.SetInt("random2", 1);
         }
     }
-    public void Tea() //Â÷¸¶½Ã±â
+    public void Tea() //ì°¨ë§ˆì‹œê¸°
     {
-        if (text4.text.Contains("Â÷")) //random1ÀÎÁö random2ÀÎÁö È®ÀÎÇÏ±â À§ÇÑ Á¶°Ç¹®
+        if (text4.text.Contains("ì°¨")) //random1ì¸ì§€ random2ì¸ì§€ í™•ì¸í•˜ê¸° ìœ„í•œ ì¡°ê±´ë¬¸
         {
             text4.text = "<s>" + text4.text + "</s>";
             PlayerPrefs.SetInt("random1", 1);

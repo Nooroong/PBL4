@@ -21,7 +21,7 @@ public class TeaTime2ctr : MonoBehaviour
 
         Invoke("GaugeBarCtrl", 4.5f);
 
-        //¸Þ¸ð °¡Á®¿À±â
+        //ë©”ëª¨ ê°€ì ¸ì˜¤ê¸°
         Memo_ctrl = GameObject.Find("Memo_ctrl");
     }
 

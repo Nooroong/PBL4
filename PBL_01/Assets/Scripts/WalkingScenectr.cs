@@ -20,7 +20,7 @@ public class WalkingScenectr : MonoBehaviour
         m_Animator = GetComponent<Animator>();
         m_Animator.GetComponent<Animator>().enabled = false;
 
-        //¸Ş¸ğ °¡Á®¿À±â
+        //ë©”ëª¨ ê°€ì ¸ì˜¤ê¸°
         Memo_ctrl = GameObject.Find("Memo_ctrl");
     }
 
@@ -51,9 +51,9 @@ public class WalkingScenectr : MonoBehaviour
         Memo_ctrl.gameObject.GetComponent<Memo_dontdestroy>().Walking();
     }
 
-    //È¿°úÀ½ Àç»ı µÚ¿¡ ¿ÀºêÁ§Æ® ºñÈ°¼ºÈ­
+    //íš¨ê³¼ìŒ ì¬ìƒ ë’¤ì— ì˜¤ë¸Œì íŠ¸ ë¹„í™œì„±í™”
     IEnumerator Destory_Btn(Button obj) {
-        // StopWatch.StartWalking() ½ÇÇà ½Ã°£ È®º¸?
+        // StopWatch.StartWalking() ì‹¤í–‰ ì‹œê°„ í™•ë³´?
         yield return new WaitForSeconds(0.15f);
 
         obj.GetComponent<AudioSource>().Play();

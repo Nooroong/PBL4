@@ -7,7 +7,7 @@ using UnityEngine;
 using UnityEngine.Android;
 # endif
 
-// https://young-94.tistory.com/44 ÂüÁ¶
+// https://young-94.tistory.com/44 ì°¸ì¡°
 
 public class MicrophonePermission : MonoBehaviour
 {
@@ -23,11 +23,11 @@ public class MicrophonePermission : MonoBehaviour
 #if PLATFORM_ANDROID
         if (Permission.HasUserAuthorizedPermission(Permission.Microphone))
         {
-            // »ç¿ëÀÚ°¡ ¸¶ÀÌÅ© »ç¿ë ±ÇÇÑÀ» Çã¿ëÇßÀ» ¶§
+            // ì‚¬ìš©ìê°€ ë§ˆì´í¬ ì‚¬ìš© ê¶Œí•œì„ í—ˆìš©í–ˆì„ ë•Œ
         }
-        else // »ç¿ëÀÚ°¡ ¸¶ÀÌÅ© »ç¿ë ±ÇÇÑÀ» Çã¿ëÇÏÁö ¾Ê¾ÒÀ» ¶§
+        else // ì‚¬ìš©ìê°€ ë§ˆì´í¬ ì‚¬ìš© ê¶Œí•œì„ í—ˆìš©í•˜ì§€ ì•Šì•˜ì„ ë•Œ
         {
-            // È¯°æ¼³Á¤°ú È¨ ¹öÆ° ÀÌ¿Ü¿¡ ºñÈ°¼ºÈ­
+            // í™˜ê²½ì„¤ì •ê³¼ í™ˆ ë²„íŠ¼ ì´ì™¸ì— ë¹„í™œì„±í™”
             Cha.interactable = false;
             Lav.interactable = false;
             Jas.interactable = false;
@@ -41,15 +41,15 @@ public class MicrophonePermission : MonoBehaviour
     {
         if (MicCheck == 0)
         {
-            // »ç¿ëÀÚ¿¡°Ô ¸¶ÀÌÅ© »ç¿ë ±ÇÇÑ ¿äÃ»
+            // ì‚¬ìš©ìì—ê²Œ ë§ˆì´í¬ ì‚¬ìš© ê¶Œí•œ ìš”ì²­
             Permission.RequestUserPermission(Permission.Microphone);
         }
-        else if(MicCheck != 0) // »ç¿ëÀÚ°¡ ¸¶ÀÌÅ© »ç¿ë ±ÇÇÑÀ» °ÅºÎ ÇßÀ» ¶§
+        else if(MicCheck != 0) // ì‚¬ìš©ìê°€ ë§ˆì´í¬ ì‚¬ìš© ê¶Œí•œì„ ê±°ë¶€ í–ˆì„ ë•Œ
         {
-            // ±ÇÇÑ Çã¿ëÀ» À§ÇØ ¼³¸í ÆË¾÷Ã¢ ¶ç¿ì±â
-            Popup_txt.text = "¸¶ÀÌÅ©¸¦ »ç¿ëÇÒ ¼ö ¾ø½À´Ï´Ù. " +
-                "°ÔÀÓÀÇ ÁøÇàÀ» À§ÇØ ´Ü¸»±âÀÇ " +
-                "\"¼³Á¤ > ¾ÖÇÃ¸®ÄÉÀÌ¼Ç > ºñ¿æµå ´õ °¶·°½Ã > ±ÇÇÑ> ¸¶ÀÌÅ©\"¸¦ Çã¿ëÀ¸·Î ¼³Á¤ÇØÁÖ¼¼¿ä.";
+            // ê¶Œí•œ í—ˆìš©ì„ ìœ„í•´ ì„¤ëª… íŒì—…ì°½ ë„ìš°ê¸°
+            Popup_txt.text = "ë§ˆì´í¬ë¥¼ ì‚¬ìš©í•  ìˆ˜ ì—†ìŠµë‹ˆë‹¤. " +
+                "ê²Œì„ì˜ ì§„í–‰ì„ ìœ„í•´ ë‹¨ë§ê¸°ì˜ " +
+                "\"ì„¤ì • > ì• í”Œë¦¬ì¼€ì´ì…˜ > ë¹„ìš˜ë“œ ë” ê°¤ëŸ­ì‹œ > ê¶Œí•œ> ë§ˆì´í¬\"ë¥¼ í—ˆìš©ìœ¼ë¡œ ì„¤ì •í•´ì£¼ì„¸ìš”.";
 
             if (!Popup.activeInHierarchy) Popup.SetActive(true);
 
@@ -59,15 +59,15 @@ public class MicrophonePermission : MonoBehaviour
 
         yield return new WaitForSeconds(0.2f);
         yield return new WaitUntil(() => Application.isFocused == true); 
-        //±ÇÇÑÀÌ ¾ø´Â »óÅÂ¿¡¼­ ¿À·ù°¡ ³ªÁö ¾Ê°Ô ¾ÛÀÌ Æ÷Ä¿½º »óÅÂÀÏ ‹š±îÁö ±â´Ù¸²
+        //ê¶Œí•œì´ ì—†ëŠ” ìƒíƒœì—ì„œ ì˜¤ë¥˜ê°€ ë‚˜ì§€ ì•Šê²Œ ì•±ì´ í¬ì»¤ìŠ¤ ìƒíƒœì¼ ë–„ê¹Œì§€ ê¸°ë‹¤ë¦¼
 
-        if (!Permission.HasUserAuthorizedPermission(Permission.Microphone)) //±ÇÇÑÀ» Çã¿ëÇÏÁö ¾Ê¾Ò´Ù¸é ÄÚ·çÆ¾ ´Ù½Ã ½ÃÀÛ
+        if (!Permission.HasUserAuthorizedPermission(Permission.Microphone)) //ê¶Œí•œì„ í—ˆìš©í•˜ì§€ ì•Šì•˜ë‹¤ë©´ ì½”ë£¨í‹´ ë‹¤ì‹œ ì‹œì‘
         {
             StartCoroutine("MicrophonePermissionRequest");
             yield break;
         }
 
-        //±ÇÇÑÀ» Çã¿ëÇßÀ» °æ¿ì ¹öÆ° È°¼ºÈ­
+        //ê¶Œí•œì„ í—ˆìš©í–ˆì„ ê²½ìš° ë²„íŠ¼ í™œì„±í™”
         Cha.interactable = true;
         Lav.interactable = true;
         Jas.interactable = true;

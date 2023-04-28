@@ -4,9 +4,9 @@ using UnityEngine;
 
 //https://rito15.github.io/posts/unity-android-toast-message/
 /*
- * <½Ì±ÛÅÏ>
- * °´Ã¼¸¦ ¿©·¯¹ø »ı¼³ÇÒ ÇÊ¿ä ¾øÀÌ ´Ü ÇÑ ¹ø¸¸ »ı¼ºÇÏ¸é µÇ´Â °æ¿ì¿¡ »ç¿ëÇÑ´Ù.
- * ¾ÛÀÌ ½ÃÀÛµÉ ¶§ ÃÖÃÊ ÇÑ¹ø¸¸ ¸Ş¸ğ¸®¸¦ ÇÒ´çÇÏ°í °Å±â¿¡ ÀÎ½ºÅÏ½º¸¦ ¸¸µé¾î »ç¿ëÇÏ´Â µğÀÚÀÎÆĞÅÏ.
+ * <ì‹±ê¸€í„´>
+ * ê°ì²´ë¥¼ ì—¬ëŸ¬ë²ˆ ìƒì„¤í•  í•„ìš” ì—†ì´ ë‹¨ í•œ ë²ˆë§Œ ìƒì„±í•˜ë©´ ë˜ëŠ” ê²½ìš°ì— ì‚¬ìš©í•œë‹¤.
+ * ì•±ì´ ì‹œì‘ë  ë•Œ ìµœì´ˆ í•œë²ˆë§Œ ë©”ëª¨ë¦¬ë¥¼ í• ë‹¹í•˜ê³  ê±°ê¸°ì— ì¸ìŠ¤í„´ìŠ¤ë¥¼ ë§Œë“¤ì–´ ì‚¬ìš©í•˜ëŠ” ë””ìì¸íŒ¨í„´.
  * 
  */
 
@@ -15,45 +15,45 @@ public class AndroidToast : MonoBehaviour
 {
     #region Singleton
 
-    //½Ì±ÛÅæ ÀÎ½ºÅÏ½º Getter
+    //ì‹±ê¸€í†¤ ì¸ìŠ¤í„´ìŠ¤ Getter
     public static AndroidToast I {
         get {
-            if (instance == null)    // Ã¼Å© 1 : ÀÎ½ºÅÏ½º°¡ ¾ø´Â °æ¿ì
+            if (instance == null)    // ì²´í¬ 1 : ì¸ìŠ¤í„´ìŠ¤ê°€ ì—†ëŠ” ê²½ìš°
                 CheckExsistence();
 
             return instance;
         }
     }
 
-    // ½Ì±ÛÅæ ÀÎ½ºÅÏ½º
+    // ì‹±ê¸€í†¤ ì¸ìŠ¤í„´ìŠ¤
     private static AndroidToast instance;
 
-    // ½Ì±ÛÅæ ÀÎ½ºÅÏ½º Á¸Àç ¿©ºÎ È®ÀÎ (Ã¼Å© 2)
+    // ì‹±ê¸€í†¤ ì¸ìŠ¤í„´ìŠ¤ ì¡´ì¬ ì—¬ë¶€ í™•ì¸ (ì²´í¬ 2)
     private static void CheckExsistence() {
-        // ½Ì±ÛÅæ °Ë»ö
+        // ì‹±ê¸€í†¤ ê²€ìƒ‰
         instance = FindObjectOfType<AndroidToast>();
 
-        // ÀÎ½ºÅÏ½º °¡Áø ¿ÀºêÁ§Æ®°¡ Á¸ÀçÇÏÁö ¾ÊÀ» °æ¿ì, ºó ¿ÀºêÁ§Æ®¸¦ ÀÓÀÇ·Î »ı¼ºÇÏ¿© ÀÎ½ºÅÏ½º ÇÒ´ç
+        // ì¸ìŠ¤í„´ìŠ¤ ê°€ì§„ ì˜¤ë¸Œì íŠ¸ê°€ ì¡´ì¬í•˜ì§€ ì•Šì„ ê²½ìš°, ë¹ˆ ì˜¤ë¸Œì íŠ¸ë¥¼ ì„ì˜ë¡œ ìƒì„±í•˜ì—¬ ì¸ìŠ¤í„´ìŠ¤ í• ë‹¹
         if (instance == null) {
-            // ºó °ÔÀÓ ¿ÀºêÁ§Æ® »ı¼º
+            // ë¹ˆ ê²Œì„ ì˜¤ë¸Œì íŠ¸ ìƒì„±
             GameObject container = new GameObject("AndroidToast Singleton Container");
 
-            // °ÔÀÓ ¿ÀºêÁ§Æ®¿¡ Å¬·¡½º ÄÄÆ÷³ÍÆ® Ãß°¡ ÈÄ ÀÎ½ºÅÏ½º ÇÒ´ç
+            // ê²Œì„ ì˜¤ë¸Œì íŠ¸ì— í´ë˜ìŠ¤ ì»´í¬ë„ŒíŠ¸ ì¶”ê°€ í›„ ì¸ìŠ¤í„´ìŠ¤ í• ë‹¹
             instance = container.AddComponent<AndroidToast>();
         }
     }
 
     private void CheckInstance() {
-        // ½Ì±ÛÅæ ÀÎ½ºÅÏ½º°¡ Á¸ÀçÇÏÁö ¾Ê¾ÒÀ» °æ¿ì, º»ÀÎÀ¸·Î ÃÊ±âÈ­
+        // ì‹±ê¸€í†¤ ì¸ìŠ¤í„´ìŠ¤ê°€ ì¡´ì¬í•˜ì§€ ì•Šì•˜ì„ ê²½ìš°, ë³¸ì¸ìœ¼ë¡œ ì´ˆê¸°í™”
         if (instance == null)
             instance = this;
 
-        // ½Ì±ÛÅæ ÀÎ½ºÅÏ½º°¡ Á¸ÀçÇÏ´Âµ¥, º»ÀÎÀÌ ¾Æ´Ò °æ¿ì, ½º½º·Î(ÄÄÆ÷³ÍÆ®)¸¦ ÆÄ±«
+        // ì‹±ê¸€í†¤ ì¸ìŠ¤í„´ìŠ¤ê°€ ì¡´ì¬í•˜ëŠ”ë°, ë³¸ì¸ì´ ì•„ë‹ ê²½ìš°, ìŠ¤ìŠ¤ë¡œ(ì»´í¬ë„ŒíŠ¸)ë¥¼ íŒŒê´´
         if (instance != null && instance != this) {
-            Debug.Log("ÀÌ¹Ì AndroidToast ½Ì±ÛÅæÀÌ Á¸ÀçÇÏ¹Ç·Î ¿ÀºêÁ§Æ®¸¦ ÆÄ±«ÇÕ´Ï´Ù.");
+            Debug.Log("ì´ë¯¸ AndroidToast ì‹±ê¸€í†¤ì´ ì¡´ì¬í•˜ë¯€ë¡œ ì˜¤ë¸Œì íŠ¸ë¥¼ íŒŒê´´í•©ë‹ˆë‹¤.");
             Destroy(this);
 
-            // ¸¸¾à °ÔÀÓ ¿ÀºêÁ§Æ®¿¡ ÄÄÆ÷³ÍÆ®°¡ ÀÚ½Å¸¸ ÀÖ¾ú´Ù¸é, °ÔÀÓ ¿ÀºêÁ§Æ®µµ ÆÄ±«
+            // ë§Œì•½ ê²Œì„ ì˜¤ë¸Œì íŠ¸ì— ì»´í¬ë„ŒíŠ¸ê°€ ìì‹ ë§Œ ìˆì—ˆë‹¤ë©´, ê²Œì„ ì˜¤ë¸Œì íŠ¸ë„ íŒŒê´´
             var components = gameObject.GetComponents<Component>();
 
             if (components.Length <= 2)
@@ -68,9 +68,9 @@ public class AndroidToast : MonoBehaviour
     #endregion // ==================================================================
 
     public enum ToastLength {
-        /// <summary> ¾à 2.5ÃÊ </summary>
+        /// <summary> ì•½ 2.5ì´ˆ </summary>
         Short,
-        /// <summary> ¾à 4ÃÊ </summary>
+        /// <summary> ì•½ 4ì´ˆ </summary>
         Long
     };
 
@@ -92,7 +92,7 @@ public class AndroidToast : MonoBehaviour
     }
 #endif
 
-    /// <summary> ¾Èµå·ÎÀÌµå Åä½ºÆ® ¸Ş½ÃÁö Ç¥½ÃÇÏ±â </summary>
+    /// <summary> ì•ˆë“œë¡œì´ë“œ í† ìŠ¤íŠ¸ ë©”ì‹œì§€ í‘œì‹œí•˜ê¸° </summary>
     [System.Diagnostics.Conditional("UNITY_ANDROID")]
     public void ShowToastMessage(string message, ToastLength length = ToastLength.Short) {
 #if UNITY_EDITOR
@@ -112,7 +112,7 @@ public class AndroidToast : MonoBehaviour
     }
 
 #if UNITY_EDITOR
-    /* À¯´ÏÆ¼ ¿¡µğÅÍ IMGUI¸¦ ÅëÇØ Åä½ºÆ® ¸Ş½ÃÁö Ç¥½Ã ¸ğ¹æÇÏ±â */
+    /* ìœ ë‹ˆí‹° ì—ë””í„° IMGUIë¥¼ í†µí•´ í† ìŠ¤íŠ¸ ë©”ì‹œì§€ í‘œì‹œ ëª¨ë°©í•˜ê¸° */
 
     private GUIStyle toastStyle;
     private void OnGUI() {

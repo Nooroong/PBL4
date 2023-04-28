@@ -14,62 +14,62 @@ public class Note0_Btn : MonoBehaviour
     void Start()
     {
         ps.gameObject.SetActive(false);
-        switch (PlayerPrefs.GetInt("day")) // case 3, 4 ps.text ¾Õ¿¡ "ps. " + Ãß°¡
+        switch (PlayerPrefs.GetInt("day")) // case 3, 4 ps.text ì•žì— "ps. " + ì¶”ê°€
         {
             case 2:
 
-                text.text = "¾È³ç, ´Ù½Ã ÇÑ ¹ø Áö±¸¿¡ ¿Â°É È¯¿µÇØ." + "\n"+
-                            "³ª´Â ¾ÆÄ§ ÀÏÂï Ãâ±ÙÇÏ°í Àú³á ´Ê°Ô Åð±ÙÇØ¼­ ¾Æ¸¶ ³Ê¿Í ¸¶ÃßÁú ÀÏÀº ¾ó¸¶ ¾øÀ»°Å¾ß." + "\n" +
-                            "´ë½Å ¸ÅÀÏ ¾ÆÄ§¸¶´Ù ³ÊÇÑÅ× ÂÊÁö¸¦ ³²±æ°Ô." + "\n" +
-                            "ps. ¹äÀº ³ÃÀå°í¿¡ ÀÖÀ¸´Ï ²¨³»¼­ Ã¬°Ü¸Ô¾î." + "\n" +
-                            "´º½º¿¡ ³Ê ¾ê±â°¡ ³ª¿Ô´õ¶ó. ½ÄÅ¹ À§¿¡ ½Å¹® È®ÀÎÇØºÁ.";
+                text.text = "ì•ˆë…•, ë‹¤ì‹œ í•œ ë²ˆ ì§€êµ¬ì— ì˜¨ê±¸ í™˜ì˜í•´." + "\n"+
+                            "ë‚˜ëŠ” ì•„ì¹¨ ì¼ì° ì¶œê·¼í•˜ê³  ì €ë… ëŠ¦ê²Œ í‡´ê·¼í•´ì„œ ì•„ë§ˆ ë„ˆì™€ ë§ˆì¶”ì§ˆ ì¼ì€ ì–¼ë§ˆ ì—†ì„ê±°ì•¼." + "\n" +
+                            "ëŒ€ì‹  ë§¤ì¼ ì•„ì¹¨ë§ˆë‹¤ ë„ˆí•œí…Œ ìª½ì§€ë¥¼ ë‚¨ê¸¸ê²Œ." + "\n" +
+                            "ps. ë°¥ì€ ëƒ‰ìž¥ê³ ì— ìžˆìœ¼ë‹ˆ êº¼ë‚´ì„œ ì±™ê²¨ë¨¹ì–´." + "\n" +
+                            "ë‰´ìŠ¤ì— ë„ˆ ì–˜ê¸°ê°€ ë‚˜ì™”ë”ë¼. ì‹íƒ ìœ„ì— ì‹ ë¬¸ í™•ì¸í•´ë´.";
                 break;
             case 3:
                 
-                if(PlayerPrefs.GetString("note").Contains("Åð±ÙÇÏ½Ã°í ÇÇ°ïÇÏ½ÇÅÙµ¥ ÀÏÂï ÁÖ¹«¼¼¿ä!"))
+                if(PlayerPrefs.GetString("note").Contains("í‡´ê·¼í•˜ì‹œê³  í”¼ê³¤í•˜ì‹¤í…ë° ì¼ì° ì£¼ë¬´ì„¸ìš”!"))
                 {
-                    ps.text = "³¸¼± °÷¿¡ ¿Í¼­ ¿©·¯¸ð·Î ÈûµéÅÙµ¥ Á¦´ë·Î Ã¬°ÜÁÖÁö ¸øÇØ ¹Ì¾ÈÇØ.";
+                    ps.text = "ë‚¯ì„  ê³³ì— ì™€ì„œ ì—¬ëŸ¬ëª¨ë¡œ íž˜ë“¤í…ë° ì œëŒ€ë¡œ ì±™ê²¨ì£¼ì§€ ëª»í•´ ë¯¸ì•ˆí•´.";
                 }
-                else if(PlayerPrefs.GetString("note").Contains("¸»½é ¾È ÇÇ¿ì°í Àß Áö³¾°Ô¿ä!"))
+                else if(PlayerPrefs.GetString("note").Contains("ë§ì½ ì•ˆ í”¼ìš°ê³  ìž˜ ì§€ë‚¼ê²Œìš”!"))
                 {
-                    ps.text = "³ª ¾ø´Â µ¿¾È ¹¹ ÇÏ°í Áö³Â´ÂÁö ±Ã±ÝÇÏ±¸³ª.";
+                    ps.text = "ë‚˜ ì—†ëŠ” ë™ì•ˆ ë­ í•˜ê³  ì§€ëƒˆëŠ”ì§€ ê¶ê¸ˆí•˜êµ¬ë‚˜.";
                 }
                 else
                 {
-                    ps.text = "³ªµµ º¼ ¼ö ÀÖÀ¸¸é ÁÁ°Ú±¸³ª.";
+                    ps.text = "ë‚˜ë„ ë³¼ ìˆ˜ ìžˆìœ¼ë©´ ì¢‹ê² êµ¬ë‚˜.";
                 }
-                text.text = "¾ÆÄ§ ÀÏÂï ³ª°¡°í ¹ã ´Ê°Ô µé¾î¿À´Ï±î ¾ó±¼ º¼ ÀÏÀÌ Àû³×." + "\n" +
-                            "¿À´Ã ÇÏ·çµµ Á¶½ÉÈ÷ Àß Áö³»! ¿©±â¼­ Áö³»´Â µ¿¾È ¸¶À½³õ°í ÆíÇÏ°Ô ÀÖÀ¸·Å." + "\n" +
-                            "¿À´Ãµµ ¹ä ¸Ô°í ¾à ÀØÁö¸¶. ¿À´Ã ¸¶À»¿¡ ÃàÁ¦ ¿­¸®´Ï±î ±¸°æÇØºÁ." + "\n" +
+                text.text = "ì•„ì¹¨ ì¼ì° ë‚˜ê°€ê³  ë°¤ ëŠ¦ê²Œ ë“¤ì–´ì˜¤ë‹ˆê¹Œ ì–¼êµ´ ë³¼ ì¼ì´ ì ë„¤." + "\n" +
+                            "ì˜¤ëŠ˜ í•˜ë£¨ë„ ì¡°ì‹¬ížˆ ìž˜ ì§€ë‚´! ì—¬ê¸°ì„œ ì§€ë‚´ëŠ” ë™ì•ˆ ë§ˆìŒë†“ê³  íŽ¸í•˜ê²Œ ìžˆìœ¼ë ´." + "\n" +
+                            "ì˜¤ëŠ˜ë„ ë°¥ ë¨¹ê³  ì•½ ìžŠì§€ë§ˆ. ì˜¤ëŠ˜ ë§ˆì„ì— ì¶•ì œ ì—´ë¦¬ë‹ˆê¹Œ êµ¬ê²½í•´ë´." + "\n" +
                             "ps. " + ps.text;
                 break;
             case 4:
 
-                if (PlayerPrefs.GetString("note").Contains("¸ÅÀÏ ÂÊÁö ³²°Ü ÁÖ¼Å¼­ °¨»çÇØ¿ä!"))
+                if (PlayerPrefs.GetString("note").Contains("ë§¤ì¼ ìª½ì§€ ë‚¨ê²¨ ì£¼ì…”ì„œ ê°ì‚¬í•´ìš”!"))
                 {
-                    ps.text = "¾ó±¼µµ ¸ø º¸´Âµ¥ ÀÌ·¸°Ô¶óµµ ¼­·Î ¾ê±âÇØ¾ßÁö.";
+                    ps.text = "ì–¼êµ´ë„ ëª» ë³´ëŠ”ë° ì´ë ‡ê²Œë¼ë„ ì„œë¡œ ì–˜ê¸°í•´ì•¼ì§€.";
                 }
-                else if (PlayerPrefs.GetString("note").Contains("¿À´ÃÀº ¹«½¼ ÀÏÀÌ ÀÏ¾î³¯Áö °ÆÁ¤µÅ¿ä."))
+                else if (PlayerPrefs.GetString("note").Contains("ì˜¤ëŠ˜ì€ ë¬´ìŠ¨ ì¼ì´ ì¼ì–´ë‚ ì§€ ê±±ì •ë¼ìš”."))
                 {
-                    ps.text = "³Ê¹« °ÆÁ¤ÇÏÁö¸¶. ¿ë±â¸¦ ³».";
+                    ps.text = "ë„ˆë¬´ ê±±ì •í•˜ì§€ë§ˆ. ìš©ê¸°ë¥¼ ë‚´.";
                 }
                 else
                 {
-                    ps.text = "ÀßÇÏ¸é ¿À´ÃÀº Åð±ÙÀÌ »¡¶óÁú ¼öµµ ÀÖ¾î.";
+                    ps.text = "ìž˜í•˜ë©´ ì˜¤ëŠ˜ì€ í‡´ê·¼ì´ ë¹¨ë¼ì§ˆ ìˆ˜ë„ ìžˆì–´.";
                 }
-                text.text = "¿©·¯°¡Áö ÀÏµéÀÌ ÀÖ¾ú±¸³ª. ¿©±â ¿ÂÁö ¾ó¸¶ µÇÁöµµ ¾Ê¾Æ¼­ Èûµé¾úÀ» ÅÙµ¥ °í»ý ¸¹¾Ò¾î." + "\n" +
-                            "¾Æ, ÇÑ °¡Áö ºÎÅ¹ÇÒ°Ô ÀÖ¾î. ½ÄÀç·á°¡ ¶³¾îÁ®¼­ ±ÙÃ³ ¸¶Æ®¿¡¼­ »ç´ÙÁáÀ¸¸é ÇØ." + "\n" +
-                            "½ÄÅ¹ À§¿¡ µ·ÀÌ¶û ¸ñ·Ï Àû¾î ³õÀº Æ÷½ºÆ®ÀÕ ºÙ¿©³ù¾î ºÎÅ¹ÇÒ°Ô, °í¸¶¿ö." + "\n" +
+                text.text = "ì—¬ëŸ¬ê°€ì§€ ì¼ë“¤ì´ ìžˆì—ˆêµ¬ë‚˜. ì—¬ê¸° ì˜¨ì§€ ì–¼ë§ˆ ë˜ì§€ë„ ì•Šì•„ì„œ íž˜ë“¤ì—ˆì„ í…ë° ê³ ìƒ ë§Žì•˜ì–´." + "\n" +
+                            "ì•„, í•œ ê°€ì§€ ë¶€íƒí• ê²Œ ìžˆì–´. ì‹ìž¬ë£Œê°€ ë–¨ì–´ì ¸ì„œ ê·¼ì²˜ ë§ˆíŠ¸ì—ì„œ ì‚¬ë‹¤ì¤¬ìœ¼ë©´ í•´." + "\n" +
+                            "ì‹íƒ ìœ„ì— ëˆì´ëž‘ ëª©ë¡ ì ì–´ ë†“ì€ í¬ìŠ¤íŠ¸ìž‡ ë¶™ì—¬ë†¨ì–´ ë¶€íƒí• ê²Œ, ê³ ë§ˆì›Œ." + "\n" +
                             "ps. " + ps.text;
                 break;
             case 5:
 
-                ps.text = "ps. ¿À´ÃÀÌ ¸¶Áö¸·ÀÌ±¸³ª. ¿À´ÃÀº ÀÏÂï ³¡³»°í µé¾î°¡¸¶.";
+                ps.text = "ps. ì˜¤ëŠ˜ì´ ë§ˆì§€ë§‰ì´êµ¬ë‚˜. ì˜¤ëŠ˜ì€ ì¼ì° ëë‚´ê³  ë“¤ì–´ê°€ë§ˆ.";
 
-                text.text = "¾îÁ¦ ³Ê°¡ °ñ¸ñ¿¡¼­ ¾î¶² ¾ÆÀÌ¸¦ µµ¿ÍÁá´Ù´Â ¾ê±â¸¦ µè°í, Âü ±â»¼¾î." + "\n" +
-                            "Áö±¸¿¡ Ã³À½ ¿ÔÀ» ¶§¶û ¸¹ÀÌ ´Þ¶óÁø °Í °°±¸³ª. ¶°³¯ ³¯ÀÌ ¾ó¸¶ ³²Áö ¾Ê¾Ò´Ù´Â °Ô ´À²¸Á®." + "\n" +
-                            "¿À´Ãµµ ¾à Ã¬°Ü ¸Ô°í, ¹äÀº ³»°¡ ½ÄÅ¹¿¡ Â÷·Á³ù¾î." + "\n" +
-                            "ÀÔ¸À¿¡ ¸ÂÀ»Áö ¸ð¸£°ÚÁö¸¸ Àß ¸ÔÀ¸¸é ÁÁ°Ú´Ù." + "\n" +
+                text.text = "ì–´ì œ ë„ˆê°€ ê³¨ëª©ì—ì„œ ì–´ë–¤ ì•„ì´ë¥¼ ë„ì™€ì¤¬ë‹¤ëŠ” ì–˜ê¸°ë¥¼ ë“£ê³ , ì°¸ ê¸°ë»¤ì–´." + "\n" +
+                            "ì§€êµ¬ì— ì²˜ìŒ ì™”ì„ ë•Œëž‘ ë§Žì´ ë‹¬ë¼ì§„ ê²ƒ ê°™êµ¬ë‚˜. ë– ë‚  ë‚ ì´ ì–¼ë§ˆ ë‚¨ì§€ ì•Šì•˜ë‹¤ëŠ” ê²Œ ëŠê»´ì ¸." + "\n" +
+                            "ì˜¤ëŠ˜ë„ ì•½ ì±™ê²¨ ë¨¹ê³ , ë°¥ì€ ë‚´ê°€ ì‹íƒì— ì°¨ë ¤ë†¨ì–´." + "\n" +
+                            "ìž…ë§›ì— ë§žì„ì§€ ëª¨ë¥´ê² ì§€ë§Œ ìž˜ ë¨¹ìœ¼ë©´ ì¢‹ê² ë‹¤." + "\n" +
                             ps.text;
                 break;
         }

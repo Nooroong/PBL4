@@ -4,15 +4,15 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class PhoneNumInput : MonoBehaviour {
-    public Text label; //Á¤´ä ÀÔ·Â Ä­
+    public Text label; //ì •ë‹µ ì…ë ¥ ì¹¸
 
     private void Start() {
-        //ÀÚ½Ä(¹öÆ°)ÀÇ ÀÚ½Ä(ÅØ½ºÆ®)¸¦ °¡Á®¿Í¼­ ÀÌ¸§ º¯°æ
+        //ìì‹(ë²„íŠ¼)ì˜ ìì‹(í…ìŠ¤íŠ¸)ë¥¼ ê°€ì ¸ì™€ì„œ ì´ë¦„ ë³€ê²½
         for (int i = 0; i < transform.childCount; i++) {
             var btn = transform.GetChild(i);
             var btnText = transform.GetChild(i).GetChild(0);
 
-            //°¢ ¹öÆ°¿¡ °íÀ¯ÀÇ id(int)¸¦ ºÎ¿©ÇÏ¿© ±¸ºĞ(0~11)
+            //ê° ë²„íŠ¼ì— ê³ ìœ ì˜ id(int)ë¥¼ ë¶€ì—¬í•˜ì—¬ êµ¬ë¶„(0~11)
             var identifier = btn.GetComponent<BtnIdentifier>();
             identifier.id = i;
 
@@ -25,10 +25,10 @@ public class PhoneNumInput : MonoBehaviour {
 
 
     public void Onclicked(BtnIdentifier idf) {
-        //Å¬¸¯µÈ ¹öÆ°À» id·Î ±¸ºĞ. ÇØ´ç ¹öÆ°ÀÇ ÀÚ½Ä(text)À» ¾ò¾î¿Â´Ù.
+        //í´ë¦­ëœ ë²„íŠ¼ì„ idë¡œ êµ¬ë¶„. í•´ë‹¹ ë²„íŠ¼ì˜ ìì‹(text)ì„ ì–»ì–´ì˜¨ë‹¤.
         var t = this.transform.GetChild(idf.id).GetChild(0);
 
-        //ÀÔ·ÂÇÑ ¹öÆ°À» ÅØ½ºÆ® ³¡¿¡´Ù Ãß°¡. 8±ÛÀÚ±îÁö ÀÔ·Â °¡´É.
+        //ì…ë ¥í•œ ë²„íŠ¼ì„ í…ìŠ¤íŠ¸ ëì—ë‹¤ ì¶”ê°€. 8ê¸€ìê¹Œì§€ ì…ë ¥ ê°€ëŠ¥.
         if(label.GetComponent<Text>().text.Length < 8)
             label.GetComponent<Text>().text += t.GetComponent<Text>().text;
     }

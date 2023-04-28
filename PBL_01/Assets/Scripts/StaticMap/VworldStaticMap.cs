@@ -171,11 +171,11 @@ public class VworldStaticMap : MonoBehaviour
         UnityWebRequest request = UnityWebRequestTexture.GetTexture(url.ToString());
         yield return request.SendWebRequest();
 
-        Debug.Log(url.ToString());
+        // Debug.Log(url.ToString());
 
         if (request.result != UnityWebRequest.Result.Success) {
             // 오류메세지 출력
-            Debug.Log(request.downloadHandler.text);
+            // Debug.Log(request.downloadHandler.text);
         } else {
             if(!request.downloadHandler.text.Contains("error")) {
                 // vworld 쪽에서 오류를 반환하지 않은 경우에만 텍스쳐 적용.

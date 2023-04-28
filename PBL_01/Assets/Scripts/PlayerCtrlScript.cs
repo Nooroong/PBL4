@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-//´Ù¸¥ ¾À¿¡ °¬´Ù°¡ µ¹¾Æ¿ÔÀ» ¶§, ÁÖÀÎ°øÀÇ À§Ä¡¸¦ °íÁ¤½ÃÅ°±â À§ÇÑ ½ºÅ©¸³Æ®
+//ë‹¤ë¥¸ ì”¬ì— ê°”ë‹¤ê°€ ëŒì•„ì™”ì„ ë•Œ, ì£¼ì¸ê³µì˜ ìœ„ì¹˜ë¥¼ ê³ ì •ì‹œí‚¤ê¸° ìœ„í•œ ìŠ¤í¬ë¦½íŠ¸
 
 public class PlayerCtrlScript : MonoBehaviour
 {

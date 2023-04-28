@@ -22,17 +22,17 @@ public class ChangeSpaceshipSprite : MonoBehaviour
             Alarm.gameObject.SetActive(true);
         }
         
-        if (dialogText.text == "(Åä¹Ì´Â Áö")
+        if (dialogText.text == "(í† ë¯¸ëŠ” ì§€")
         {
             Alarm.gameObject.SetActive(false);
             this.GetComponent<Image>().sprite = Resources.Load("PrologueImage\\19_0", typeof(Sprite)) as Sprite;
         }
 
-        if (dialogText.text == "(Åä¹Ì´Â Áö½Ã¿¡ µû¶ó ¾ÈÀüº§Æ®¸¦ ¸Ç´Ù.)")
+        if (dialogText.text == "(í† ë¯¸ëŠ” ì§€ì‹œì— ë”°ë¼ ì•ˆì „ë²¨íŠ¸ë¥¼ ë§¨ë‹¤.)")
         {
             this.GetComponent<Image>().sprite = Resources.Load("PrologueImage\\19_1", typeof(Sprite)) as Sprite;
         }
-        if (dialogText.text == "(Åä¹Ì´Â ½É")
+        if (dialogText.text == "(í† ë¯¸ëŠ” ì‹¬")
         {
             this.GetComponent<Image>().sprite = Resources.Load("PrologueImage\\20", typeof(Sprite)) as Sprite;
         }

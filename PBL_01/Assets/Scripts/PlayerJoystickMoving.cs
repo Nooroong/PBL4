@@ -2,10 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-//ÁÖÀÎ°ø ¾Ö´Ï¸ŞÀÌ¼Ç ¼³Á¤ Âü°í ¸µÅ©: http://devkorea.co.kr/bbs/board.php?bo_table=m03_qna&wr_id=106646
+//ì£¼ì¸ê³µ ì• ë‹ˆë©”ì´ì…˜ ì„¤ì • ì°¸ê³  ë§í¬: http://devkorea.co.kr/bbs/board.php?bo_table=m03_qna&wr_id=106646
 
 public class PlayerJoystickMoving : MonoBehaviour {
-    public RectTransform innerPad; //¾ÈÂÊ ¿ø
+    public RectTransform innerPad; //ì•ˆìª½ ì›
     public float speed;
 
     private Joystick joystick;
@@ -20,18 +20,18 @@ public class PlayerJoystickMoving : MonoBehaviour {
 
 
     void FixedUpdate() {
-        if (joystick.Horizontal != 0 || joystick.Vertical != 0) { //ÀÌµ¿
+        if (joystick.Horizontal != 0 || joystick.Vertical != 0) { //ì´ë™
             anim.speed = 0.5f;
             MoveControl();
-        } else { //ÀÌµ¿ x
-            anim.speed = 0.0f; //ÇöÀç Àç»ı ÁßÀÎ ¾Ö´Ï¸ŞÀÌ¼Ç ¸ØÃã
+        } else { //ì´ë™ x
+            anim.speed = 0.0f; //í˜„ì¬ ì¬ìƒ ì¤‘ì¸ ì• ë‹ˆë©”ì´ì…˜ ë©ˆì¶¤
         }
     }
 
     private void MoveControl() {
-        Vector3 upMovement = Vector3.up * speed * Time.deltaTime * joystick.Vertical; //»óÇÏ·Î ÀÌµ¿ÇÏ´Â Á¤µµ
-        Vector3 rightMovement = Vector3.right * speed * Time.deltaTime * joystick.Horizontal; //ÁÂ¿ì·Î ÀÌµ¿ÇÏ´Â Á¤µµ
-        float stickAngle = Mathf.Abs(Mathf.Atan2(innerPad.anchoredPosition.x, innerPad.anchoredPosition.y) * Mathf.Rad2Deg); //Á¶ÀÌ½ºÆ½ °¢µµ
+        Vector3 upMovement = Vector3.up * speed * Time.deltaTime * joystick.Vertical; //ìƒí•˜ë¡œ ì´ë™í•˜ëŠ” ì •ë„
+        Vector3 rightMovement = Vector3.right * speed * Time.deltaTime * joystick.Horizontal; //ì¢Œìš°ë¡œ ì´ë™í•˜ëŠ” ì •ë„
+        float stickAngle = Mathf.Abs(Mathf.Atan2(innerPad.anchoredPosition.x, innerPad.anchoredPosition.y) * Mathf.Rad2Deg); //ì¡°ì´ìŠ¤í‹± ê°ë„
 
         transform.position += upMovement;
         transform.position += rightMovement;

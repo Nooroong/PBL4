@@ -72,7 +72,7 @@ public class GoToMain : MonoBehaviour
             PlayerPrefs.SetString("Last_scene", "House");
         }
 
-        Debug.Log(PlayerPrefs.GetString("Last_scene"));
+        // Debug.Log(PlayerPrefs.GetString("Last_scene"));
         
         StartCoroutine(UntilPlayback(Button));
     }

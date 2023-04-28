@@ -8,15 +8,15 @@ using UnityEngine.EventSystems;
 
 public class Joystick_shooting : MonoBehaviour, IDragHandler, IPointerUpHandler, IPointerDownHandler
 {
-    public RectTransform innerPad; //¾ÈÂÊ ¿ø
-    public RectTransform outerPad; //¹Ù±ù ¿ø
+    public RectTransform innerPad; //ì•ˆìª½ ì›
+    public RectTransform outerPad; //ë°”ê¹¥ ì›
 
-    private float deadZone = 0; //¾ÈÂÊ ¿øÀÇ ÀÌµ¿ ¹üÀ§?
+    private float deadZone = 0; //ì•ˆìª½ ì›ì˜ ì´ë™ ë²”ìœ„?
     private float handleRange = 1;
     private Vector3 input = Vector3.zero;
     private Canvas canvas;
 
-    //ÀÏ´Ü µÑ ´Ù 0f·Î ¼³Á¤ÇÏ´Âµí?
+    //ì¼ë‹¨ ë‘˜ ë‹¤ 0fë¡œ ì„¤ì •í•˜ëŠ”ë“¯?
     public float Horizontal { get { return input.x; } }
     public float Vertical { get { return input.y; } }
 
@@ -33,15 +33,15 @@ public class Joystick_shooting : MonoBehaviour, IDragHandler, IPointerUpHandler,
 
     public void OnDrag(PointerEventData eventData)
     {
-        //anchors ¼³Á¤: outer pad´Â bottom-left, inner pad´Â middle-center (ÀÌÀ¯´Â ¸ô·ç)
+        //anchors ì„¤ì •: outer padëŠ” bottom-left, inner padëŠ” middle-center (ì´ìœ ëŠ” ëª°ë£¨)
         Vector2 radius = outerPad.sizeDelta / 2;
         Vector2 event_pos = Camera.main.ScreenToWorldPoint(eventData.position);
         event_pos.x -= 1.8f;
         event_pos.y -= 1.9f;
         Vector2 outer_pos = outerPad.position;
         Vector2 input_pos = (event_pos - outer_pos) * 100;
-        input = input_pos / (radius * canvas.scaleFactor); //(ÅÍÄ¡ ÁÂÇ¥-)
-        HandleInput(input.magnitude, input.normalized); //magnitude: length of vector, normalized: º¤ÅÍ Á¤±ÔÈ­
+        input = input_pos / (radius * canvas.scaleFactor); //(í„°ì¹˜ ì¢Œí‘œ-)
+        HandleInput(input.magnitude, input.normalized); //magnitude: length of vector, normalized: ë²¡í„° ì •ê·œí™”
         innerPad.anchoredPosition = input * radius *  handleRange;
     }
 
@@ -63,12 +63,12 @@ public class Joystick_shooting : MonoBehaviour, IDragHandler, IPointerUpHandler,
     public void OnPointerUp(PointerEventData eventData)
     {
         input = Vector2.zero;
-        innerPad.anchoredPosition = Vector2.zero; //¾ÈÂÊ ¿øÀÇ À§Ä¡¸¦ Á¦ÀÚ¸®·Î
+        innerPad.anchoredPosition = Vector2.zero; //ì•ˆìª½ ì›ì˜ ìœ„ì¹˜ë¥¼ ì œìë¦¬ë¡œ
     }
     public void timeIsZero()
     {
         input = Vector2.zero;
-        innerPad.anchoredPosition = Vector2.zero; //¾ÈÂÊ ¿øÀÇ À§Ä¡¸¦ Á¦ÀÚ¸®·Î
+        innerPad.anchoredPosition = Vector2.zero; //ì•ˆìª½ ì›ì˜ ìœ„ì¹˜ë¥¼ ì œìë¦¬ë¡œ
     }
 }
 

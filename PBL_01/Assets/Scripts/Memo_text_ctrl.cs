@@ -11,18 +11,18 @@ public class Memo_text_ctrl : MonoBehaviour
     TextMeshProUGUI tmp0, tmp1, tmp2, tmp3, tmp4, tmp5;
 
 
-    // tmp0, text0: ÂÊÁö ´äÀå (PlayerPrefs Å° ÀÌ¸§ NoteCp)
-    // tmp1, text1: ¹ä¸Ô±â    (PlayerPrefs Å° ÀÌ¸§ bap)
-    // tmp2, text2: ¾à¸Ô±â    (PlayerPrefs Å° ÀÌ¸§ pill)
-    // tmp3, text3: È­ºĞ °¡²Ù±â (PlayerPrefs Å° ÀÌ¸§ planter)
-    // tmp4, text4: ·£´ı1     (PlayerPrefs Å° ÀÌ¸§ random1)
-    // tmp5, text5: ·£´ı2     (PlayerPrefs Å° ÀÌ¸§ random2)
+    // tmp0, text0: ìª½ì§€ ë‹µì¥ (PlayerPrefs í‚¤ ì´ë¦„ NoteCp)
+    // tmp1, text1: ë°¥ë¨¹ê¸°    (PlayerPrefs í‚¤ ì´ë¦„ bap)
+    // tmp2, text2: ì•½ë¨¹ê¸°    (PlayerPrefs í‚¤ ì´ë¦„ pill)
+    // tmp3, text3: í™”ë¶„ ê°€ê¾¸ê¸° (PlayerPrefs í‚¤ ì´ë¦„ planter)
+    // tmp4, text4: ëœë¤1     (PlayerPrefs í‚¤ ì´ë¦„ random1)
+    // tmp5, text5: ëœë¤2     (PlayerPrefs í‚¤ ì´ë¦„ random2)
 
 
     // Start is called before the first frame update
     void Awake()
     {
-        /* House ¾À Memo_ctrl > TMPS > T0, T1, T2, T3, T4, T5 °¡Á®¿À±â */
+        /* House ì”¬ Memo_ctrl > TMPS > T0, T1, T2, T3, T4, T5 ê°€ì ¸ì˜¤ê¸° */
         Memo_ctrl = GameObject.Find("Memo_ctrl");
         TMPs = Memo_ctrl.transform.Find("TMPs").gameObject;
         tmp0 = TMPs.transform.Find("T0").gameObject.GetComponent<TextMeshProUGUI>();
@@ -39,7 +39,7 @@ public class Memo_text_ctrl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        /* ¸Ş¸ğÁö¿¡ ÇÒ ÀÏ ¶ç¿ì±â */
+        /* ë©”ëª¨ì§€ì— í•  ì¼ ë„ìš°ê¸° */
         text0.text = tmp0.text;
         text1.text = tmp1.text;
         text2.text = tmp2.text;

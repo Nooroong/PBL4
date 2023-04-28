@@ -72,7 +72,7 @@ public class DialogManager_Spaceship : MonoBehaviour, IPointerDownHandler
             //dialogGroup.alpha = 0;
             //dialogGroup.blocksRaycasts = false;
             //button.gameObject.SetActive(true);
-            //¹öÆ° Å¬¸¯ ¾øÀÌ ¹Ù·Î ´ÙÀ½ ¾À ³Ñ¾î°¡±â
+            //ë²„íŠ¼ í´ë¦­ ì—†ì´ ë°”ë¡œ ë‹¤ìŒ ì”¬ ë„˜ì–´ê°€ê¸°
             SceneManager.LoadScene("Prologue_Spaceship2");
         }
     }

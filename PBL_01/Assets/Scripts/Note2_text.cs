@@ -17,7 +17,7 @@ public class Note2_text : MonoBehaviour
     {
         text.text = PlayerPrefs.GetString("note");
 
-        //¸Þ¸ð °¡Á®¿À±â
+        //ë©”ëª¨ ê°€ì ¸ì˜¤ê¸°
         Memo_ctrl = GameObject.Find("Memo_ctrl");
     }
 

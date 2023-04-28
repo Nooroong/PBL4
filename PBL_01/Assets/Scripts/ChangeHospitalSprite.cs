@@ -18,14 +18,14 @@ public class ChangeHospitalSprite : MonoBehaviour
     void Update()
     {
  
-            if (dialogText.text == "³ª¿Ô½À´Ï´Ù. ÀÏ´Ü ³ú »çÁøÀ» º¾½Ã´Ù.")
-            {   //Åä¹Ì¿Í ÀÇ»ç ´«°ú ÀÔ ÀÌ¹ÌÁö ºñÈ°¼ºÈ­
+            if (dialogText.text == "ë‚˜ì™”ìŠµë‹ˆë‹¤. ì¼ë‹¨ ë‡Œ ì‚¬ì§„ì„ ë´…ì‹œë‹¤.")
+            {   //í† ë¯¸ì™€ ì˜ì‚¬ ëˆˆê³¼ ì… ì´ë¯¸ì§€ ë¹„í™œì„±í™”
                 tomee.gameObject.SetActive(false);
                 doctor.gameObject.SetActive(false);
                 image.GetComponent<Image>().sprite = Resources.Load("PrologueImage\\2", typeof(Sprite)) as Sprite;
             }
-            if (dialogText.text == "Áö±İ ´À³¢°í °è½Ã´Â ¹®Á¦µéÀº ¾Æ¸¶ ½É¸®ÀûÀ¸·Î ´À³¢")
-            {   //Åä¹Ì¿Í ÀÇ»ç ´«°ú ÀÔ ÀÌ¹ÌÁö È°¼ºÈ­
+            if (dialogText.text == "ì§€ê¸ˆ ëŠë¼ê³  ê³„ì‹œëŠ” ë¬¸ì œë“¤ì€ ì•„ë§ˆ ì‹¬ë¦¬ì ìœ¼ë¡œ ëŠë¼")
+            {   //í† ë¯¸ì™€ ì˜ì‚¬ ëˆˆê³¼ ì… ì´ë¯¸ì§€ í™œì„±í™”
                 image.GetComponent<Image>().sprite = Resources.Load("PrologueImage\\1_BG", typeof(Sprite)) as Sprite;
                 tomee.gameObject.SetActive(true);
                 doctor.gameObject.SetActive(true);

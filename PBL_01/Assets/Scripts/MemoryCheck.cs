@@ -6,8 +6,8 @@ using UnityEngine.SceneManagement;
 using UnityEngine.EventSystems;
 
 public class MemoryCheck : MonoBehaviour {
-    public Text ch; //Ã¼Å© ÅØ½ºÆ® º¯¼ö
-    public Image mind; //±â¾ï ¼Ó ÀÌ¹ÌÁö
+    public Text ch; //ì²´í¬ í…ìŠ¤íŠ¸ ë³€ìˆ˜
+    public Image mind; //ê¸°ì–µ ì† ì´ë¯¸ì§€
 
     public Image Panel;
     float time = 0f;
@@ -16,32 +16,32 @@ public class MemoryCheck : MonoBehaviour {
 
     private void Update() {
         if(Input.GetMouseButtonUp(0)) {
-            int cnt = transform.childCount; //ÇØ´ç ¿ÀºêÁ§Æ®ÀÇ ÀÚ½Ä ¼ö
+            int cnt = transform.childCount; //í•´ë‹¹ ì˜¤ë¸Œì íŠ¸ì˜ ìì‹ ìˆ˜
 
-            //³ª»Û ±â¾ïÀÌ 3°³ÀÌ¹Ç·Î ÀÏ´Ü Á¶°Ç¿¡ 3 ÀÌ»óÀ» ³ÖÀ½
+            //ë‚˜ìœ ê¸°ì–µì´ 3ê°œì´ë¯€ë¡œ ì¼ë‹¨ ì¡°ê±´ì— 3 ì´ìƒì„ ë„£ìŒ
             if (cnt >= 3) {
                 for (int i = 0; i < cnt; i++) {
-                    //ÀÌ¸§¿¡ bad°¡ µé¾î°¡Áö ¾ÊÀº ÀÚ½ÄÀÌ ÀÖ´Ù¸é
+                    //ì´ë¦„ì— badê°€ ë“¤ì–´ê°€ì§€ ì•Šì€ ìì‹ì´ ìˆë‹¤ë©´
                     if (!transform.GetChild(i).name.Contains("bad")) {
-                        ch.gameObject.SetActive(false); //Ã¼Å© ÅØ½ºÆ® ºñÈ°¼ºÈ­
-                        return; //°Ë»ç °úÁ¤ ³ª°¡¸®
+                        ch.gameObject.SetActive(false); //ì²´í¬ í…ìŠ¤íŠ¸ ë¹„í™œì„±í™”
+                        return; //ê²€ì‚¬ ê³¼ì • ë‚˜ê°€ë¦¬
                     }
                 }
-                ch.gameObject.SetActive(true); //ÀÚ½ÄÀÌ ¸ğµÎ bad memory¶ó¸é Åë°ú.(ÅØ½ºÆ® È°¼ºÈ­)
-                //±â¾ï ÅÍÄ¡ ºñÈ°¼ºÈ­
+                ch.gameObject.SetActive(true); //ìì‹ì´ ëª¨ë‘ bad memoryë¼ë©´ í†µê³¼.(í…ìŠ¤íŠ¸ í™œì„±í™”)
+                //ê¸°ì–µ í„°ì¹˜ ë¹„í™œì„±í™”
                 for (int i = 0; i < transform.childCount; i++)
                     transform.GetChild(i).GetComponent<MemoryMovement>().enabled = false;
                 for (int i = 0; i < mind.transform.childCount; i++) 
                     mind.transform.GetChild(i).GetComponent<MemoryMovement>().enabled = false;
 
-                //ÆäÀÌµå ¾Æ¿ô Áß ÅÍÄ¡½Ã È­¸éÀÌ ±ô¹Ú°Å¸®´Â Çö»óÀ» ¹æÁö
-                //È­¸éÀ» ¾Æ¹«¸® ÅÍÄ¡ÇØµµ F_Out()ÀÌ ÃÖÃÊ 1È¸¸¸ µ¿ÀÛÇÏµµ·Ï ÇÑ´Ù.
+                //í˜ì´ë“œ ì•„ì›ƒ ì¤‘ í„°ì¹˜ì‹œ í™”ë©´ì´ ê¹œë°•ê±°ë¦¬ëŠ” í˜„ìƒì„ ë°©ì§€
+                //í™”ë©´ì„ ì•„ë¬´ë¦¬ í„°ì¹˜í•´ë„ F_Out()ì´ ìµœì´ˆ 1íšŒë§Œ ë™ì‘í•˜ë„ë¡ í•œë‹¤.
                 if (flag) {
                     StartCoroutine(FadeText());
                     Invoke("F_Out", 1f);
                     flag = !flag;
                 }
-            } else { //±â¾ïÀÌ 2°³ ÀÌÇÏÀÎ °æ¿ì
+            } else { //ê¸°ì–µì´ 2ê°œ ì´í•˜ì¸ ê²½ìš°
                 ch.gameObject.SetActive(false);
             }
         }

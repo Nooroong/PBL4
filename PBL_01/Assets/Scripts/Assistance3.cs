@@ -5,15 +5,15 @@ using UnityEngine.UI;
 
 public class Assistance3 : MonoBehaviour
 {
-    public Camera m_cam; // Ä«¸Ş¶ó
+    public Camera m_cam; // ì¹´ë©”ë¼
 
     public Image Background;
     public Image Player;
 
-    Vector3 BG_screenPos; //»õ·Î¿î BG Æ÷Áö¼Ç
-    Vector3 P_screenPos; //»õ·Î¿î Player Æ÷Áö¼Ç
+    Vector3 BG_screenPos; //ìƒˆë¡œìš´ BG í¬ì§€ì…˜
+    Vector3 P_screenPos; //ìƒˆë¡œìš´ Player í¬ì§€ì…˜
 
-    float speed = 1.6f; // 1/50¹è
+    float speed = 1.6f; // 1/50ë°°
     float speed1 = 3.0f;
     float yMove;
     float xMove;

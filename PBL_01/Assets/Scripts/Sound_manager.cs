@@ -14,7 +14,7 @@ public class Sound_manager : MonoBehaviour
     int tea, Out, day, rain, bully, guitar, after_busking;
     string s_name = "";
     float fadeInTime = 2.0f;
-    float fadeOutTime = 1.0f;
+    // float fadeOutTime = 1.0f;
     int cnt = 0;
     
     private void Awake()
@@ -37,12 +37,12 @@ public class Sound_manager : MonoBehaviour
             Destroy(gameObject);
         }
     }
-    private void OnSceneLoaded(Scene arg0, LoadSceneMode arg1) //¾ÀÀÌ º¯°æÇÒ ¶§ »ç¿îµå º¯°æ
+    private void OnSceneLoaded(Scene arg0, LoadSceneMode arg1) //ì”¬ì´ ë³€ê²½í•  ë•Œ ì‚¬ìš´ë“œ ë³€ê²½
     {
 
-        //Debug.Log("¾À ¹Ù²ñ");
+        //Debug.Log("ì”¬ ë°”ë€œ");
         cnt += 1;
-        if(cnt == 1) //°ÔÀÓ Ã¹ ½ÃÀÛ »ç¿îµå ÆäÀÌµå ¾Æ¿ôX
+        if(cnt == 1) //ê²Œì„ ì²« ì‹œì‘ ì‚¬ìš´ë“œ í˜ì´ë“œ ì•„ì›ƒX
         {
             s_name = arg0.name;
             BGSoundPlay(bglist[0]);
@@ -50,24 +50,24 @@ public class Sound_manager : MonoBehaviour
         else
         {
             for (int i = 0; i < bglist.Length; i++)
-            {   // ÇÏ³ªÀÇ ¾À¿¡¼­¸¸ Àç»ıµÇ´Â À½¾ÇÀº ¾À°ú À½¾ÇÀÇ ÀÌ¸§ÀÌ µ¿ÀÏÇÒ ¶§ Àç»ıµÇµµ·Ï ÇÔ.
-                // ¾ÀÀÌ main, Walking, meditation, Prologue_Spaceship2, Prologue_ForcedLanding,
+            {   // í•˜ë‚˜ì˜ ì”¬ì—ì„œë§Œ ì¬ìƒë˜ëŠ” ìŒì•…ì€ ì”¬ê³¼ ìŒì•…ì˜ ì´ë¦„ì´ ë™ì¼í•  ë•Œ ì¬ìƒë˜ë„ë¡ í•¨.
+                // ì”¬ì´ main, Walking, meditation, Prologue_Spaceship2, Prologue_ForcedLanding,
                 // Assistance2, Siren, Shooting_game, Day4_comfort, PuzzleGame, Assistance2,
-                //  Day4_Start, fight_game, Day6_Video ÀÏ °æ¿ì
+                //  Day4_Start, fight_game, Day6_Video ì¼ ê²½ìš°
                 if (arg0.name == bglist[i].name)
                 { 
                     s_name = arg0.name;
                     BGSoundPlay(bglist[i]);
                     break;
                 }
-                /* PlayerPrefs.GetInt()·Î ÇØ´ç ¾ÀÀÌ ·Îµå µÇ¾ú´ÂÁö¸¦ Ã¼Å©ÇÔ */
-                else if (rain != PlayerPrefs.GetInt("Rain") | tea != PlayerPrefs.GetInt("Tea") | Out != PlayerPrefs.GetInt("out") | day != PlayerPrefs.GetInt("day") //Â÷ ¸¶½Ã±â, ¹ÛÀ¸·Î ³ª°¡±â, ÀÌÀü ¾ÀÀÌ main, Walking, meditation ÀÌ¾úÀ» °æ¿ì
+                /* PlayerPrefs.GetInt()ë¡œ í•´ë‹¹ ì”¬ì´ ë¡œë“œ ë˜ì—ˆëŠ”ì§€ë¥¼ ì²´í¬í•¨ */
+                else if (rain != PlayerPrefs.GetInt("Rain") | tea != PlayerPrefs.GetInt("Tea") | Out != PlayerPrefs.GetInt("out") | day != PlayerPrefs.GetInt("day") //ì°¨ ë§ˆì‹œê¸°, ë°–ìœ¼ë¡œ ë‚˜ê°€ê¸°, ì´ì „ ì”¬ì´ main, Walking, meditation ì´ì—ˆì„ ê²½ìš°
                    | bully != PlayerPrefs.GetInt("Bully") | guitar != PlayerPrefs.GetInt("Guitar") | after_busking != PlayerPrefs.GetInt("BuskingEnd")
-                    | s_name != "")     //¾ÀÀÌ º¯°æµÇ¾îµµ °°Àº BGMÀÌ ³ª¿Í¾ß ÇÏ´Â °÷.
+                    | s_name != "")     //ì”¬ì´ ë³€ê²½ë˜ì–´ë„ ê°™ì€ BGMì´ ë‚˜ì™€ì•¼ í•˜ëŠ” ê³³.
                 {
                     s_name = "";
 
-                    /* º¯¼ö¿¡ PlayerPrefs.GetInt() °ªÀ» ÀúÀåÇÏ¿© ¾ÀÀÌ ¹Ù²î¾îµµ À½¾ÇÀÌ Ã³À½ºÎÅÍ ´Ù½Ã Àç»ıµÇÁö ¾Êµµ·Ï ÇÔ */
+                    /* ë³€ìˆ˜ì— PlayerPrefs.GetInt() ê°’ì„ ì €ì¥í•˜ì—¬ ì”¬ì´ ë°”ë€Œì–´ë„ ìŒì•…ì´ ì²˜ìŒë¶€í„° ë‹¤ì‹œ ì¬ìƒë˜ì§€ ì•Šë„ë¡ í•¨ */
                     tea = PlayerPrefs.GetInt("Tea");
                     Out = PlayerPrefs.GetInt("out");
                     day = PlayerPrefs.GetInt("day");
@@ -76,48 +76,48 @@ public class Sound_manager : MonoBehaviour
                     guitar = PlayerPrefs.GetInt("Guitar");
                     after_busking = PlayerPrefs.GetInt("BuskingEnd");
 
-                    if (PlayerPrefs.GetInt("Tea") == 1)         // Â÷ ¸¸µé±â ÇÒ ¶§ ³ª¿À´Â À½¾Ç
+                    if (PlayerPrefs.GetInt("Tea") == 1)         // ì°¨ ë§Œë“¤ê¸° í•  ë•Œ ë‚˜ì˜¤ëŠ” ìŒì•…
                     {
                         BGSoundPlay(bglist[3]);
                     }
-                    else if (PlayerPrefs.GetInt("Rain") == 1)   // Day1¿¡¼­ Á¤ºñ»ç¿Í ¸¸³ª´Â Àå¸é&Á¤ºñ»ç¿Í ´ëÈ­ÇÏ´Â Àå¸é¿¡¼­ ³ª¿À´Â ºø¼Ò¸®
+                    else if (PlayerPrefs.GetInt("Rain") == 1)   // Day1ì—ì„œ ì •ë¹„ì‚¬ì™€ ë§Œë‚˜ëŠ” ì¥ë©´&ì •ë¹„ì‚¬ì™€ ëŒ€í™”í•˜ëŠ” ì¥ë©´ì—ì„œ ë‚˜ì˜¤ëŠ” ë¹—ì†Œë¦¬
                     {
                         BGSoundPlay(bglist[12]);
                     }
-                    else if (PlayerPrefs.GetInt("Bully") == 1) //Day4 ±«·ÓÈ÷´Â Àå¸é~È¸»ó ³¡±îÁö ³ª¿À´Â À½¾Ç
+                    else if (PlayerPrefs.GetInt("Bully") == 1) //Day4 ê´´ë¡­íˆëŠ” ì¥ë©´~íšŒìƒ ëê¹Œì§€ ë‚˜ì˜¤ëŠ” ìŒì•…
                     {
                         BGSoundPlay(bglist[17]);
                     }
-                    else if (PlayerPrefs.GetInt("Guitar") == 1) // Day5 ½ÃÀÛ~¹ö½ºÄ¿ À½¾Ç °¨»ó±îÁö ³ª¿À´Â À½¾Ç
+                    else if (PlayerPrefs.GetInt("Guitar") == 1) // Day5 ì‹œì‘~ë²„ìŠ¤ì»¤ ìŒì•… ê°ìƒê¹Œì§€ ë‚˜ì˜¤ëŠ” ìŒì•…
                     {
                         BGSoundPlay(bglist[20]);
                     }
-                    else if (PlayerPrefs.GetInt("BuskingEnd") == 1) // Day5  ¹ö½ºÄ¿¿ÍÀÇ ´ëÈ­~Áı °¥ ¶§±îÁö ³ª¿À´Â À½¾Ç
+                    else if (PlayerPrefs.GetInt("BuskingEnd") == 1) // Day5  ë²„ìŠ¤ì»¤ì™€ì˜ ëŒ€í™”~ì§‘ ê°ˆ ë•Œê¹Œì§€ ë‚˜ì˜¤ëŠ” ìŒì•…
                     {
                         BGSoundPlay(bglist[21]);
                     }
-                    else if (PlayerPrefs.GetInt("out") == 0) // Áı ¾È¿¡¼­ Ã¥»ó, ³ÃÀå°í, È­ºĞ°ú °°ÀÌ ¾ÀÀÌ ¹Ù²î¾îµµ ¸ŞÀÎ Å×¸¶°îÀÌ ³ª¿À´Â °æ¿ì
+                    else if (PlayerPrefs.GetInt("out") == 0) // ì§‘ ì•ˆì—ì„œ ì±…ìƒ, ëƒ‰ì¥ê³ , í™”ë¶„ê³¼ ê°™ì´ ì”¬ì´ ë°”ë€Œì–´ë„ ë©”ì¸ í…Œë§ˆê³¡ì´ ë‚˜ì˜¤ëŠ” ê²½ìš°
                     {
                         BGSoundPlay(bglist[0]);
                     }
-                    else if (PlayerPrefs.GetInt("out") == 1) // Áı ¹ÛÀ¸·Î ³ª°¬À» ¶§
+                    else if (PlayerPrefs.GetInt("out") == 1) // ì§‘ ë°–ìœ¼ë¡œ ë‚˜ê°”ì„ ë•Œ
                     {
-                        switch (PlayerPrefs.GetInt("day")) //°¢ Day º° Å×¸¶°îÀ¸·Î ¾ÀÀÌ º¯°æµÇ¾îµµ °è¼Ó Àç»ıµÇ´Â À½¾Ç, Day4 Á¦¿Ü
+                        switch (PlayerPrefs.GetInt("day")) //ê° Day ë³„ í…Œë§ˆê³¡ìœ¼ë¡œ ì”¬ì´ ë³€ê²½ë˜ì–´ë„ ê³„ì† ì¬ìƒë˜ëŠ” ìŒì•…, Day4 ì œì™¸
                         {
-                            case 0:                         // ÇÁ·Ñ·Î±× µ¿¾È ³ª¿À´Â À½¾Ç
+                            case 0:                         // í”„ë¡¤ë¡œê·¸ ë™ì•ˆ ë‚˜ì˜¤ëŠ” ìŒì•…
                                 BGSoundPlay(bglist[4]);
                                 break;
-                            case 1:                         // Áö±¸ ºÒ½ÃÂø~Á¤ºñ»ç¸¦ ¸¸³ª Áı¿¡ µé¾î¿À±â Àü±îÁö ³ª¿À´Â À½¾Ç
+                            case 1:                         // ì§€êµ¬ ë¶ˆì‹œì°©~ì •ë¹„ì‚¬ë¥¼ ë§Œë‚˜ ì§‘ì— ë“¤ì–´ì˜¤ê¸° ì „ê¹Œì§€ ë‚˜ì˜¤ëŠ” ìŒì•…
                                 BGSoundPlay(bglist[5]);     
                                 break;
-                            case 2:                         // Day2 Å×¸¶ °î
+                            case 2:                         // Day2 í…Œë§ˆ ê³¡
                                 BGSoundPlay(bglist[6]);
                                 break;
-                            case 3:                         // Day3 Å×¸¶ °î
+                            case 3:                         // Day3 í…Œë§ˆ ê³¡
                                 BGSoundPlay(bglist[7]);
                                 break;
-                            case 4:                         // Day4ÀÇ Å×¸¶°îÀº Day4_Start¾À¿¡¼­¸¸ Àç»ıµÇ°í, 
-                                BGSoundPlay(bglist[15]);    // ¸»½Î¿ò Àå¸é µÎ ¾À¿¡¼­ °°Àº À½¾ÇÀ» ¾²±â ¶§¹®¿¡ ÀÌ BGMÀº ¸»½Î¿ò Àå¸é¿¡ ¾²ÀÌ´Â À½¾Ç.
+                            case 4:                         // Day4ì˜ í…Œë§ˆê³¡ì€ Day4_Startì”¬ì—ì„œë§Œ ì¬ìƒë˜ê³ , 
+                                BGSoundPlay(bglist[15]);    // ë§ì‹¸ì›€ ì¥ë©´ ë‘ ì”¬ì—ì„œ ê°™ì€ ìŒì•…ì„ ì“°ê¸° ë•Œë¬¸ì— ì´ BGMì€ ë§ì‹¸ì›€ ì¥ë©´ì— ì“°ì´ëŠ” ìŒì•….
                                 break;
                         }
 
@@ -130,7 +130,7 @@ public class Sound_manager : MonoBehaviour
 
 
     }
-    public void SFXPlay(string sfxName, AudioClip clip) // È¿°úÀ½ Àç»ı ÇÔ¼ö
+    public void SFXPlay(string sfxName, AudioClip clip) // íš¨ê³¼ìŒ ì¬ìƒ í•¨ìˆ˜
     {
         GameObject go = new GameObject(sfxName + "Sound");
         AudioSource audioSource =  go.AddComponent<AudioSource>();

@@ -49,11 +49,11 @@ public class FadeIn : MonoBehaviour
     {
         Panel.gameObject.SetActive(false);
         for (int i = 0; i < Btn_Grid.transform.childCount; i++) {
-            Btn_Grid.transform.GetChild(i).gameObject.SetActive(false); //¹öÆ° ÀÌ¹ÌÁö
-            Btn_Grid.transform.GetChild(i).GetChild(0).gameObject.SetActive(false); //¹öÆ° ÅØ½ºÆ®
+            Btn_Grid.transform.GetChild(i).gameObject.SetActive(false); //ë²„íŠ¼ ì´ë¯¸ì§€
+            Btn_Grid.transform.GetChild(i).GetChild(0).gameObject.SetActive(false); //ë²„íŠ¼ í…ìŠ¤íŠ¸
         }
 
-        //ÃÊÈ¸ ÇÃ·¹ÀÌ¶ó¸é ÀÌ¾îÇÏ±â ¹öÆ°À» ºñÈ°¼ºÈ­
+        //ì´ˆíšŒ í”Œë ˆì´ë¼ë©´ ì´ì–´í•˜ê¸° ë²„íŠ¼ì„ ë¹„í™œì„±í™”
         if(!PlayerPrefs.HasKey("Last_scene")) {
             Btn_Grid.transform.Find("Continue").GetComponent<Button>().interactable = false;
         }

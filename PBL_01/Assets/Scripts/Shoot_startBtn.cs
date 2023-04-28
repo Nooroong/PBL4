@@ -12,7 +12,11 @@ public class Shoot_startBtn : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        targets.gameObject.GetComponent<Target_move>().enabled = false;
+        // targets.gameObject.GetComponent<Target_move>().enabled = false;
+        for(int i = 0; i < targets.transform.childCount; i++){
+            targets.transform.GetChild(i).GetComponent<Target_move>().enabled = false;
+        }
+        
         timer.gameObject.GetComponent<Timer>().enabled = false;
         black.enabled = true;
     }
@@ -20,6 +24,10 @@ public class Shoot_startBtn : MonoBehaviour
     // Update is called once per frame
     public void Onclick()
     {
+        for(int i = 0; i < targets.transform.childCount; i++){
+            targets.transform.GetChild(i).GetComponent<Target_move>().enabled = true;
+        }
+
         StartCoroutine(Onclick_co(this.gameObject.GetComponent<Button>()));
     }
         
@@ -31,7 +39,11 @@ public class Shoot_startBtn : MonoBehaviour
 
         this.gameObject.SetActive(false);
 
-        targets.gameObject.GetComponent<Target_move>().enabled = true;
+        // targets.gameObject.GetComponent<Target_move>().enabled = true;
+        for(int i = 0; i < targets.transform.childCount; i++){
+            targets.transform.GetChild(i).GetComponent<Target_move>().enabled = true;
+        }
+
         timer.gameObject.GetComponent<Timer>().enabled = true;
         black.enabled = false;
     }

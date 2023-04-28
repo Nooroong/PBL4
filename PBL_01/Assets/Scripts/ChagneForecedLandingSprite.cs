@@ -19,24 +19,24 @@ public class ChagneForecedLandingSprite : MonoBehaviour
     void Update()
     {
 
-        if (dialogText.text == "(Åä¹Ì´Â ±âÀıÀ»")
+        if (dialogText.text == "(í† ë¯¸ëŠ” ê¸°ì ˆì„")
         {
             tomee_eyes.gameObject.SetActive(true);
             spaceship.gameObject.SetActive(false);
         }
 
-        if (dialogText.text == "(Á¤½ÅÀ»")
+        if (dialogText.text == "(ì •ì‹ ì„")
         {
             tomee_eyes.gameObject.SetActive(false);
             image.GetComponent<Image>().sprite = Resources.Load("PrologueImage\\23_0", typeof(Sprite)) as Sprite;
         }
 
-        if (dialogText.text == "(Á¤½ÅÀ» Â÷¸° Åä¹Ì´Â ¿ìÁÖ¼±À»")
+        if (dialogText.text == "(ì •ì‹ ì„ ì°¨ë¦° í† ë¯¸ëŠ” ìš°ì£¼ì„ ì„")
         {
             image.GetComponent<Image>().sprite = Resources.Load("PrologueImage\\23_1", typeof(Sprite)) as Sprite;
         }
 
-        if (dialogText.text == "(Á¤½ÅÀ» Â÷¸° Åä¹Ì´Â ¿ìÁÖ¼±À» ³ª°¡·Á°í ÇÏ´Âµ¥.)")
+        if (dialogText.text == "(ì •ì‹ ì„ ì°¨ë¦° í† ë¯¸ëŠ” ìš°ì£¼ì„ ì„ ë‚˜ê°€ë ¤ê³  í•˜ëŠ”ë°.)")
         {
             image.GetComponent<Image>().sprite = Resources.Load("PrologueImage\\23_2", typeof(Sprite)) as Sprite;
         }
