@@ -36,15 +36,22 @@ public class test : MonoBehaviour
 
             if (time >= 2f)
             {
-                if ( cnt == 4 || cnt == 5 || cnt == 14)
+                if ( cnt == 4 || cnt == 5)
                 {
                     time = 0f;
                     cnt++;
                     yield return new WaitForSeconds(5f);
                 }
+                else if( cnt == 14)
+                {
+                    time = 0f;
+                    cnt++;
+                    Complete();
+                    yield return new WaitForSeconds(5f);
+                }
                 else if (cnt == 15)
                 {
-                    break;
+                    yield break;
                 }
                 else
                 {
@@ -57,7 +64,5 @@ public class test : MonoBehaviour
             }
             yield return null;
         }
-        Complete();
     }
-
 }

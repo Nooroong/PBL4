@@ -8,7 +8,6 @@ public class Fight_game : MonoBehaviour
 {
     public Image Bar;
     public GameObject black;
-    public AudioSource audioSource;
 
     // Start is called before the first frame update
     void Start()
@@ -21,15 +20,15 @@ public class Fight_game : MonoBehaviour
     {
         if (Bar.GetComponent<Image>().fillAmount == 0)
         {
-            StartCoroutine(UntilPlayback(audioSource, "Fail"));
+            StartCoroutine(UntilPlayback("Fail"));
         }
         else if (Bar.GetComponent<Image>().fillAmount != 1.0f)
         {
-            Bar.GetComponent<Image>().fillAmount -= 0.0008f;
+            Bar.GetComponent<Image>().fillAmount -= 0.001f;
         }
         else if(Bar.GetComponent<Image>().fillAmount == 1.0f)
         {
-            StartCoroutine(UntilPlayback(audioSource, "Complete"));
+            StartCoroutine(UntilPlayback("Complete"));
         }
     }
 
@@ -42,10 +41,8 @@ public class Fight_game : MonoBehaviour
         SceneManager.LoadScene("Day4_fight1");
     }
 
-    IEnumerator UntilPlayback(AudioSource obj, string scene)
+    IEnumerator UntilPlayback(string scene)
     {
-        //obj.Play();
-        //yield return new WaitUntil(() => !obj.isPlaying);
         black.SetActive(true);
         black.GetComponent<fightgame_black>().enabled = true;
         Invoke(scene, 3);
