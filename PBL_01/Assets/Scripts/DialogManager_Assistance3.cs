@@ -14,7 +14,7 @@ public class DialogManager_Assistance3 : MonoBehaviour
     // Start is called before the first frame update 
     void Start()
     {
-        m_Message = @"档客林技夸..";
+        m_Message = @"도와주세요..";
 
         StartCoroutine(Typing(m_TypingText, m_Message, m_Speed));
 

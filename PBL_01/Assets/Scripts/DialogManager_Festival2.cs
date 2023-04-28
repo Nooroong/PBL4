@@ -13,7 +13,7 @@ public class DialogManager_Festival2 : MonoBehaviour
     // Start is called before the first frame update 
     void Start()
     {
-        m_Message = @"历扁ˇ";
+        m_Message = @"저기…";
 
         StartCoroutine(Typing(m_TypingText, m_Message, m_Speed));
 
