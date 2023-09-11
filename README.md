@@ -23,8 +23,8 @@ https://m.onestore.co.kr/mobilepoc/apps/appsDetail.omp?prodId=0000769114
 
 ## 소개 및 개요
 |소개영상|[![Video Label](http://img.youtube.com/vi/2HXLPRLztzM/0.jpg)](https://youtu.be/2HXLPRLztzM)|
-|:---:|:---|
-|**게임 타이틀**| Beyond The Galaxy |
+|:------:|:------|
+|**게임 타이틀**| Beyond The Galaxy : 지구여행(확장판) |
 |**주제**| 주인공 토미가 감정 표출에 대한 어려움을 극복하고 성장하는 스토리 |
 |**목표**| 지구에 불시착한 주인공이 사람들과 어울리면서 우주선 수리 부품을  모아 자신의 행성으로 돌아가는 것|
 |**장르**| 힐링 / 어드벤처 / 캐주얼 |
